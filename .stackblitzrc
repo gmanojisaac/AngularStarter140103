@@ -1,1 +1,1 @@
-{"installDependencies":true,"startCommand":"turbo run start","env":{"ENABLE_CJS_IMPORTS":true}}
+{"installDependencies":true,"startCommand":"turbo run storybook","env":{"ENABLE_CJS_IMPORTS":true}}
