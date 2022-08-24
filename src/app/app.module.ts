@@ -4,14 +4,20 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 import { environment } from '../environments/environment';
-import { AppComponent } from './app.component';
+import { AppComponent  } from './app.component';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { TaskModule } from './components/task.module';
-
+import { PureInboxScreenComponent } from './components/pure-inbox-screen.component';
+import { MarkdownModule, MarkdownService } from 'ngx-markdown';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PureInboxScreenComponent],
   imports: [
+    HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     BrowserModule,
     TaskModule,
@@ -22,8 +28,9 @@ import { TaskModule } from './components/task.module';
     NgxsLoggerPluginModule.forRoot({
       disabled: environment.production,
     }),
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
-  providers: [],
+  providers: [MarkdownService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
