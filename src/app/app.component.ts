@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import mermaid from 'mermaid';
 
 @Component({
   selector: 'app-root',
@@ -30,8 +30,22 @@ export class AppComponent implements OnInit {
    
   }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
+    mermaid.initialize({
+      startOnLoad: true
+    });
+  }
 }
-}
 
+
+/**
+ <markdown class="variable-binding" [data]="markdowncode"></markdown>
+<div class="markdown">
+  <markdown mermaid [src]="'../assets/myfile.md'"></markdown>
+</div>
+<pre class="mermaid">
+  sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+</pre>
+ */

@@ -1,54 +1,15 @@
-<markdown clipboard class="variable-binding" [data]="markdowncode"></markdown>
 
-<pre class="mermaid">graph TD;
-  A--&gt;B;
-  A--&gt;C;
-  B--&gt;D;
-  C--&gt;D;</pre>
+<h1>TaskMarked</h1>
+<app-task-marked></app-task-marked>
 
 
-<!--markdown
-  mermaid class="mermaid "
-  [src]="'../assets/myfile.md'">
-  [mermaidOptions]="options"
-</markdown>
-
-<div style="min-width: 100vw" markdown [src]="'../assets/myfile.md'"   (load)="onLoad($event)" ></div-->
-
-
-<!--pre class="mermaid">
-  gantt
-  section Section
-  Completed :done,    des1, 2014-01-06,2014-01-08
-  Active        :active,  des2, 2014-01-07, 3d
-  Parallel 1   :         des3, after des1, 1d
-  Parallel 2   :         des4, after des1, 1d
-  Parallel 3   :         des5, after des3, 1d
-  Parallel 4   :         des6, after des4, 1d
-</pre-->
-
-<!--pre class="mermaid">graph TD;
-  A--&gt;B;
-  A--&gt;C;
-  B--&gt;D;
-  C--&gt;D;</pre-->
-
-
-
-<!--pre><code class="language-mermaid">
-
-
-```mermaid
-sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom->>iframe: loads html w/ iframe url
-    iframe->>viewscreen: request template
-    viewscreen->>iframe: html & javascript
-    iframe->>dotcom: iframe ready
-    dotcom->>iframe: set mermaid data on iframe
-    iframe->>iframe: render mermaid
-```
-
-</code></pre-->
+<h1>TaskOhers</h1>
+<markdown class="variable-binding" [data]="markdowncode"></markdown>
+<div class="markdown">
+  <markdown mermaid [src]="'../assets/myfile.md'"></markdown>
+</div>
+<pre class="mermaid">
+  sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+</pre>

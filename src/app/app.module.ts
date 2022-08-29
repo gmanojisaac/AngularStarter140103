@@ -13,8 +13,11 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+//import { InboxScreenComponent } from './components/inbox-screen.component';
+import { TaskCheckComponent } from './components/checkComponent.component';
+
 @NgModule({
-  declarations: [AppComponent, PureInboxScreenComponent],
+  declarations: [AppComponent, PureInboxScreenComponent,TaskCheckComponent], //],
   imports: [
     HttpClientModule,
     FormsModule,

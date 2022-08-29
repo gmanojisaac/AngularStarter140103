@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { ArchiveTask, PinTask } from '../state/task.state';
 import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-task-list',
@@ -10,14 +11,18 @@ import { Observable } from 'rxjs';
       [tasks]="tasks$ | async"
       (onArchiveTask)="archiveTask($event)"
       (onPinTask)="pinTask($event)"
-    ></app-pure-task-list>
+    ></app-pure-task-list>  
   `,
 })
-export class TaskListComponent {
+export class TaskListComponent{
   tasks$?: Observable<any>;
 
   constructor(private store: Store) {
-    this.tasks$ = store.select((state) => state.taskbox.tasks);
+    this.tasks$ = store.select((state) => {
+      console.log(state.taskbox.tasks);
+      return state.taskbox.tasks;      
+    } );
+    
   }
 
   /**
@@ -33,4 +38,5 @@ export class TaskListComponent {
   pinTask(id: string) {
     this.store.dispatch(new PinTask(id));
   }
+
 }

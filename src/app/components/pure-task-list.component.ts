@@ -12,6 +12,7 @@ import { Task } from '../models/task.model';
         (onPinTask)="onPinTask.emit($event)"
       >
       </app-task>
+
       <div
         *ngIf="tasksInOrder.length === 0 && !loading"
         class="wrapper-message"

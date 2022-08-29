@@ -4,23 +4,32 @@ import { fireEvent, within } from '@storybook/testing-library';
 
 import { CommonModule } from '@angular/common';
 
-import { PureInboxScreenComponent } from './pure-inbox-screen.component';
+import { InboxScreenComponent } from './inbox-screen.component';
 
-import { TaskModule } from './task.module';
+import { TaskMarkedModule } from './taskMarked.module';
 
 import { Store, NgxsModule } from '@ngxs/store';
 
+import { MarkdownModule, MarkdownService } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+import 'marked';
+import 'prismjs';
+
+import 'mermaid';
+import 'clipboard';
+
 
 export default {
-  component: PureInboxScreenComponent,
+  component: InboxScreenComponent,
   decorators: [
     moduleMetadata({
-      declarations: [PureInboxScreenComponent],
-      imports: [CommonModule, TaskModule, NgxsModule.forRoot([])],
-      providers: [Store],
+      declarations: [],
+      imports: [CommonModule,HttpClientModule, TaskMarkedModule, NgxsModule.forRoot([]), MarkdownModule.forRoot({ loader: HttpClient })],
+      providers: [Store, MarkdownService],
     }),
   ],
-  title: 'PureInboxScreen',
+  title: 'PureInboxScreenMarked',
 } as Meta;
 
 const Template: Story = (args) => ({

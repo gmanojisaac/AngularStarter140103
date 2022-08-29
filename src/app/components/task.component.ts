@@ -1,10 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Task } from '../models/task.model';
 
-import mermaid from 'mermaid';
-
- 
-
 @Component({
   selector: 'app-task',
   template: `
@@ -46,15 +42,7 @@ import mermaid from 'mermaid';
         <span class="icon-star"></span>
       </button>
     </div>
-
-<markdown class="variable-binding" [data]="markdown"></markdown>
-  `,
-  styles:[`
-  .variable-binding {
-    display: block;
-    float: right;
-  }
-  `]
+  `
 })
 export class TaskComponent {
   @Input()
@@ -82,23 +70,6 @@ export class TaskComponent {
   onArchive(id: any) {
     this.onArchiveTask.emit(id);
   }
-  markdown = `## Markdown __rulez__!
----
 
-### Syntax highlight
-\`\`\`typescript
-const language = 'typescript';
-\`\`\`
-
-### Lists
-1. Ordered list
-2. Another bullet point
-   - Unordered list
-   - Another unordered bullet
-
-### Blockquote
-> Blockquote to the max`;
-  onLoad(event: any): void {
-    mermaid.initialize({ startOnLoad: true });
-  }
+  
 }

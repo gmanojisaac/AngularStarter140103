@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "clipboard/dist/clipboard.min.js",
+              "mermaid/dist/mermaid.min.js",
+              "prismjs/prism.js"
+           ],
             "outputPath": "dist/angular-starter140103",
             "index": "src/index.html",
             "main": "src/main.ts",

@@ -2,11 +2,11 @@ import { Meta, Story } from '@storybook/angular';
 
 import { action } from '@storybook/addon-actions';
 
-import { TaskComponent } from './task.component';
+import { TaskMarkedComponent } from './taskMarked.component';
 
 export default {
-  component: TaskComponent,
-  title: 'Task',
+  component: TaskMarkedComponent,
+  title: 'TaskMarked',
   excludeStories: /.*Data$/,
 } as Meta;
 
