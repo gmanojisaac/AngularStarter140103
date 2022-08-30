@@ -10,50 +10,56 @@ import 'prismjs';
 import 'mermaid';
 import 'prismjs/components/prism-typescript.min.js';
 export default {
-    title: 'Angular Material/Progressbar',
-    component: ProgressBarComponent,
-    decorators: [
-      moduleMetadata({
-        imports: [MatProgressBarModule, HttpClientModule, MarkdownModule.forRoot({ loader: HttpClient })],
-        providers: [MarkdownService]      
-      }),
-    ],
-    argTypes: {
-      color: {
-        options: ['primary', 'accent', 'warn'],
-        control: { type: 'radio'},
-      }
+  title: 'MANOJ ISAAC G',
+  component: ProgressBarComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [
+        MatProgressBarModule,
+        HttpClientModule,
+        MarkdownModule.forRoot({ loader: HttpClient }),
+      ],
+      providers: [MarkdownService],
+    }),
+  ],
+  argTypes: {
+    color: {
+      options: ['primary', 'accent', 'warn'],
+      control: { type: 'radio' },
     },
-  } as Meta;
-  
+  },
+} as Meta;
 
-  const Template: Story<ProgressBarComponent> = (args: ProgressBarComponent) => ({
-    props: args,
-  });
+const Template: Story<ProgressBarComponent> = (args: ProgressBarComponent) => ({
+  props: args,
+});
 
-  export const Determinate = Template.bind({});
-Determinate.args = {
-  mode: 'determinate',
-  value: 35,
-  color: "primary" // primary | accent | warn
-};
-
-export const Indeterminate = Template.bind({});
-Indeterminate.args = {
+export const Introduction = Template.bind({});
+Introduction.args = {
   mode: 'indeterminate',
-  color: "accent" // primary | accent | warn
+  value: 10,
+  color: 'primary', // primary | accent | warn
 };
 
-export const Buffer = Template.bind({});
-Buffer.args = {
-  mode: 'buffer',  
-  value: 35,
+export const College = Template.bind({});
+College.args = {
+  mode: 'indeterminate',
+  value: 30,
+  color: 'accent', // primary | accent | warn
+};
+
+export const PG = Template.bind({});
+PG.args = {
+  mode: 'indeterminate',
+  value: 65,
   bufferValue: 65,
-  color: "warn" // primary | accent | warn
+  color: 'warn', // primary | accent | warn
 };
 
-export const Query = Template.bind({});
-Query.args = {
-  mode: 'query',
-  color: "warn" // primary | accent | warn
+export const Teaching = Template.bind({});
+Teaching.args = {
+  mode: 'indeterminate',
+  value: 65,
+  bufferValue: 65,
+  color: 'warn', // primary | accent | warn
 };

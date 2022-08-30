@@ -1,16 +1,18 @@
-
-
-  <mat-progress-bar 
-    [mode]="mode"
-    [value]="value"
-    [bufferValue]="bufferValue"
-    [color]="color">
+<mat-progress-bar
+  [mode]="mode"
+  [value]="value"
+  [bufferValue]="bufferValue"
+  [color]="color"
+>
 </mat-progress-bar>
+
 <div class="markdown">
-  <markdown class="variable-binding" [src]="'../../assets/myfilemark.md'"></markdown>
+  <markdown mermaid [src]="'../../assets/myfile.md'"></markdown>
 </div>
 
-
 <div class="markdown">
-    <markdown mermaid [src]="'../../assets/myfile.md'"></markdown>
-  </div>
+  <markdown
+    class="variable-binding"
+    [src]="'../../assets/myfilemark.md'"
+  ></markdown>
+</div>

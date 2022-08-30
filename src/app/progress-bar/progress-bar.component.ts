@@ -5,20 +5,18 @@ import { ProgressBarMode } from '@angular/material/progress-bar';
 @Component({
   selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
-  styleUrls: ['./progress-bar.component.scss']
+  styleUrls: ['./progress-bar.component.scss'],
 })
 export class ProgressBarComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   /**
    * ProgressBar mode - determinate | indeterminate | Buffer | Query
    */
   @Input()
-  mode: ProgressBarMode = 'determinate';
+  mode: ProgressBarMode = 'indeterminate';
 
   /**
    * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes
@@ -26,7 +24,7 @@ export class ProgressBarComponent implements OnInit {
   @Input()
   value: number = 40;
 
-   /**
+  /**
    * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode
    */
   @Input()
@@ -39,7 +37,7 @@ export class ProgressBarComponent implements OnInit {
   color: ThemePalette = 'primary';
 
   @Input()
-  markdowncode : string = `## Markdown __rulez__!
+  markdowncode: string = `## Markdown __rulez__!
   ---
   
   ### Syntax highlight
