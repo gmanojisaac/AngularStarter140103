@@ -962,7 +962,7 @@
         },
         {
             "name": "ProgressBarComponent",
-            "id": "component-ProgressBarComponent-d051331d13319d6247ce699c3f631abbff76940e754187b5c41e32d0aa16ce489ca05f6bae755ef3fdbd4d89980e7fde774ecc8f10e4bb60b67ac8c46070fbaa",
+            "id": "component-ProgressBarComponent-95bef1babbf707831c9cf912719206a17bf727753d9a125590ee76b8afd74788d1be848415f3ee35cae0882fe6357fe1122968c148eec6db401a539aa9033d56",
             "file": "src/app/progress-bar/progress-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -986,7 +986,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n",
                     "description": "<p>ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode</p>\n",
-                    "line": 33,
+                    "line": 31,
                     "type": "number",
                     "decorators": []
                 },
@@ -997,7 +997,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nProgressBar Color - primary (Theme color) | accent | warn\n",
                     "description": "<p>ProgressBar Color - primary (Theme color) | accent | warn</p>\n",
-                    "line": 39,
+                    "line": 37,
                     "type": "ThemePalette",
                     "decorators": []
                 },
@@ -1006,18 +1006,18 @@
                     "defaultValue": "`## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 42,
+                    "line": 40,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "mode",
-                    "defaultValue": "'determinate'",
+                    "defaultValue": "'indeterminate'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nProgressBar mode - determinate | indeterminate | Buffer | Query\n",
                     "description": "<p>ProgressBar mode - determinate | indeterminate | Buffer | Query</p>\n",
-                    "line": 21,
+                    "line": 19,
                     "type": "ProgressBarMode",
                     "decorators": []
                 },
@@ -1028,7 +1028,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n",
                     "description": "<p>ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes</p>\n",
-                    "line": 27,
+                    "line": 25,
                     "type": "number",
                     "decorators": []
                 }
@@ -1042,7 +1042,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1054,7 +1054,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n\n@Component({\n  selector: 'app-progress-bar',\n  templateUrl: './progress-bar.component.html',\n  styleUrls: ['./progress-bar.component.scss']\n})\nexport class ProgressBarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  /**\n   * ProgressBar mode - determinate | indeterminate | Buffer | Query\n   */\n  @Input()\n  mode: ProgressBarMode = 'determinate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n   /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode : string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n\n@Component({\n  selector: 'app-progress-bar',\n  templateUrl: './progress-bar.component.html',\n  styleUrls: ['./progress-bar.component.scss'],\n})\nexport class ProgressBarComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  /**\n   * ProgressBar mode - determinate | indeterminate | Buffer | Query\n   */\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1074,7 +1074,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\n\n  <mat-progress-bar \n    [mode]=\"mode\"\n    [value]=\"value\"\n    [bufferValue]=\"bufferValue\"\n    [color]=\"color\">\n</mat-progress-bar>\n<div class=\"markdown\">\n  <markdown class=\"variable-binding\" [src]=\"'../../assets/myfilemark.md'\"></markdown>\n</div>\n\n\n<div class=\"markdown\">\n    <markdown mermaid [src]=\"'../../assets/myfile.md'\"></markdown>\n  </div>"
+            "templateData": "<mat-progress-bar\n  [mode]=\"mode\"\n  [value]=\"value\"\n  [bufferValue]=\"bufferValue\"\n  [color]=\"color\"\n>\n</mat-progress-bar>\n\n<div class=\"markdown\">\n  <markdown mermaid [src]=\"'../../assets/myfile.md'\"></markdown>\n</div>\n\n<div class=\"markdown\">\n  <markdown\n    class=\"variable-binding\"\n    [src]=\"'../../assets/myfilemark.md'\"\n  ></markdown>\n</div>\n"
         },
         {
             "name": "PureInboxScreenComponent",
@@ -1908,7 +1908,7 @@
                 "defaultValue": "{\n  ARCHIVE_TASK: 'ARCHIVE_TASK',\n  PIN_TASK: 'PIN_TASK',\n  ERROR: 'APP_ERROR',\n}"
             },
             {
-                "name": "Buffer",
+                "name": "College",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Progressbar.stories.ts",
@@ -1938,16 +1938,6 @@
                 "defaultValue": "[\n  { id: '1', title: 'Something', state: 'TASK_INBOX' },\n  { id: '2', title: 'Something more', state: 'TASK_INBOX' },\n  { id: '3', title: 'Something else', state: 'TASK_INBOX' },\n  { id: '4', title: 'Something again', state: 'TASK_INBOX' },\n]"
             },
             {
-                "name": "Determinate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Progressbar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1968,7 +1958,7 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
-                "name": "Indeterminate",
+                "name": "Introduction",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Progressbar.stories.ts",
@@ -1978,67 +1968,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Query",
+                "name": "PG",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Progressbar.stories.ts",
@@ -2057,54 +1987,14 @@
                 "type": "literal type"
             },
             {
-                "name": "Secondary",
+                "name": "Teaching",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/stories/Progressbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2114,7 +2004,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ProgressBarComponent>",
-                "defaultValue": "(args: ProgressBarComponent) => ({\n    props: args,\n  })"
+                "defaultValue": "(args: ProgressBarComponent) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -2145,7 +2035,7 @@
             ],
             "src/stories/Progressbar.stories.ts": [
                 {
-                    "name": "Buffer",
+                    "name": "College",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Progressbar.stories.ts",
@@ -2155,7 +2045,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Determinate",
+                    "name": "Introduction",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Progressbar.stories.ts",
@@ -2165,7 +2055,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Indeterminate",
+                    "name": "PG",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Progressbar.stories.ts",
@@ -2175,7 +2065,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Query",
+                    "name": "Teaching",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Progressbar.stories.ts",
@@ -2192,7 +2082,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ProgressBarComponent>",
-                    "defaultValue": "(args: ProgressBarComponent) => ({\n    props: args,\n  })"
+                    "defaultValue": "(args: ProgressBarComponent) => ({\n  props: args,\n})"
                 }
             ],
             "src/test.ts": [
@@ -2239,122 +2129,6 @@
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
                 }
-            ],
-            "src/stories/Button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-                }
             ]
         },
         "groupedFunctions": {},
@@ -2376,7 +2150,7 @@
         ]
     },
     "coverage": {
-        "count": 5,
+        "count": 7,
         "status": "low",
         "files": [
             {
@@ -2555,111 +2329,11 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Button.stories.ts",
+                "filePath": "src/stories/Progressbar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
+                "name": "College",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2669,7 +2343,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Buffer",
+                "name": "Introduction",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2679,7 +2353,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Determinate",
+                "name": "PG",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2689,17 +2363,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Indeterminate",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Progressbar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Query",
+                "name": "Teaching",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

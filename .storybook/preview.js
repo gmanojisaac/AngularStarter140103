@@ -6,7 +6,10 @@ setCompodocJson(docJson);
 export const parameters = {
   options: {
     storySort: {
-      order: ['MANOJ ISAAC G', ['Introduction', 'College', 'PG', 'Teaching']],
+      order: [
+        'About me',
+        ['Manoj Isaac G', 'Career', 'Lecturer', 'Telecom', 'Development'],
+      ],
     },
   },
   actions: { argTypesRegex: '^on[A-Z].*' },

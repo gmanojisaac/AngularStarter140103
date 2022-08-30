@@ -10,7 +10,7 @@ import 'prismjs';
 import 'mermaid';
 import 'prismjs/components/prism-typescript.min.js';
 export default {
-  title: 'MANOJ ISAAC G',
+  title: 'About me/Career',
   component: ProgressBarComponent,
   decorators: [
     moduleMetadata({
@@ -34,32 +34,9 @@ const Template: Story<ProgressBarComponent> = (args: ProgressBarComponent) => ({
   props: args,
 });
 
-export const Introduction = Template.bind({});
-Introduction.args = {
-  mode: 'indeterminate',
-  value: 10,
-  color: 'primary', // primary | accent | warn
-};
-
-export const College = Template.bind({});
-College.args = {
+export const TillNow = Template.bind({});
+TillNow.args = {
   mode: 'indeterminate',
   value: 30,
   color: 'accent', // primary | accent | warn
-};
-
-export const PG = Template.bind({});
-PG.args = {
-  mode: 'indeterminate',
-  value: 65,
-  bufferValue: 65,
-  color: 'warn', // primary | accent | warn
-};
-
-export const Teaching = Template.bind({});
-Teaching.args = {
-  mode: 'indeterminate',
-  value: 65,
-  bufferValue: 65,
-  color: 'warn', // primary | accent | warn
 };

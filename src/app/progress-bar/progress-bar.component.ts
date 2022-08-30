@@ -54,3 +54,260 @@ export class ProgressBarComponent implements OnInit {
   ### Blockquote
   > Blockquote to the max`;
 }
+
+@Component({
+  selector: 'app-aboutme-Introduction',
+  template: `
+
+      
+    <mat-progress-bar 
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue"
+        [color]="color">
+    </mat-progress-bar>
+
+
+    <div class="markdown">
+      <markdown
+        class="variable-binding"
+        [src]="'../../assets/Introduction.md'"
+      ></markdown>
+    </div>
+
+  `,
+})
+export class AboutmeIntroductionComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+  @Input()
+  mode: ProgressBarMode = 'indeterminate';
+
+  /**
+   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes
+   */
+  @Input()
+  value: number = 40;
+
+  /**
+   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode
+   */
+  @Input()
+  bufferValue: number = 60;
+
+  /**
+   * ProgressBar Color - primary (Theme color) | accent | warn
+   */
+  @Input()
+  color: ThemePalette = 'primary';
+
+  @Input()
+  markdowncode: string = `## Markdown __rulez__!
+  ---
+  
+  ### Syntax highlight
+  \`\`\`typescript
+  const language = 'typescript';
+  \`\`\`
+  
+  ### Lists
+  1. Ordered list
+  2. Another bullet point
+     - Unordered list
+     - Another unordered bullet
+  
+  ### Blockquote
+  > Blockquote to the max`;
+}
+
+@Component({
+  selector: 'app-aboutme-Lecturer',
+  template: `
+
+      
+    <mat-progress-bar 
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue"
+        [color]="color">
+    </mat-progress-bar>
+
+    <div class="markdown">
+    <markdown mermaid [src]="'../../assets/Lecturer.md'"></markdown>
+  </div>
+
+  `,
+})
+export class AboutmeLecturerComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+  @Input()
+  mode: ProgressBarMode = 'indeterminate';
+
+  /**
+   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes
+   */
+  @Input()
+  value: number = 40;
+
+  /**
+   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode
+   */
+  @Input()
+  bufferValue: number = 60;
+
+  /**
+   * ProgressBar Color - primary (Theme color) | accent | warn
+   */
+  @Input()
+  color: ThemePalette = 'primary';
+
+  @Input()
+  markdowncode: string = `## Markdown __rulez__!
+  ---
+  
+  ### Syntax highlight
+  \`\`\`typescript
+  const language = 'typescript';
+  \`\`\`
+  
+  ### Lists
+  1. Ordered list
+  2. Another bullet point
+     - Unordered list
+     - Another unordered bullet
+  
+  ### Blockquote
+  > Blockquote to the max`;
+}
+
+@Component({
+  selector: 'app-aboutme-Telecom',
+  template: `
+
+      
+    <mat-progress-bar 
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue"
+        [color]="color">
+    </mat-progress-bar>
+
+
+    <div class="markdown">
+    <markdown mermaid [src]="'../../assets/Telecom.md'"></markdown>
+  </div>
+
+  `,
+})
+export class AboutmeTelecomComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+  @Input()
+  mode: ProgressBarMode = 'indeterminate';
+
+  /**
+   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes
+   */
+  @Input()
+  value: number = 40;
+
+  /**
+   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode
+   */
+  @Input()
+  bufferValue: number = 60;
+
+  /**
+   * ProgressBar Color - primary (Theme color) | accent | warn
+   */
+  @Input()
+  color: ThemePalette = 'primary';
+
+  @Input()
+  markdowncode: string = `## Markdown __rulez__!
+  ---
+  
+  ### Syntax highlight
+  \`\`\`typescript
+  const language = 'typescript';
+  \`\`\`
+  
+  ### Lists
+  1. Ordered list
+  2. Another bullet point
+     - Unordered list
+     - Another unordered bullet
+  
+  ### Blockquote
+  > Blockquote to the max`;
+}
+
+@Component({
+  selector: 'app-aboutme-Development',
+  template: `
+
+      
+    <mat-progress-bar 
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue"
+        [color]="color">
+    </mat-progress-bar>
+
+
+    <div class="markdown">
+      <markdown
+        class="variable-binding"
+        [src]="'../../assets/Development.md'"
+      ></markdown>
+    </div>
+
+  `,
+})
+export class AboutmeDevelopmentComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+  @Input()
+  mode: ProgressBarMode = 'indeterminate';
+
+  /**
+   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes
+   */
+  @Input()
+  value: number = 40;
+
+  /**
+   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode
+   */
+  @Input()
+  bufferValue: number = 60;
+
+  /**
+   * ProgressBar Color - primary (Theme color) | accent | warn
+   */
+  @Input()
+  color: ThemePalette = 'primary';
+
+  @Input()
+  markdowncode: string = `## Markdown __rulez__!
+  ---
+  
+  ### Syntax highlight
+  \`\`\`typescript
+  const language = 'typescript';
+  \`\`\`
+  
+  ### Lists
+  1. Ordered list
+  2. Another bullet point
+     - Unordered list
+     - Another unordered bullet
+  
+  ### Blockquote
+  > Blockquote to the max`;
+}

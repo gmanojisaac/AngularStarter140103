@@ -4,7 +4,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 import { environment } from '../environments/environment';
-import { AppComponent  } from './app.component';
+import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { TaskModule } from './components/task.module';
@@ -16,11 +16,26 @@ import { HttpClientModule } from '@angular/common/http';
 //import { InboxScreenComponent } from './components/inbox-screen.component';
 import { TaskCheckComponent } from './components/checkComponent.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import {
+  ProgressBarComponent,
+  AboutmeIntroductionComponent,
+  AboutmeLecturerComponent,
+  AboutmeTelecomComponent,
+  AboutmeDevelopmentComponent,
+} from './progress-bar/progress-bar.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
-  declarations: [AppComponent, PureInboxScreenComponent,TaskCheckComponent, ProgressBarComponent], //],
+  declarations: [
+    AppComponent,
+    PureInboxScreenComponent,
+    TaskCheckComponent,
+    ProgressBarComponent,
+    AboutmeIntroductionComponent,
+    AboutmeLecturerComponent,
+    AboutmeTelecomComponent,
+    AboutmeDevelopmentComponent,
+  ], //],
   imports: [
     MatProgressBarModule,
     HttpClientModule,
@@ -36,7 +51,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
       disabled: environment.production,
     }),
     MarkdownModule.forRoot({ loader: HttpClient }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [MarkdownService],
   bootstrap: [AppComponent],
