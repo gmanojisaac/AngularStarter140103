@@ -15,10 +15,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 //import { InboxScreenComponent } from './components/inbox-screen.component';
 import { TaskCheckComponent } from './components/checkComponent.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
-  declarations: [AppComponent, PureInboxScreenComponent,TaskCheckComponent], //],
+  declarations: [AppComponent, PureInboxScreenComponent,TaskCheckComponent, ProgressBarComponent], //],
   imports: [
+    MatProgressBarModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
@@ -31,7 +35,8 @@ import { TaskCheckComponent } from './components/checkComponent.component';
     NgxsLoggerPluginModule.forRoot({
       disabled: environment.production,
     }),
-    MarkdownModule.forRoot({ loader: HttpClient })
+    MarkdownModule.forRoot({ loader: HttpClient }),
+    BrowserAnimationsModule
   ],
   providers: [MarkdownService],
   bootstrap: [AppComponent],
