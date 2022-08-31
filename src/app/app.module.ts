@@ -11,7 +11,6 @@ import { TaskModule } from './components/task.module';
 import { PureInboxScreenComponent } from './components/pure-inbox-screen.component';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 //import { InboxScreenComponent } from './components/inbox-screen.component';
 import { TaskCheckComponent } from './components/checkComponent.component';
@@ -23,7 +22,7 @@ import {
   AboutmeTelecomComponent,
   AboutmeDevelopmentComponent,
 } from './progress-bar/progress-bar.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { AppSharedModule } from './app-shared/app-shared.module';
 
 @NgModule({
   declarations: [
@@ -37,9 +36,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     AboutmeDevelopmentComponent,
   ], //],
   imports: [
-    MatProgressBarModule,
+    AppSharedModule,
     HttpClientModule,
-    FormsModule,
     AppRoutingModule,
     BrowserModule,
     TaskModule,
