@@ -75,6 +75,11 @@ export class ProgressBarComponent implements OnInit {
       ></markdown>
     </div>
 
+    Here
+<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10vw">
+  <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
+  <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
+</div>
   `,
 })
 export class AboutmeIntroductionComponent implements OnInit {

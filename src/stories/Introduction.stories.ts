@@ -4,6 +4,7 @@ import { AboutmeIntroductionComponent } from '../app/progress-bar/progress-bar.c
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AppSharedModule } from '../app/app-shared/app-shared.module';
 
 import 'marked';
 import 'prismjs';
@@ -15,7 +16,8 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        MatProgressBarModule,
+        // MatProgressBarModule,
+        AppSharedModule,
         HttpClientModule,
         MarkdownModule.forRoot({ loader: HttpClient }),
       ],
