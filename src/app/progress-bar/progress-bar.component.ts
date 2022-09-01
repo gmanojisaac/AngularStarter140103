@@ -331,14 +331,84 @@ export class AboutmeDevelopmentComponent implements OnInit {
     <markdown mermaid [src]="'../../assets/Testing.md'"></markdown>
   </div>
 
-  <markdown ngPreserveWhitespaces lineNumbers>
+  <markdown ngPreserveWhitespaces lineNumbers lineHighlight  [line]="'6, 10-16'"
+  [lineOffset]="5">
   \`\`\`typescript
   export function greetings(name: string): string &#123;
     return 'Hello ' + name;
   }
+  export function greetings(name: string): string &#123;
+  return 'Hello ' + name;
+}
+export function greetings(name: string): string &#123;
+return 'Hello ' + name;
+}
+export function greetings(name: string): string &#123;
+return 'Hello ' + name;
+}
+export function greetings(name: string): string &#123;
+return 'Hello ' + name;
+}
   \`\`\`
 </markdown>
+
+
+<markdown ngPreserveWhitespaces clipboard 
+commandLine
+[prompt]="'PS C:\Users\Chris>'"
+[filterOutput]="'(out)'">
+\`\`\` powershell
+Get-Date
+(out)
+(ut)Sunday, November 7, 2021 8:19:21 PM
+(out)
+\`\`\`
+</markdown>
+
+<div class="footer">
+<mat-divider></mat-divider>
+<markdown emoji class="footer-text" fxLayout="row" fxLayoutAlign.gt-xs="center">
+  Crafted with :heart: by **jfcere** <span style="margin:0 .15em;">•</span> Follow on [GitHub](https://github.com/jfcere)
+</markdown>
+</div>
+
   `,
+  style: [
+    `
+    .footer {
+      margin: 32px 0 8px;
+    
+      &-text {
+        display: block;
+        font-size: 13px;
+        padding-top: 4px;
+      }
+    }
+    
+    .mat-fab,
+    .mat-mini-fab {
+      img {
+        margin-bottom: 2px;
+      }
+    }
+    
+    .sticky {
+      position: sticky;
+      top: 80px;
+    }
+    
+    .scrollup-button {
+      margin:14px;
+    
+      &--fixed {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+    
+    `,
+  ],
 })
 export class AboutmeTestingComponent implements OnInit {
   constructor() {}
