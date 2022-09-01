@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { moduleMetadata } from '@storybook/angular';
-import { AboutmeIntroductionComponent } from '../app/progress-bar/progress-bar.component';
+import { AboutmeTestingComponent } from '../app/progress-bar/progress-bar.component';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppSharedModule } from '../app/app-shared/app-shared.module';
@@ -10,8 +10,8 @@ import 'prismjs';
 import 'mermaid';
 import 'prismjs/components/prism-typescript.min.js';
 export default {
-  title: 'About me/Manoj Isaac G',
-  component: AboutmeIntroductionComponent,
+  title: 'Testing/Mermaid',
+  component: AboutmeTestingComponent,
   decorators: [
     moduleMetadata({
       imports: [
@@ -30,8 +30,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AboutmeIntroductionComponent> = (
-  args: AboutmeIntroductionComponent
+const Template: Story<AboutmeTestingComponent> = (
+  args: AboutmeTestingComponent
 ) => ({
   props: args,
 });

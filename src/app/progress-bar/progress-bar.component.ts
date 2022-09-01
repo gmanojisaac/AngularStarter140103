@@ -76,10 +76,10 @@ export class ProgressBarComponent implements OnInit {
     </div>
 
     Here
-<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10vw">
-  <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
-  <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
-</div>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10vw">
+      <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
+      <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
+    </div>
   `,
 })
 export class AboutmeIntroductionComponent implements OnInit {
@@ -274,6 +274,73 @@ export class AboutmeTelecomComponent implements OnInit {
   `,
 })
 export class AboutmeDevelopmentComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+  @Input()
+  mode: ProgressBarMode = 'indeterminate';
+
+  /**
+   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes
+   */
+  @Input()
+  value: number = 40;
+
+  /**
+   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode
+   */
+  @Input()
+  bufferValue: number = 60;
+
+  /**
+   * ProgressBar Color - primary (Theme color) | accent | warn
+   */
+  @Input()
+  color: ThemePalette = 'primary';
+
+  @Input()
+  markdowncode: string = `## Markdown __rulez__!
+  ---
+  
+  ### Syntax highlight
+  \`\`\`typescript
+  const language = 'typescript';
+  \`\`\`
+  
+  ### Lists
+  1. Ordered list
+  2. Another bullet point
+     - Unordered list
+     - Another unordered bullet
+  
+  ### Blockquote
+  > Blockquote to the max`;
+}
+
+@Component({
+  selector: 'app-aboutme-Testing',
+  template: `
+    <mat-progress-bar 
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue"
+        [color]="color">
+    </mat-progress-bar>
+
+  <div class="markdown">
+    <markdown mermaid [src]="'../../assets/Testing.md'"></markdown>
+  </div>
+
+  <markdown ngPreserveWhitespaces lineNumbers>
+  \`\`\`typescript
+  export function greetings(name: string): string &#123;
+    return 'Hello ' + name;
+  }
+  \`\`\`
+</markdown>
+  `,
+})
+export class AboutmeTestingComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

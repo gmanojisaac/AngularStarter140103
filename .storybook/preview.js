@@ -9,6 +9,8 @@ export const parameters = {
       order: [
         'About me',
         ['Manoj Isaac G', 'Career', 'Lecturer', 'Telecom', 'Development'],
+        'Testing',
+        ['Mermaid'],
       ],
     },
   },
