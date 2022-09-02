@@ -360,7 +360,9 @@ export class AboutmeDevelopmentComponent implements OnInit {
     </markdown>
   </div>
 
-  <style>
+  `,
+  styles: [
+    `
     .footer {
       margin: 32px 0 8px;
 
@@ -391,10 +393,9 @@ export class AboutmeDevelopmentComponent implements OnInit {
         bottom: 16px;
         right: 16px;
       }
-    }
-  </style>
-
-  `,
+    }    
+    `,
+  ],
 })
 export class AboutmeTestingComponent implements OnInit {
   constructor() {}
