@@ -24,6 +24,12 @@ import {
   AboutmeTestingComponent
 } from './progress-bar/progress-bar.component';
 import { AppSharedModule } from './app-shared/app-shared.module';
+import { StackblitzComponent,
+  StackblitzTitleComponent,
+  StackblitzRunAngularComponent,
+  StackblitzStorybookComponent,
+  StackblitzUpdatePRComponent
+ } from './youtube/2022sept02/stackblitz.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,8 @@ import { AppSharedModule } from './app-shared/app-shared.module';
     AboutmeLecturerComponent,
     AboutmeTelecomComponent,
     AboutmeDevelopmentComponent,
-    AboutmeTestingComponent
+    AboutmeTestingComponent,
+    StackblitzComponent, StackblitzTitleComponent
   ], //],
   imports: [
     AppSharedModule,

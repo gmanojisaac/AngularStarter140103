@@ -1,14 +1,14 @@
-### Development Career
+### Development Career from 2015
 
 ## Stealth mode development till 2017
 
-## Create a Billion $ Unicorn
+## Wish to Create a Billion $ Unicorn
 
-## Incorporated Candiser Software Pvt Ltd in 2017
+## Registered company:  Candiser Software Pvt Ltd Incorporated in 2017
 
 ---
 
-### Developed Technical Skillset
+### My Technical Skillset
 
 ```typescript
 Languages : Angular 6,7 & 8, 10
@@ -25,3 +25,6 @@ Authentication : AngularFire
 2. Consent App with Web3 payments
 
 ### Looking forward for new Challenging work
+
+1. Web3
+2. WebGPU

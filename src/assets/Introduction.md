@@ -22,5 +22,6 @@ Have Lived in : TamilNadu - 1 year
 
 ### About Myself
 
-> I gell with the team well. I make friends and Also keep in touch.
+> I am looking forward to interact people with great startup ideas. please contact me in https://www.instagram.com/gmanoj.isaac/.
+
 > Interested in Fitness/ Making Tech Youtube Videos/ Automated trade using Zerodha API

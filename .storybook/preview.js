@@ -8,9 +8,8 @@ export const parameters = {
     storySort: {
       order: [
         'About me',
-        ['Manoj Isaac G', 'Career', 'Lecturer', 'Telecom', 'Development'],
-        'Testing',
-        ['Mermaid'],
+            ['Manoj Isaac G', 'Career', 'Lecturer', 'Telecom', 'Development'],
+        'Youtube', ['02Sep22',['Title', 'FlowChart','RunAngular', 'RunStorybook', 'UpdatePR' ]]
       ],
     },
   },
