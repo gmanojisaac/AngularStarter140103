@@ -1146,7 +1146,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
+            "id": "component-ButtonComponent-8d0b26788a1c8bdf115db2f145c09d3b3bbac643722b3b9286c5bc61abb4505d9cc612c6774d33f3ec3bd8bb6d5e3ca1374e117840820e68f0244390aa2f404c",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1179,15 +1179,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 711,
-                            "end": 724,
+                            "pos": 703,
+                            "end": 716,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 712,
-                                "end": 720,
+                                "pos": 704,
+                                "end": 712,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1247,7 +1247,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1267,6 +1267,61 @@
                     }
                 }
             }
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-20f594b81311fa0da5183beb9ff89ad6c8fd0bed36e148df900da741fa5154428b86e5185b9abf822d09b2746b84e273f57cf31b88dad8eebf52a36ac17c1d50-1",
+            "file": "src/stories/angular-demo/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button-component",
+            "styleUrls": [],
+            "styles": [
+                "\n      button {\n        border: 1px solid #eee;\n        border-radius: 3px;\n        background-color: #ffffff;\n        cursor: pointer;\n        font-size: 15px;\n        padding: 3px 10px;\n        margin: 10px;\n      }\n    "
+            ],
+            "template": "<button (click)=\"onClick.emit($event)\">{{ text }}</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button-component',\r\n  template: ` <button (click)=\"onClick.emit($event)\">{{ text }}</button> `,\r\n  styles: [\r\n    `\r\n      button {\r\n        border: 1px solid #eee;\r\n        border-radius: 3px;\r\n        background-color: #ffffff;\r\n        cursor: pointer;\r\n        font-size: 15px;\r\n        padding: 3px 10px;\r\n        margin: 10px;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input()\r\n  text = '';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<any>();\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      button {\n        border: 1px solid #eee;\n        border-radius: 3px;\n        background-color: #ffffff;\n        cursor: pointer;\n        font-size: 15px;\n        padding: 3px 10px;\n        margin: 10px;\n      }\n    \n",
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1"
         },
         {
             "name": "HeaderComponent",
@@ -1743,7 +1798,7 @@
         },
         {
             "name": "StackblitzComponent",
-            "id": "component-StackblitzComponent-a0499555039134829fe5165771e1760eeb6fa790c818ad090ceb661f8723a671890f85dc16a9045b23897998edb9aae244dcabf1ac1b827fcc6848aeab2ab42f",
+            "id": "component-StackblitzComponent-1f929853ead0996dee08b269406e08c98ef47410287be0a1bae0adef0f41dd08ed890b8afbec494d478f8b7bbc82aa5838cbed6fddbcf6368b49e9fc38c385c8",
             "file": "src/app/youtube/2022sept02/stackblitz.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1833,7 +1888,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n@Component({\n  selector: 'app-stackblitz',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n\n@Component({\n  selector: 'app-stackblitz-title',\n  template: `\n\n    <div fxLayout=\"column\">  \n      <div class=\"markdown\" fxLayoutAlign=\"center center\">\n        <markdown mermaid [src]=\"'../../assets/stackblitzTitle.md'\"></markdown>\n      </div>\n\n      <div class=\"footer\">\n        <mat-divider></mat-divider>\n          <markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\n            Crafted with :heart: by **gmanojisaac** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)\n          </markdown>\n      </div>\n    </div>\n\n\n  `,\n  styles: [`\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  `]\n})\nexport class StackblitzTitleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n@Component({\n  selector: 'app-stackblitz',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-title',\n  template: `\n\n    <div fxLayout=\"column\">  \n      <div class=\"markdown\" fxLayoutAlign=\"center center\">\n        <markdown mermaid [src]=\"'../../assets/stackblitzTitle.md'\"></markdown>\n      </div>\n\n      <div class=\"footer\">\n        <mat-divider></mat-divider>\n          <markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\n            Crafted with :heart: by **gmanojisaac** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)\n          </markdown>\n      </div>\n    </div>\n\n\n  `,\n  styles: [`\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  `]\n})\nexport class StackblitzTitleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-runangular',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzRunAngularComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-storybook',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzStorybookComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-updatePR',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzUpdatePRComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1856,8 +1911,236 @@
             "templateData": "<!--\n\n<mat-progress-bar \n[mode]=\"mode\"\n[value]=\"value\"\n[bufferValue]=\"bufferValue\"\n[color]=\"color\">\n</mat-progress-bar>\n\n<div class=\"markdown\">\n<markdown mermaid [src]=\"'../../assets/Testing.md'\"></markdown>\n</div>\n\n<markdown ngPreserveWhitespaces lineNumbers lineHighlight  [line]=\"'6, 10-16'\"\n[lineOffset]=\"5\" [src]=\"'../../assets/stackblitzTypescript.md'\"></markdown>\n\n<markdown ngPreserveWhitespaces clipboard \ncommandLine\n[prompt]=\"'PS C:\\Users\\Chris>'\"\n[filterOutput]=\"'(out)'\" [src]=\"'../../assets/stackblitzPowershell.md'\"></markdown>\n\n<div class=\"markdown\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n  \n<div class=\"footer\">\n<mat-divider></mat-divider>\n<markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\nCrafted with :heart: by **jfcere** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/jfcere)\n</markdown>\n</div>\n-->\n<div class=\"markdown\" fxFlexOffset=\"25vw\" fxLayout=\"row\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n"
         },
         {
+            "name": "StackblitzRunAngularComponent",
+            "id": "component-StackblitzRunAngularComponent-1f929853ead0996dee08b269406e08c98ef47410287be0a1bae0adef0f41dd08ed890b8afbec494d478f8b7bbc82aa5838cbed6fddbcf6368b49e9fc38c385c8",
+            "file": "src/app/youtube/2022sept02/stackblitz.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-stackblitz-runangular",
+            "styleUrls": [
+                "./stackblitz.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./stackblitz.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bufferValue",
+                    "defaultValue": "60",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n",
+                    "description": "<p>ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode</p>\n",
+                    "line": 178,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar Color - primary (Theme color) | accent | warn\n",
+                    "description": "<p>ProgressBar Color - primary (Theme color) | accent | warn</p>\n",
+                    "line": 184,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "markdowncode",
+                    "defaultValue": "`## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 187,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'indeterminate'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 166,
+                    "type": "ProgressBarMode",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "40",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n",
+                    "description": "<p>ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes</p>\n",
+                    "line": 172,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 164,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n@Component({\n  selector: 'app-stackblitz',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-title',\n  template: `\n\n    <div fxLayout=\"column\">  \n      <div class=\"markdown\" fxLayoutAlign=\"center center\">\n        <markdown mermaid [src]=\"'../../assets/stackblitzTitle.md'\"></markdown>\n      </div>\n\n      <div class=\"footer\">\n        <mat-divider></mat-divider>\n          <markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\n            Crafted with :heart: by **gmanojisaac** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)\n          </markdown>\n      </div>\n    </div>\n\n\n  `,\n  styles: [`\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  `]\n})\nexport class StackblitzTitleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-runangular',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzRunAngularComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-storybook',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzStorybookComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-updatePR',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzUpdatePRComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n    .footer {\r\n        margin: 32px 0 8px;\r\n  \r\n        &-text {\r\n          display: block;\r\n          font-size: 13px;\r\n          padding-top: 4px;\r\n        }\r\n      }\r\n  \r\n      .mat-fab,\r\n      .mat-mini-fab {\r\n        img {\r\n          margin-bottom: 2px;\r\n        }\r\n      }\r\n  \r\n      .sticky {\r\n        position: sticky;\r\n        top: 80px;\r\n      }\r\n  \r\n      .scrollup-button {\r\n        margin:14px;\r\n  \r\n        &--fixed {\r\n          position: fixed;\r\n          bottom: 16px;\r\n          right: 16px;\r\n        }\r\n      }  ",
+                    "styleUrl": "./stackblitz.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 160
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<!--\n\n<mat-progress-bar \n[mode]=\"mode\"\n[value]=\"value\"\n[bufferValue]=\"bufferValue\"\n[color]=\"color\">\n</mat-progress-bar>\n\n<div class=\"markdown\">\n<markdown mermaid [src]=\"'../../assets/Testing.md'\"></markdown>\n</div>\n\n<markdown ngPreserveWhitespaces lineNumbers lineHighlight  [line]=\"'6, 10-16'\"\n[lineOffset]=\"5\" [src]=\"'../../assets/stackblitzTypescript.md'\"></markdown>\n\n<markdown ngPreserveWhitespaces clipboard \ncommandLine\n[prompt]=\"'PS C:\\Users\\Chris>'\"\n[filterOutput]=\"'(out)'\" [src]=\"'../../assets/stackblitzPowershell.md'\"></markdown>\n\n<div class=\"markdown\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n  \n<div class=\"footer\">\n<mat-divider></mat-divider>\n<markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\nCrafted with :heart: by **jfcere** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/jfcere)\n</markdown>\n</div>\n-->\n<div class=\"markdown\" fxFlexOffset=\"25vw\" fxLayout=\"row\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n"
+        },
+        {
+            "name": "StackblitzStorybookComponent",
+            "id": "component-StackblitzStorybookComponent-1f929853ead0996dee08b269406e08c98ef47410287be0a1bae0adef0f41dd08ed890b8afbec494d478f8b7bbc82aa5838cbed6fddbcf6368b49e9fc38c385c8",
+            "file": "src/app/youtube/2022sept02/stackblitz.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-stackblitz-storybook",
+            "styleUrls": [
+                "./stackblitz.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./stackblitz.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bufferValue",
+                    "defaultValue": "60",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n",
+                    "description": "<p>ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode</p>\n",
+                    "line": 229,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar Color - primary (Theme color) | accent | warn\n",
+                    "description": "<p>ProgressBar Color - primary (Theme color) | accent | warn</p>\n",
+                    "line": 235,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "markdowncode",
+                    "defaultValue": "`## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 238,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'indeterminate'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 217,
+                    "type": "ProgressBarMode",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "40",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n",
+                    "description": "<p>ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes</p>\n",
+                    "line": 223,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 215,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n@Component({\n  selector: 'app-stackblitz',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-title',\n  template: `\n\n    <div fxLayout=\"column\">  \n      <div class=\"markdown\" fxLayoutAlign=\"center center\">\n        <markdown mermaid [src]=\"'../../assets/stackblitzTitle.md'\"></markdown>\n      </div>\n\n      <div class=\"footer\">\n        <mat-divider></mat-divider>\n          <markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\n            Crafted with :heart: by **gmanojisaac** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)\n          </markdown>\n      </div>\n    </div>\n\n\n  `,\n  styles: [`\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  `]\n})\nexport class StackblitzTitleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-runangular',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzRunAngularComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-storybook',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzStorybookComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-updatePR',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzUpdatePRComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n    .footer {\r\n        margin: 32px 0 8px;\r\n  \r\n        &-text {\r\n          display: block;\r\n          font-size: 13px;\r\n          padding-top: 4px;\r\n        }\r\n      }\r\n  \r\n      .mat-fab,\r\n      .mat-mini-fab {\r\n        img {\r\n          margin-bottom: 2px;\r\n        }\r\n      }\r\n  \r\n      .sticky {\r\n        position: sticky;\r\n        top: 80px;\r\n      }\r\n  \r\n      .scrollup-button {\r\n        margin:14px;\r\n  \r\n        &--fixed {\r\n          position: fixed;\r\n          bottom: 16px;\r\n          right: 16px;\r\n        }\r\n      }  ",
+                    "styleUrl": "./stackblitz.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 211
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<!--\n\n<mat-progress-bar \n[mode]=\"mode\"\n[value]=\"value\"\n[bufferValue]=\"bufferValue\"\n[color]=\"color\">\n</mat-progress-bar>\n\n<div class=\"markdown\">\n<markdown mermaid [src]=\"'../../assets/Testing.md'\"></markdown>\n</div>\n\n<markdown ngPreserveWhitespaces lineNumbers lineHighlight  [line]=\"'6, 10-16'\"\n[lineOffset]=\"5\" [src]=\"'../../assets/stackblitzTypescript.md'\"></markdown>\n\n<markdown ngPreserveWhitespaces clipboard \ncommandLine\n[prompt]=\"'PS C:\\Users\\Chris>'\"\n[filterOutput]=\"'(out)'\" [src]=\"'../../assets/stackblitzPowershell.md'\"></markdown>\n\n<div class=\"markdown\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n  \n<div class=\"footer\">\n<mat-divider></mat-divider>\n<markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\nCrafted with :heart: by **jfcere** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/jfcere)\n</markdown>\n</div>\n-->\n<div class=\"markdown\" fxFlexOffset=\"25vw\" fxLayout=\"row\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n"
+        },
+        {
             "name": "StackblitzTitleComponent",
-            "id": "component-StackblitzTitleComponent-a0499555039134829fe5165771e1760eeb6fa790c818ad090ceb661f8723a671890f85dc16a9045b23897998edb9aae244dcabf1ac1b827fcc6848aeab2ab42f",
+            "id": "component-StackblitzTitleComponent-1f929853ead0996dee08b269406e08c98ef47410287be0a1bae0adef0f41dd08ed890b8afbec494d478f8b7bbc82aa5838cbed6fddbcf6368b49e9fc38c385c8",
             "file": "src/app/youtube/2022sept02/stackblitz.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1880,7 +2163,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n",
                     "description": "<p>ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode</p>\n",
-                    "line": 128,
+                    "line": 127,
                     "type": "number",
                     "decorators": []
                 },
@@ -1891,7 +2174,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nProgressBar Color - primary (Theme color) | accent | warn\n",
                     "description": "<p>ProgressBar Color - primary (Theme color) | accent | warn</p>\n",
-                    "line": 134,
+                    "line": 133,
                     "type": "ThemePalette",
                     "decorators": []
                 },
@@ -1900,7 +2183,7 @@
                     "defaultValue": "`## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 137,
+                    "line": 136,
                     "type": "string",
                     "decorators": []
                 },
@@ -1909,7 +2192,7 @@
                     "defaultValue": "'indeterminate'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 116,
+                    "line": 115,
                     "type": "ProgressBarMode",
                     "decorators": []
                 },
@@ -1920,7 +2203,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n",
                     "description": "<p>ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes</p>\n",
-                    "line": 122,
+                    "line": 121,
                     "type": "number",
                     "decorators": []
                 }
@@ -1934,7 +2217,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 114,
+                    "line": 113,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1946,7 +2229,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n@Component({\n  selector: 'app-stackblitz',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n\n@Component({\n  selector: 'app-stackblitz-title',\n  template: `\n\n    <div fxLayout=\"column\">  \n      <div class=\"markdown\" fxLayoutAlign=\"center center\">\n        <markdown mermaid [src]=\"'../../assets/stackblitzTitle.md'\"></markdown>\n      </div>\n\n      <div class=\"footer\">\n        <mat-divider></mat-divider>\n          <markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\n            Crafted with :heart: by **gmanojisaac** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)\n          </markdown>\n      </div>\n    </div>\n\n\n  `,\n  styles: [`\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  `]\n})\nexport class StackblitzTitleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n@Component({\n  selector: 'app-stackblitz',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-title',\n  template: `\n\n    <div fxLayout=\"column\">  \n      <div class=\"markdown\" fxLayoutAlign=\"center center\">\n        <markdown mermaid [src]=\"'../../assets/stackblitzTitle.md'\"></markdown>\n      </div>\n\n      <div class=\"footer\">\n        <mat-divider></mat-divider>\n          <markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\n            Crafted with :heart: by **gmanojisaac** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)\n          </markdown>\n      </div>\n    </div>\n\n\n  `,\n  styles: [`\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  `]\n})\nexport class StackblitzTitleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-runangular',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzRunAngularComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-storybook',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzStorybookComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-updatePR',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzUpdatePRComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  \n",
@@ -1956,11 +2239,125 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 110
+                "line": 109
             },
             "implements": [
                 "OnInit"
             ]
+        },
+        {
+            "name": "StackblitzUpdatePRComponent",
+            "id": "component-StackblitzUpdatePRComponent-1f929853ead0996dee08b269406e08c98ef47410287be0a1bae0adef0f41dd08ed890b8afbec494d478f8b7bbc82aa5838cbed6fddbcf6368b49e9fc38c385c8",
+            "file": "src/app/youtube/2022sept02/stackblitz.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-stackblitz-updatePR",
+            "styleUrls": [
+                "./stackblitz.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./stackblitz.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bufferValue",
+                    "defaultValue": "60",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n",
+                    "description": "<p>ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode</p>\n",
+                    "line": 280,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar Color - primary (Theme color) | accent | warn\n",
+                    "description": "<p>ProgressBar Color - primary (Theme color) | accent | warn</p>\n",
+                    "line": 286,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "markdowncode",
+                    "defaultValue": "`## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 289,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'indeterminate'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 268,
+                    "type": "ProgressBarMode",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "40",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n",
+                    "description": "<p>ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes</p>\n",
+                    "line": 274,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 266,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n@Component({\n  selector: 'app-stackblitz',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-title',\n  template: `\n\n    <div fxLayout=\"column\">  \n      <div class=\"markdown\" fxLayoutAlign=\"center center\">\n        <markdown mermaid [src]=\"'../../assets/stackblitzTitle.md'\"></markdown>\n      </div>\n\n      <div class=\"footer\">\n        <mat-divider></mat-divider>\n          <markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\n            Crafted with :heart: by **gmanojisaac** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)\n          </markdown>\n      </div>\n    </div>\n\n\n  `,\n  styles: [`\n  \n  .footer {\n        margin: 32px 0 8px;\n  \n        &-text {\n          display: block;\n          font-size: 13px;\n          padding-top: 4px;\n        }\n      }\n  \n      .mat-fab,\n      .mat-mini-fab {\n        img {\n          margin-bottom: 2px;\n        }\n      }\n  \n      .sticky {\n        position: sticky;\n        top: 80px;\n      }\n  \n      .scrollup-button {\n        margin:14px;\n  \n        &--fixed {\n          position: fixed;\n          bottom: 16px;\n          right: 16px;\n        }\n      }  \n  `]\n})\nexport class StackblitzTitleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-runangular',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzRunAngularComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-storybook',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzStorybookComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n\n@Component({\n  selector: 'app-stackblitz-updatePR',\n  templateUrl: './stackblitz.component.html',\n  styleUrls: ['./stackblitz.component.scss']\n})\nexport class StackblitzUpdatePRComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  @Input()\n  mode: ProgressBarMode = 'indeterminate';\n\n  /**\n   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes\n   */\n  @Input()\n  value: number = 40;\n\n  /**\n   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode\n   */\n  @Input()\n  bufferValue: number = 60;\n\n  /**\n   * ProgressBar Color - primary (Theme color) | accent | warn\n   */\n  @Input()\n  color: ThemePalette = 'primary';\n\n  @Input()\n  markdowncode: string = `## Markdown __rulez__!\n  ---\n  \n  ### Syntax highlight\n  \\`\\`\\`typescript\n  const language = 'typescript';\n  \\`\\`\\`\n  \n  ### Lists\n  1. Ordered list\n  2. Another bullet point\n     - Unordered list\n     - Another unordered bullet\n  \n  ### Blockquote\n  > Blockquote to the max`;\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n    .footer {\r\n        margin: 32px 0 8px;\r\n  \r\n        &-text {\r\n          display: block;\r\n          font-size: 13px;\r\n          padding-top: 4px;\r\n        }\r\n      }\r\n  \r\n      .mat-fab,\r\n      .mat-mini-fab {\r\n        img {\r\n          margin-bottom: 2px;\r\n        }\r\n      }\r\n  \r\n      .sticky {\r\n        position: sticky;\r\n        top: 80px;\r\n      }\r\n  \r\n      .scrollup-button {\r\n        margin:14px;\r\n  \r\n        &--fixed {\r\n          position: fixed;\r\n          bottom: 16px;\r\n          right: 16px;\r\n        }\r\n      }  ",
+                    "styleUrl": "./stackblitz.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 262
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<!--\n\n<mat-progress-bar \n[mode]=\"mode\"\n[value]=\"value\"\n[bufferValue]=\"bufferValue\"\n[color]=\"color\">\n</mat-progress-bar>\n\n<div class=\"markdown\">\n<markdown mermaid [src]=\"'../../assets/Testing.md'\"></markdown>\n</div>\n\n<markdown ngPreserveWhitespaces lineNumbers lineHighlight  [line]=\"'6, 10-16'\"\n[lineOffset]=\"5\" [src]=\"'../../assets/stackblitzTypescript.md'\"></markdown>\n\n<markdown ngPreserveWhitespaces clipboard \ncommandLine\n[prompt]=\"'PS C:\\Users\\Chris>'\"\n[filterOutput]=\"'(out)'\" [src]=\"'../../assets/stackblitzPowershell.md'\"></markdown>\n\n<div class=\"markdown\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n  \n<div class=\"footer\">\n<mat-divider></mat-divider>\n<markdown emoji class=\"footer-text\" fxLayout=\"row\" fxLayoutAlign.gt-xs=\"center\">\nCrafted with :heart: by **jfcere** <span style=\"margin:0 .15em;\">•</span> Follow on [GitHub](https://github.com/jfcere)\n</markdown>\n</div>\n-->\n<div class=\"markdown\" fxFlexOffset=\"25vw\" fxLayout=\"row\">\n    <markdown mermaid [src]=\"'../../assets/stackblitzMermaid.md'\"></markdown>\n  </div>\n"
         },
         {
             "name": "TaskCheckComponent",
@@ -2440,18 +2837,105 @@
             "implements": [
                 "OnInit"
             ]
+        },
+        {
+            "name": "WelcomeComponent",
+            "id": "component-WelcomeComponent-35f0950a414d59028659672d52561fcc412f374a310e7eac392f28a42f09cec128f1b38e8e5f1d163deec8ae4c6e4896114e3527ec37201346193fc3b9d61a1c",
+            "file": "src/stories/welcome.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-welcome-component",
+            "styleUrls": [],
+            "styles": [
+                "\n      main {\n        padding: 15px;\n        line-height: 1.4;\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\n        background-color: #ffffff;\n      }\n\n      .note {\n        opacity: 0.5;\n      }\n\n      .inline-code {\n        font-size: 15px;\n        font-weight: 600;\n        padding: 2px 5px;\n        border: 1px solid #eae9e9;\n        border-radius: 4px;\n        background-color: #f3f2f2;\n        color: #3a3a3a;\n      }\n\n      a {\n        color: #1474f3;\n        text-decoration: none;\n        border-bottom: 1px solid #1474f3;\n        padding-bottom: 2px;\n      }\n    "
+            ],
+            "template": "<main>\n  <h1>Welcome to storybook</h1>\n  <p>This is a UI component dev environment for your app.</p>\n  <p>\n    We've added some basic stories inside the\n    <span class=\"inline-code\">src/stories</span> directory. <br />\n    A story is a single state of one or more UI components. You can have as many stories as you\n    want. <br />\n    (Basically a story is like a visual test case.)\n  </p>\n  <p>\n    See these sample\n    <a (click)=\"showApp.emit($event)\" role=\"button\" tabIndex=\"0\">stories</a> for a component\n    called <span class=\"inline-code\">Button</span> .\n  </p>\n  <p>\n    Just like that, you can add your own components as stories. <br />\n    You can also edit those components and see changes right away. <br />\n    (Try editing the <span class=\"inline-code\">Button</span> stories located at\n    <span class=\"inline-code\">src/stories/index.js</span>.)\n  </p>\n  <p>\n    Usually we create stories with smaller UI components in the app.<br />\n    Have a look at the\n    <a\n      href=\"https://storybook.js.org/basics/writing-stories\"\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n    >\n      Writing Stories\n    </a>\n    section in our documentation.\n  </p>\n  <p class=\"note\">\n    <b>NOTE:</b> <br />\n    Have a look at the <span class=\"inline-code\">.storybook/webpack.config.js</span> to add\n    webpack loaders and plugins you are using in this project.\n  </p>\n</main>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "showApp",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 80,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-welcome-component',\r\n  template: `\r\n    <main>\r\n      <h1>Welcome to storybook</h1>\r\n      <p>This is a UI component dev environment for your app.</p>\r\n      <p>\r\n        We've added some basic stories inside the\r\n        <span class=\"inline-code\">src/stories</span> directory. <br />\r\n        A story is a single state of one or more UI components. You can have as many stories as you\r\n        want. <br />\r\n        (Basically a story is like a visual test case.)\r\n      </p>\r\n      <p>\r\n        See these sample\r\n        <a (click)=\"showApp.emit($event)\" role=\"button\" tabIndex=\"0\">stories</a> for a component\r\n        called <span class=\"inline-code\">Button</span> .\r\n      </p>\r\n      <p>\r\n        Just like that, you can add your own components as stories. <br />\r\n        You can also edit those components and see changes right away. <br />\r\n        (Try editing the <span class=\"inline-code\">Button</span> stories located at\r\n        <span class=\"inline-code\">src/stories/index.js</span>.)\r\n      </p>\r\n      <p>\r\n        Usually we create stories with smaller UI components in the app.<br />\r\n        Have a look at the\r\n        <a\r\n          href=\"https://storybook.js.org/basics/writing-stories\"\r\n          target=\"_blank\"\r\n          rel=\"noopener noreferrer\"\r\n        >\r\n          Writing Stories\r\n        </a>\r\n        section in our documentation.\r\n      </p>\r\n      <p class=\"note\">\r\n        <b>NOTE:</b> <br />\r\n        Have a look at the <span class=\"inline-code\">.storybook/webpack.config.js</span> to add\r\n        webpack loaders and plugins you are using in this project.\r\n      </p>\r\n    </main>\r\n  `,\r\n  styles: [\r\n    `\r\n      main {\r\n        padding: 15px;\r\n        line-height: 1.4;\r\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\r\n        background-color: #ffffff;\r\n      }\r\n\r\n      .note {\r\n        opacity: 0.5;\r\n      }\r\n\r\n      .inline-code {\r\n        font-size: 15px;\r\n        font-weight: 600;\r\n        padding: 2px 5px;\r\n        border: 1px solid #eae9e9;\r\n        border-radius: 4px;\r\n        background-color: #f3f2f2;\r\n        color: #3a3a3a;\r\n      }\r\n\r\n      a {\r\n        color: #1474f3;\r\n        text-decoration: none;\r\n        border-bottom: 1px solid #1474f3;\r\n        padding-bottom: 2px;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport default class WelcomeComponent {\r\n  @Output()\r\n  showApp = new EventEmitter<any>();\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      main {\n        padding: 15px;\n        line-height: 1.4;\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\n        background-color: #ffffff;\n      }\n\n      .note {\n        opacity: 0.5;\n      }\n\n      .inline-code {\n        font-size: 15px;\n        font-weight: 600;\n        padding: 2px 5px;\n        border: 1px solid #eae9e9;\n        border-radius: 4px;\n        background-color: #f3f2f2;\n        color: #3a3a3a;\n      }\n\n      a {\n        color: #1474f3;\n        text-decoration: none;\n        border-bottom: 1px solid #1474f3;\n        padding-bottom: 2px;\n      }\n    \n"
+        },
+        {
+            "name": "WelcomeComponent",
+            "id": "component-WelcomeComponent-35f0950a414d59028659672d52561fcc412f374a310e7eac392f28a42f09cec128f1b38e8e5f1d163deec8ae4c6e4896114e3527ec37201346193fc3b9d61a1c-1",
+            "file": "src/stories/angular-demo/welcome.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-welcome-component",
+            "styleUrls": [],
+            "styles": [
+                "\n      main {\n        padding: 15px;\n        line-height: 1.4;\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\n        background-color: #ffffff;\n      }\n\n      .note {\n        opacity: 0.5;\n      }\n\n      .inline-code {\n        font-size: 15px;\n        font-weight: 600;\n        padding: 2px 5px;\n        border: 1px solid #eae9e9;\n        border-radius: 4px;\n        background-color: #f3f2f2;\n        color: #3a3a3a;\n      }\n\n      a {\n        color: #1474f3;\n        text-decoration: none;\n        border-bottom: 1px solid #1474f3;\n        padding-bottom: 2px;\n      }\n    "
+            ],
+            "template": "<main>\n  <h1>Welcome to storybook</h1>\n  <p>This is a UI component dev environment for your app.</p>\n  <p>\n    We've added some basic stories inside the\n    <span class=\"inline-code\">src/stories</span> directory. <br />\n    A story is a single state of one or more UI components. You can have as many stories as you\n    want. <br />\n    (Basically a story is like a visual test case.)\n  </p>\n  <p>\n    See these sample\n    <a (click)=\"showApp.emit($event)\" role=\"button\" tabIndex=\"0\">stories</a> for a component\n    called <span class=\"inline-code\">Button</span> .\n  </p>\n  <p>\n    Just like that, you can add your own components as stories. <br />\n    You can also edit those components and see changes right away. <br />\n    (Try editing the <span class=\"inline-code\">Button</span> stories located at\n    <span class=\"inline-code\">src/stories/index.js</span>.)\n  </p>\n  <p>\n    Usually we create stories with smaller UI components in the app.<br />\n    Have a look at the\n    <a\n      href=\"https://storybook.js.org/basics/writing-stories\"\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n    >\n      Writing Stories\n    </a>\n    section in our documentation.\n  </p>\n  <p class=\"note\">\n    <b>NOTE:</b> <br />\n    Have a look at the <span class=\"inline-code\">.storybook/webpack.config.js</span> to add\n    webpack loaders and plugins you are using in this project.\n  </p>\n</main>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "showApp",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 80,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-welcome-component',\r\n  template: `\r\n    <main>\r\n      <h1>Welcome to storybook</h1>\r\n      <p>This is a UI component dev environment for your app.</p>\r\n      <p>\r\n        We've added some basic stories inside the\r\n        <span class=\"inline-code\">src/stories</span> directory. <br />\r\n        A story is a single state of one or more UI components. You can have as many stories as you\r\n        want. <br />\r\n        (Basically a story is like a visual test case.)\r\n      </p>\r\n      <p>\r\n        See these sample\r\n        <a (click)=\"showApp.emit($event)\" role=\"button\" tabIndex=\"0\">stories</a> for a component\r\n        called <span class=\"inline-code\">Button</span> .\r\n      </p>\r\n      <p>\r\n        Just like that, you can add your own components as stories. <br />\r\n        You can also edit those components and see changes right away. <br />\r\n        (Try editing the <span class=\"inline-code\">Button</span> stories located at\r\n        <span class=\"inline-code\">src/stories/index.js</span>.)\r\n      </p>\r\n      <p>\r\n        Usually we create stories with smaller UI components in the app.<br />\r\n        Have a look at the\r\n        <a\r\n          href=\"https://storybook.js.org/basics/writing-stories\"\r\n          target=\"_blank\"\r\n          rel=\"noopener noreferrer\"\r\n        >\r\n          Writing Stories\r\n        </a>\r\n        section in our documentation.\r\n      </p>\r\n      <p class=\"note\">\r\n        <b>NOTE:</b> <br />\r\n        Have a look at the <span class=\"inline-code\">.storybook/webpack.config.js</span> to add\r\n        webpack loaders and plugins you are using in this project.\r\n      </p>\r\n    </main>\r\n  `,\r\n  styles: [\r\n    `\r\n      main {\r\n        padding: 15px;\r\n        line-height: 1.4;\r\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\r\n        background-color: #ffffff;\r\n      }\r\n\r\n      .note {\r\n        opacity: 0.5;\r\n      }\r\n\r\n      .inline-code {\r\n        font-size: 15px;\r\n        font-weight: 600;\r\n        padding: 2px 5px;\r\n        border: 1px solid #eae9e9;\r\n        border-radius: 4px;\r\n        background-color: #f3f2f2;\r\n        color: #3a3a3a;\r\n      }\r\n\r\n      a {\r\n        color: #1474f3;\r\n        text-decoration: none;\r\n        border-bottom: 1px solid #1474f3;\r\n        padding-bottom: 2px;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport default class WelcomeComponent {\r\n  @Output()\r\n  showApp = new EventEmitter<any>();\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      main {\n        padding: 15px;\n        line-height: 1.4;\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\n        background-color: #ffffff;\n      }\n\n      .note {\n        opacity: 0.5;\n      }\n\n      .inline-code {\n        font-size: 15px;\n        font-weight: 600;\n        padding: 2px 5px;\n        border: 1px solid #eae9e9;\n        border-radius: 4px;\n        background-color: #f3f2f2;\n        color: #3a3a3a;\n      }\n\n      a {\n        color: #1474f3;\n        text-decoration: none;\n        border-bottom: 1px solid #1474f3;\n        padding-bottom: 2px;\n      }\n    \n",
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "WelcomeComponent-1"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-55b436a9a4de7e7d47af463dbb0c972444cbe536b2b702877f87bbe77a0bc2d1dd64afc058486cf590c53943ff66e42362c706b43dc202e6ef27572ca8465b22",
+            "id": "module-AppModule-42bb178b8d557447e716cfff7e60aceb7f971d9aca44957cb9e57a2838f4b60140f6960c6835641140721b5390a10615c998f867a01f7288c71163b6b6a30bc0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\n\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { NgModule } from '@angular/core';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { TaskModule } from './components/task.module';\r\nimport { PureInboxScreenComponent } from './components/pure-inbox-screen.component';\r\nimport { MarkdownModule, MarkdownService } from 'ngx-markdown';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n//import { InboxScreenComponent } from './components/inbox-screen.component';\r\nimport { TaskCheckComponent } from './components/checkComponent.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport {\r\n  ProgressBarComponent,\r\n  AboutmeIntroductionComponent,\r\n  AboutmeLecturerComponent,\r\n  AboutmeTelecomComponent,\r\n  AboutmeDevelopmentComponent,\r\n  AboutmeTestingComponent\r\n} from './progress-bar/progress-bar.component';\r\nimport { AppSharedModule } from './app-shared/app-shared.module';\r\nimport { StackblitzComponent,\r\n  StackblitzTitleComponent\r\n } from './youtube/2022sept02/stackblitz.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    PureInboxScreenComponent,\r\n    TaskCheckComponent,\r\n    ProgressBarComponent,\r\n    AboutmeIntroductionComponent,\r\n    AboutmeLecturerComponent,\r\n    AboutmeTelecomComponent,\r\n    AboutmeDevelopmentComponent,\r\n    AboutmeTestingComponent,\r\n    StackblitzComponent, StackblitzTitleComponent\r\n  ], //],\r\n  imports: [\r\n    AppSharedModule,\r\n    HttpClientModule,\r\n    AppRoutingModule,\r\n    BrowserModule,\r\n    TaskModule,\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: !environment.production,\r\n    }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({\r\n      disabled: environment.production,\r\n    }),\r\n    MarkdownModule.forRoot({ loader: HttpClient }),\r\n    BrowserAnimationsModule,\r\n  ],\r\n  providers: [MarkdownService],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\n\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { NgModule } from '@angular/core';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { TaskModule } from './components/task.module';\r\nimport { PureInboxScreenComponent } from './components/pure-inbox-screen.component';\r\nimport { MarkdownModule, MarkdownService } from 'ngx-markdown';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n//import { InboxScreenComponent } from './components/inbox-screen.component';\r\nimport { TaskCheckComponent } from './components/checkComponent.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport {\r\n  ProgressBarComponent,\r\n  AboutmeIntroductionComponent,\r\n  AboutmeLecturerComponent,\r\n  AboutmeTelecomComponent,\r\n  AboutmeDevelopmentComponent,\r\n  AboutmeTestingComponent\r\n} from './progress-bar/progress-bar.component';\r\nimport { AppSharedModule } from './app-shared/app-shared.module';\r\nimport { StackblitzComponent,\r\n  StackblitzTitleComponent,\r\n  StackblitzRunAngularComponent,\r\n  StackblitzStorybookComponent,\r\n  StackblitzUpdatePRComponent\r\n } from './youtube/2022sept02/stackblitz.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    PureInboxScreenComponent,\r\n    TaskCheckComponent,\r\n    ProgressBarComponent,\r\n    AboutmeIntroductionComponent,\r\n    AboutmeLecturerComponent,\r\n    AboutmeTelecomComponent,\r\n    AboutmeDevelopmentComponent,\r\n    AboutmeTestingComponent,\r\n    StackblitzComponent, StackblitzTitleComponent\r\n  ], //],\r\n  imports: [\r\n    AppSharedModule,\r\n    HttpClientModule,\r\n    AppRoutingModule,\r\n    BrowserModule,\r\n    TaskModule,\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: !environment.production,\r\n    }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({\r\n      disabled: environment.production,\r\n    }),\r\n    MarkdownModule.forRoot({ loader: HttpClient }),\r\n    BrowserAnimationsModule,\r\n  ],\r\n  providers: [MarkdownService],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2779,6 +3263,16 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2786,14 +3280,14 @@
                 "defaultValue": "{\n  production: true\n}"
             },
             {
-                "name": "environment",
+                "name": "FlowChart",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/stories/stackblitz.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Introduction",
@@ -2835,10 +3329,20 @@
                 "type": "literal type"
             },
             {
-                "name": "Stackblitz",
+                "name": "RunAngular",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/stackblitz.stories.ts",
+                "file": "src/stories/stackblitzRunAngular.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "RunStorybook",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/stackblitzStorybook.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2908,11 +3412,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/stackblitzRunAngular.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<StackblitzRunAngularComponent>",
+                "defaultValue": "(\r\n  args: StackblitzRunAngularComponent\r\n) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/stackblitzStorybook.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<StackblitzStorybookComponent>",
+                "defaultValue": "(\r\n  args: StackblitzStorybookComponent\r\n) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/stackblitzTitle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<StackblitzTitleComponent>",
                 "defaultValue": "(\r\n  args: StackblitzTitleComponent\r\n) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/stackblitzUpdatePR.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<StackblitzUpdatePRComponent>",
+                "defaultValue": "(\r\n  args: StackblitzUpdatePRComponent\r\n) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2939,6 +3473,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/stackblitzTitle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "UpdatePR",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/stackblitzUpdatePR.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2992,6 +3536,18 @@
                     "type": "literal type"
                 }
             ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3004,16 +3560,26 @@
                     "defaultValue": "{\n  production: true\n}"
                 }
             ],
-            "src/environments/environment.ts": [
+            "src/stories/stackblitz.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "FlowChart",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.ts",
+                    "file": "src/stories/stackblitz.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/stackblitz.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<StackblitzComponent>",
+                    "defaultValue": "(\r\n  args: StackblitzComponent\r\n) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/Development.stories.ts": [
@@ -3082,12 +3648,12 @@
                     "defaultValue": "(\r\n  args: AboutmeTelecomComponent\r\n) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/stackblitz.stories.ts": [
+            "src/stories/stackblitzRunAngular.stories.ts": [
                 {
-                    "name": "Stackblitz",
+                    "name": "RunAngular",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/stackblitz.stories.ts",
+                    "file": "src/stories/stackblitzRunAngular.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -3097,11 +3663,33 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/stackblitz.stories.ts",
+                    "file": "src/stories/stackblitzRunAngular.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<StackblitzComponent>",
-                    "defaultValue": "(\r\n  args: StackblitzComponent\r\n) => ({\r\n  props: args,\r\n})"
+                    "type": "Story<StackblitzRunAngularComponent>",
+                    "defaultValue": "(\r\n  args: StackblitzRunAngularComponent\r\n) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/stackblitzStorybook.stories.ts": [
+                {
+                    "name": "RunStorybook",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/stackblitzStorybook.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/stackblitzStorybook.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<StackblitzStorybookComponent>",
+                    "defaultValue": "(\r\n  args: StackblitzStorybookComponent\r\n) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/Lecturer.stories.ts": [
@@ -3164,6 +3752,28 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/stackblitzTitle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/stories/stackblitzUpdatePR.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/stackblitzUpdatePR.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<StackblitzUpdatePRComponent>",
+                    "defaultValue": "(\r\n  args: StackblitzUpdatePRComponent\r\n) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "UpdatePR",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/stackblitzUpdatePR.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -3406,7 +4016,34 @@
                 "filePath": "src/app/youtube/2022sept02/stackblitz.component.ts",
                 "type": "component",
                 "linktype": "component",
+                "name": "StackblitzRunAngularComponent",
+                "coveragePercent": 37,
+                "coverageCount": "3/8",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/youtube/2022sept02/stackblitz.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StackblitzStorybookComponent",
+                "coveragePercent": 37,
+                "coverageCount": "3/8",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/youtube/2022sept02/stackblitz.component.ts",
+                "type": "component",
+                "linktype": "component",
                 "name": "StackblitzTitleComponent",
+                "coveragePercent": 37,
+                "coverageCount": "3/8",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/youtube/2022sept02/stackblitz.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StackblitzUpdatePRComponent",
                 "coveragePercent": 37,
                 "coverageCount": "3/8",
                 "status": "medium"
@@ -3541,6 +4178,24 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/angular-demo/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/angular-demo/welcome.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WelcomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3572,13 +4227,53 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Stackblitz",
+                "name": "FlowChart",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
                 "filePath": "src/stories/stackblitz.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/stackblitzRunAngular.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RunAngular",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/stackblitzRunAngular.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/stackblitzStorybook.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RunStorybook",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/stackblitzStorybook.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -3605,6 +4300,35 @@
                 "name": "Title",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/stackblitzUpdatePR.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/stackblitzUpdatePR.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "UpdatePR",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/welcome.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WelcomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

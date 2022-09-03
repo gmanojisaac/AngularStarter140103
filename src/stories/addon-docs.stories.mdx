@@ -1,0 +1,84 @@
+import { moduleMetadata } from '@storybook/angular';
+import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
+import { Welcome, Button } from './angular-demo';
+import { linkTo } from '@storybook/addon-links';
+
+
+# Storybook Docs for Angular
+
+Storybook supports every major view layer:
+React, Vue, Angular, Ember, React Native, etc.
+
+Storybook Docs does too.
+
+
+
+Hallelujah! Angular is working out of the box without modification.
+How you like them apples?!
+
+## Component Declaration
+
+Just like in React, we first declare our component.
+
+<Meta title="Addons/Docs"   
+  parameters={{
+      viewMode: 'docs',
+      previewTabs: { 
+        canvas: { hidden: true } 
+      },
+  }}
+  decorators={[moduleMetadata({ declarations: [Button] })]} />
+
+This declaration doesn't show up in the MDX output.
+
+## SB5 "Classic" Angular Stories
+
+Next let's declare some stories.
+
+But first let's review how it's done in SB5 for Angular.
+
+```
+storiesOf('Button', module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [Button],
+    })
+  )
+  .add('with text', () => ({
+    template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
+    props: {
+      text: 'Hello Button',
+      onClick: () => {},
+    },
+  }));
+```
+
+## MDX Stories
+
+Similarly, here's how we do it in the Docs MDX format. We've already added the decorator above in the component declaration, so we just need to declare a story.
+
+<Story name="with text">
+  {{
+    template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
+    props: {
+      text: 'hello button',
+      onClick: () => {},
+    },
+  }}
+</Story>
+
+## Another one
+
+Let's add another one. The UI updates automatically as you'd expect.
+
+<Story name="with some emoji">
+  {{
+    template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
+    props: {
+      text: '😀 😎 👍 💯',
+      onClick: () => {},
+    },
+  }}
+</Story>
+
+
