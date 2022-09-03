@@ -21,7 +21,7 @@ import {
   AboutmeLecturerComponent,
   AboutmeTelecomComponent,
   AboutmeDevelopmentComponent,
-  AboutmeTestingComponent
+  AboutmeTestingComponent, StartScreenComponent
 } from './progress-bar/progress-bar.component';
 import { AppSharedModule } from './app-shared/app-shared.module';
 import { StackblitzComponent,
@@ -41,7 +41,7 @@ import { StackblitzComponent,
     AboutmeLecturerComponent,
     AboutmeTelecomComponent,
     AboutmeDevelopmentComponent,
-    AboutmeTestingComponent,
+    AboutmeTestingComponent,StartScreenComponent,
     StackblitzComponent, StackblitzTitleComponent
   ], //],
   imports: [

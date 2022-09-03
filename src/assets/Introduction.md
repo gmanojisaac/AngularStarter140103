@@ -4,7 +4,7 @@
 
 ### AGE: 45
 
-```typescript
+```powershell
 Current City : Trivandrum
 Have Lived in : TamilNadu - 1 year
            Bangalore - 8 years

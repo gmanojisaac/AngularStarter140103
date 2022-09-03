@@ -1,8 +1,15 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
-import { Welcome, Button } from './angular-demo';
+import { StartScreenComponent } from '../app/progress-bar/progress-bar.component';
 import { linkTo } from '@storybook/addon-links';
+import { MarkdownModule, MarkdownService } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AppSharedModule } from '../app/app-shared/app-shared.module';
 
+import 'marked';
+import 'prismjs';
+import 'mermaid';
+import 'prismjs/components/prism-typescript.min.js';
 
 # Storybook Docs for Angular
 
@@ -27,7 +34,18 @@ Just like in React, we first declare our component.
         canvas: { hidden: true } 
       },
   }}
-  decorators={[moduleMetadata({ declarations: [Button] })]} />
+  decorators={[
+moduleMetadata({
+  declarations: [StartScreenComponent],
+      imports: [
+        AppSharedModule,
+        HttpClientModule,
+        MarkdownModule.forRoot({ loader: HttpClient }),
+      ],
+      providers: [MarkdownService],
+    }),
+    
+    ]} />
 
 This declaration doesn't show up in the MDX output.
 
@@ -59,26 +77,9 @@ Similarly, here's how we do it in the Docs MDX format. We've already added the d
 
 <Story name="with text">
   {{
-    template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
+    template: `<app-startscreen></app-startscreen>`,
     props: {
-      text: 'hello button',
-      onClick: () => {},
+    
     },
   }}
 </Story>
-
-## Another one
-
-Let's add another one. The UI updates automatically as you'd expect.
-
-<Story name="with some emoji">
-  {{
-    template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
-    props: {
-      text: '😀 😎 👍 💯',
-      onClick: () => {},
-    },
-  }}
-</Story>
-
-
