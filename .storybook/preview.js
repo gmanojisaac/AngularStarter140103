@@ -11,6 +11,7 @@ export const parameters = {
         'About me',
             ['Manoj Isaac G', 'Career', 'Lecturer', 'Telecom', 'Development'],
         'Youtube', ['02Sep22',['Title', 'FlowChart','RunAngular', 'RunStorybook', 'UpdatePR', 'MDXTest' ]],
+        'YoutubeMaking', ['06Sep22'],
         'Firstpage',[ 'Start'],
         'TestPage',['Start']
       ],

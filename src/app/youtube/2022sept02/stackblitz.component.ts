@@ -55,21 +55,53 @@ export class StackblitzComponent implements OnInit {
 @Component({
   selector: 'app-stackblitz-title',
   template: `
-
-    <div fxLayout="column">  
-      <div class="markdown" fxLayoutAlign="center center">
-        <markdown mermaid [src]="'../../assets/stackblitzTitle.md'"></markdown>
+    <ng-template #mermaidCenter >
+      <div fxLayout="column">  
+        <div class="markdown" fxLayoutAlign="center center">
+          <markdown mermaid [src]="'../../assets/stackblitzTitle.md'"></markdown>
+        </div>
       </div>
-
       <div class="footer">
         <mat-divider></mat-divider>
           <markdown emoji class="footer-text" fxLayout="row" fxLayoutAlign.gt-xs="center">
             Crafted with :heart: by **gmanojisaac** <span style="margin:0 .15em;">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)
           </markdown>
       </div>
-    </div>
+    </ng-template>
 
+    <ng-template #pagedesign >
+      <markdown  ngPreserveWhitespaces clipboard>
+        {{pagedesignvar}}
+      </markdown>
+      <div class="markdoWn">
+        <markdown [src]="'../../assets/storydesign.md'" ngPreserveWhitespaces clipboard></markdown>
+      </div>
+    </ng-template>
 
+    <ng-template #usingmermaid >
+      <markdown [data]="usingmermaidMarkdown" ngPreserveWhitespaces clipboard></markdown>
+    </ng-template>
+    <ng-template #usingmarkdown >
+      <markdown  ngPreserveWhitespaces clipboard>
+      ## Markdown __works__!
+      ---          
+      </markdown>
+      <markdown mermaid  ngPreserveWhitespaces clipboard>
+        <pre class="mermaid">
+          flowchart TD
+            id1([Markdown in html])
+            id2([Markdown in template])
+            id3([Markdown in component])
+            id4([Markdown loaded from src])
+        </pre>
+      </markdown>
+      <markdown [data]="usingmarkdownMarkdown" ngPreserveWhitespaces clipboard ></markdown>
+     
+    </ng-template>
+    <ng-container 
+      [ngTemplateOutlet]="tems"
+      [ngTemplateOutletContext]="myContext"> 
+    </ng-container>
   `,
   styles: [`
   
@@ -106,49 +138,222 @@ export class StackblitzComponent implements OnInit {
       }  
   `]
 })
-export class StackblitzTitleComponent implements OnInit {
+export class StackblitzTitleComponent implements OnInit, AfterContentInit {
 
   constructor() { }
 
   ngOnInit(): void { }
-  @Input()
-  mode: ProgressBarMode = 'indeterminate';
 
-  /**
-   * ProgressBar Value (0 -100) - Applicable only for Determinate and Buffer modes
-   */
-  @Input()
-  value: number = 40;
+  something = `
+  @ViewChild('mermaidCenter', { static: true })
+  mermaidCenter!: TemplateRef<any>;`;
+  @ViewChild('mermaidCenter', { static: true })
+  mermaidCenter!: TemplateRef<any>;
 
-  /**
-   * ProgressBar BufferValue (0 -100) - Applicable only for Buffer mode
-   */
-  @Input()
-  bufferValue: number = 60;
+  @ViewChild('usingmermaid', { static: true })
+  usingmermaid!: TemplateRef<any>;
 
-  /**
-   * ProgressBar Color - primary (Theme color) | accent | warn
-   */
-  @Input()
-  color: ThemePalette = 'primary';
+  @ViewChild('usingmarkdown', { static: true })
+  usingmarkdown!: TemplateRef<any>;
+
+  @ViewChild('pagedesign', { static: true })
+  pagedesign!: TemplateRef<any>;
+  
+  tems: TemplateRef<any> = this.mermaidCenter;
+  myContext = { $implicit: 'World', localSk: 'Svet' };
+
 
   @Input()
-  markdowncode: string = `## Markdown __rulez__!
+  myselectedtemp: string = 'first';
+
+  storydesign=`
+  \`\`\`typescript
+  props: {
+  myselectedtemp : 'usingmarkdown'
+  },
+  \`\`\`
+  `;
+
+  usingmarkdownMarkdown = `
+  ### Markdown working from html
+  \`\`\`typescript
+  <markdown ngPreserveWhitespaces clipboard>
+  ### Lists
+    1. Ordered list
+    2. Another bullet point
+      - Unordered list
+      - Another unordered bullet
+  {{ '#working' | language: 'typescript' }}
+  </markdown>
+  \`\`\`
+  ---
+
+  ### Markdown working from template
+  \`\`\`typescript
+  <markdown  ngPreserveWhitespaces clipboard>
+  ## Markdown __works__!
+  ---          
+  </markdown>
+  \`\`\`
+
+  ---
+
+  ### Markdown working from component
+  \`\`\`typescript
+  <markdown ngPreserveWhitespaces clipboard>
+  {{someothervar}}
+  {{ somevar | language: 'typescript' }}
+  </markdown>
+
+  <div [innerHTML]="markdowncode | markdown"></div>
+  \`\`\`
+
+  # somevar should be having the markdown to run from the component
+  ---
+
+  
+  ### Markdown working from src
+  \`\`\`typescript
+  <div class="markdown">
+    <markdown [src]="'../../assets/storydesign.md'"></markdown>
+  </div>
+  \`\`\`
+
+  ## .md file will not contain => backslash
+  \`\`\`typescript
+    props: {
+    myselectedtemp : 'usingmarkdown'
+    },   
+  \`\`\`
+  ---
+`;
+
+  usingmermaidMarkdown = `## Mermaid __works__!
   ---
   
-  ### Syntax highlight
+  ### Mermaid works from html
   \`\`\`typescript
-  const language = 'typescript';
+  <markdown mermaid>
+  <pre class="mermaid">
+    flowchart TD
+      id1([Markdown in html])
+      id2([Markdown in template])
+      id3([Markdown in data])
+      id4([Markdown loaded from src])
+  </pre>
+</markdown>
   \`\`\`
   
-  ### Lists
-  1. Ordered list
-  2. Another bullet point
-     - Unordered list
-     - Another unordered bullet
+  # Markdown tag contains mermaid keyword and injected with code using pretty tag and class mermaid
+  # Mermaid works from template same way
+  ---
+   
+  ### Mermaid works from file load
+  \`\`\`typescript
+    <div class="markdown">
+      <markdown mermaid [src]="'../../assets/stackblitzMermaid.md'"></markdown>
+    </div>
+  \`\`\`
+
+  # Mermaid works from file load seamlessly
+  `;
+
+  pagedesignvar=`
+  ## PageDesign __works__!
+
+  # In html use the different templates
+  \`\`\`typescript
+  <ng-template #usingmarkdown >
+  </ng-template>
+  \`\`\`
+
+  # call the templates using templateOutlet and can pass a context
+
+  \`\`\`typescript
+  <ng-container 
+  [ngTemplateOutlet]="tems"
+  [ngTemplateOutletContext]="myContext"> 
+  \`\`\`
+
+  # use the context in html
+
+  \`\`\`typescript
+  <ng-template #greet let-person><span>Hello {{person}} </span></ng-template>
+  <ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
+  <ng-template #svk let-person="localSk" ><span>Ahoj {{person}}!</span></ng-template>
+  \`\`\`
+
+  # use the context in component
+
+  \`\`\`typescript
+  @ViewChild('greet', { static: true })
+  greet!: TemplateRef<any>;
+  @ViewChild('svk', { static: true })
+  svk!: TemplateRef<any>;
+  @ViewChild('eng', { static: true })
+  eng!: TemplateRef<any>;
+
+  myContext = { $implicit: 'World', localSk: 'Svet' };
+
+  \`\`\`
+
+  # use AfterContentInit
+
+  \`\`\`typescript
+
+  import { OnInit, AfterContentInit, ViewChild, TemplateRef } from '@angular/core';
+
+  Component=>  implements OnInit, AfterContentInit {
+
+  @Input()
+  myselectedtemp: string = 'first';
+
+
+  ngAfterContentInit() {
+
+    switch (this.myselectedtemp) {
+      case 'greet':
+        this.tems = this.greet;
+        break;
+      case 'svk':
+        this.tems = this.svk;
+        break;
+      case 'eng':
+        this.tems = this.eng;
+        break;
+    }
+  }
+
+  \`\`\`
+
+
+  # From the story pass the right template name
+
+
   
-  ### Blockquote
-  > Blockquote to the max`;
+</ng-container>
+
+  `;
+
+  ngAfterContentInit() {
+
+    switch (this.myselectedtemp) {
+      case 'mermaidCenter':
+        this.tems = this.mermaidCenter;
+        break;
+
+      case 'usingmermaid':
+        this.tems = this.usingmermaid;
+        break;
+
+      case 'usingmarkdown':
+        this.tems = this.usingmarkdown;
+        break;
+      case 'pagedesign':
+        this.tems = this.pagedesign;
+        break;
+    }
+  }
 
 }
 
@@ -429,7 +634,7 @@ export class StackblitzStartTestComponent implements OnInit, AfterContentInit {
   eng!: TemplateRef<any>;
 
   tems: TemplateRef<any> = this.greet;
-  myContext = {$implicit: 'World', localSk: 'Svet'};
+  myContext = { $implicit: 'World', localSk: 'Svet' };
 
 
   @Input()

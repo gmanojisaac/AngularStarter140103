@@ -34,7 +34,5 @@ const Template: Story<StackblitzTitleComponent> = (
 
 export const Title = Template.bind({});
 Title.args = {
-  mode: 'indeterminate',
-  value: 10,
-  color: 'primary', // primary | accent | warn
+  myselectedtemp : 'pagedesign'
 };

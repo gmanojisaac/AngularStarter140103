@@ -4,6 +4,12 @@ export function greetings(name: string): string &#123;
 return 'Hello ' + name;
 }
 ```
+### Lists
+1. Ordered list
+2. Another bullet point
+    - Unordered list
+    - Another unordered bullet
+
 
 ``` typescript
 Current City : Trivandrum
