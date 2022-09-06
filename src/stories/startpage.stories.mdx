@@ -1,6 +1,6 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
-import { StartScreenComponent } from '../app/progress-bar/progress-bar.component';
+import {  StackblitzStartPageComponent  } from '../app/youtube/2022sept02/stackblitz.component';
 import { linkTo } from '@storybook/addon-links';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -22,7 +22,7 @@ How you like them apples?!
 
 Just like in React, we first declare our component.
 
-<Meta title="Addons/Docs"   
+<Meta title="Firstpage/Start"   
   parameters={{
       viewMode: 'docs',
       previewTabs: { 
@@ -31,7 +31,7 @@ Just like in React, we first declare our component.
   }}
   decorators={[
 moduleMetadata({
-  declarations: [StartScreenComponent],
+  declarations: [StackblitzStartPageComponent],
       imports: [
         AppSharedModule,
         HttpClientModule,
@@ -70,9 +70,9 @@ storiesOf('Button', module)
 
 Similarly, here's how we do it in the Docs MDX format. We've already added the decorator above in the component declaration, so we just need to declare a story.
 
-<Story name="with text">
+<Story name="Start">
   {{
-    template: `<app-startscreen></app-startscreen>`,
+    template: `<app-stackblitz-startpage></app-stackblitz-startpage>`,
     props: {
     
     },

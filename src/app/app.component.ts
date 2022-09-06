@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, TemplateRef, AfterContentInit, Input} from '@angular/core';
 import mermaid from 'mermaid';
 
 @Component({
@@ -6,8 +6,17 @@ import mermaid from 'mermaid';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterContentInit {
+
+  @ViewChild('greet', { static: true })
+  greet!: TemplateRef<any>;
+  @Input()
+  Inputtems!: TemplateRef<any>;
+  tems!: TemplateRef<any>;
+  
+
   title = 'AngularStarter140103';
+
   markdowncode = `## Markdown __rulez__!
   ---
   
@@ -26,15 +35,19 @@ export class AppComponent implements OnInit {
   > Blockquote to the max`;
 
 
-  constructor() { 
-   
-  }
+
 
   ngOnInit(): void {
     mermaid.initialize({
       startOnLoad: true
     });
   }
+
+  ngAfterContentInit () {
+    this.tems = this.Inputtems;
+  }
+
+
 }
 
 

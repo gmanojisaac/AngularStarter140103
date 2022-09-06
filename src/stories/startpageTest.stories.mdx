@@ -1,0 +1,101 @@
+import { moduleMetadata } from '@storybook/angular';
+import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
+import {  StackblitzStartTestComponent ,StackblitzMermaidInlineComponent } from '../app/youtube/2022sept02/stackblitz.component';
+import { linkTo } from '@storybook/addon-links';
+import { MarkdownModule, MarkdownService } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AppSharedModule } from '../app/app-shared/app-shared.module';
+
+# Need to write the start Page for Youtube video site
+
+We need to make sure the working code for Mermaid-both from html and from inline template also from the src loaded file
+
+## Component Declaration
+
+<Meta title="TestPage/Start"   
+  parameters={{
+      viewMode: 'docs',
+      previewTabs: { 
+        canvas: { hidden: true } 
+      },
+  }}
+  decorators={[
+moduleMetadata({
+  declarations: [StackblitzStartTestComponent, StackblitzMermaidInlineComponent],
+      imports: [
+        AppSharedModule,
+        HttpClientModule,
+        MarkdownModule.forRoot({ loader: HttpClient }),
+      ],
+      providers: [MarkdownService],
+    }),
+    
+    ]} />
+
+
+<Story name="All Working">
+  {{
+    template: `<app-stackblitz-testpage [myselectedtemp]= "myselectedtemp"></app-stackblitz-testpage>`,
+    props: {
+    myselectedtemp : 'eng'
+    },
+  }}
+</Story>
+
+
+``` typescript
+
+<Meta title="TestPage/Start"   
+  parameters={{
+      viewMode: 'docs',
+      previewTabs: { 
+        canvas: { hidden: true } 
+      },
+  }}
+  decorators={[
+moduleMetadata({
+  declarations: [StackblitzStartTestComponent],
+      imports: [
+        AppSharedModule,
+        HttpClientModule,
+        MarkdownModule.forRoot({ loader: HttpClient }),
+      ],
+      providers: [MarkdownService],
+    }),
+    
+    ]} />
+
+```
+## I don't want to use the unformated storybook code block.. May be i need to find the proper way to beautify it
+
+## First Story
+
+Similarly, here's how we do it in the Docs MDX format. We've already added the decorator above in the component declaration, so we just need to declare a story.
+
+
+
+## More info
+
+For more info, check out the [Storybook Docs Technical Preview](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing).
+
+We want your feedback to help make this more useful.
+
+Follow us on Twitter for more short demos & project updates! ❤️📈🛠
+
+<Story name="Mermaid inline">
+  {{
+    template: `<app-stackblitz-mermaidinline></app-stackblitz-mermaidinline>`,
+    props: {
+    
+    },
+  }}
+</Story>
+
+
+## More info
+
+For more info, check out the [Storybook Docs Technical Preview](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing).
+
+We want your feedback to help make this more useful.
+
+Follow us on Twitter for more short demos & project updates! ❤️📈🛠

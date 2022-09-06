@@ -5,7 +5,7 @@ return 'Hello ' + name;
 }
 ```
 
-```typescript
+``` typescript
 Current City : Trivandrum
 Have Lived in : TamilNadu - 1 year
            Bangalore - 8 years

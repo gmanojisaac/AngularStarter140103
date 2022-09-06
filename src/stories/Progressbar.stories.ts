@@ -5,10 +5,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import 'marked';
-import 'prismjs';
-import 'mermaid';
-import 'prismjs/components/prism-typescript.min.js';
 export default {
   title: 'About me/Career',
   component: ProgressBarComponent,

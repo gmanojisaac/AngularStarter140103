@@ -28,7 +28,10 @@ import { StackblitzComponent,
   StackblitzTitleComponent,
   StackblitzRunAngularComponent,
   StackblitzStorybookComponent,
-  StackblitzUpdatePRComponent
+  StackblitzUpdatePRComponent,
+  StackblitzStartPageComponent,
+  StackblitzStartTestComponent,
+  StackblitzMermaidInlineComponent
  } from './youtube/2022sept02/stackblitz.component';
 
 @NgModule({
@@ -42,7 +45,13 @@ import { StackblitzComponent,
     AboutmeTelecomComponent,
     AboutmeDevelopmentComponent,
     AboutmeTestingComponent,StartScreenComponent,
-    StackblitzComponent, StackblitzTitleComponent
+    StackblitzComponent, StackblitzTitleComponent,
+    StackblitzRunAngularComponent,
+    StackblitzStorybookComponent,
+    StackblitzUpdatePRComponent,
+    StackblitzStartPageComponent,
+    StackblitzStartTestComponent,
+    StackblitzMermaidInlineComponent
   ], //],
   imports: [
     AppSharedModule,

@@ -7,9 +7,12 @@ export const parameters = {
   options: {
     storySort: {
       order: [
+
         'About me',
             ['Manoj Isaac G', 'Career', 'Lecturer', 'Telecom', 'Development'],
-        'Youtube', ['02Sep22',['Title', 'FlowChart','RunAngular', 'RunStorybook', 'UpdatePR', 'MDXTest' ]]
+        'Youtube', ['02Sep22',['Title', 'FlowChart','RunAngular', 'RunStorybook', 'UpdatePR', 'MDXTest' ]],
+        'Firstpage',[ 'Start'],
+        'TestPage',['Start']
       ],
     },
   },
