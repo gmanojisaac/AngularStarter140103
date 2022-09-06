@@ -310,10 +310,10 @@ export class StackblitzUpdatePRComponent implements OnInit {
   selector: 'app-stackblitz-startpage',
   template: `
 <mat-progress-bar mode="buffer"></mat-progress-bar>
-<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10vw">
-  <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
-  <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
-</div>
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10vw">
+    <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
+    <mat-slider fxFlex="10vw" min="1" max="100" step="1" value="50"></mat-slider>
+  </div>
 <mat-progress-bar mode="buffer"></mat-progress-bar>
 
 <h1>TaskOhers</h1>
