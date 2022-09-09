@@ -55,53 +55,190 @@ export class StackblitzComponent implements OnInit {
 @Component({
   selector: 'app-stackblitz-title',
   template: `
-    <ng-template #mermaidCenter >
-      <div fxLayout="column">  
-        <div class="markdown" fxLayoutAlign="center center">
-          <markdown mermaid [src]="'../../assets/stackblitzTitle.md'"></markdown>
-        </div>
-      </div>
-      <div class="footer">
-        <mat-divider></mat-divider>
-          <markdown emoji class="footer-text" fxLayout="row" fxLayoutAlign.gt-xs="center">
-            Crafted with :heart: by **gmanojisaac** <span style="margin:0 .15em;">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)
-          </markdown>
-      </div>
-    </ng-template>
 
-    <ng-template #pagedesign >
+    <ng-template #angularComp>
       <markdown  ngPreserveWhitespaces clipboard>
-        {{pagedesignvar}}
+        ---
       </markdown>
-      <div class="markdoWn">
-        <markdown [src]="'../../assets/storydesign.md'" ngPreserveWhitespaces clipboard></markdown>
-      </div>
-    </ng-template>
-
-    <ng-template #usingmermaid >
-      <markdown [data]="usingmermaidMarkdown" ngPreserveWhitespaces clipboard></markdown>
-    </ng-template>
-    <ng-template #usingmarkdown >
-      <markdown  ngPreserveWhitespaces clipboard>
-      ## Markdown __works__!
-      ---          
-      </markdown>
-      <markdown mermaid  ngPreserveWhitespaces clipboard>
+      <markdown mermaid  ngPreserveWhitespaces clipboard fxLayoutAlign="center center">
         <pre class="mermaid">
           flowchart TD
-            id1([Markdown in html])
-            id2([Markdown in template])
-            id3([Markdown in component])
-            id4([Markdown loaded from src])
+          id1([1.Setup Windows Env]) -->  id2([2.Run Local Hello World Angular])
+
+          id2([2.Run Local Hello World Angular]) -->  id3([3.Add Shared Module])
+
+          id3([3.Add Shared Module])  --> id4([4.Add Material Design])
+      
+          id4([4.Add Material Design]) -->  id5([5.Add FlexLayout])
+
+          id5([5.Add FlexLayout]) -->  id6([6.Add Lazy Loaded Module/ Service])
+
+          id6([6.Add Lazy Loaded Module/ Service]) -->  id7([7.Add Reactive Forms])
+
+          id7([7.Add Reactive Forms]) -->  id8([8.Add ngXs Store])
+
+          id8([8.Add ngXs Store]) -->  id9([9.Add ngx-markdown])
         </pre>
       </markdown>
-      <markdown [data]="usingmarkdownMarkdown" ngPreserveWhitespaces clipboard ></markdown>
-     
+      <markdown  [src]="'../../assets/angularcomp.md'" ngPreserveWhitespaces clipboard
+      commandLine
+      [prompt]="'PS C:\Manoj>'"
+      [filterOutput]="'(out)'">
+    </markdown>
     </ng-template>
-    <ng-container 
-      [ngTemplateOutlet]="tems"
-      [ngTemplateOutletContext]="myContext"> 
-    </ng-container>
+    <ng-template #storybookdesign >
+      <markdown  ngPreserveWhitespaces clipboard>
+            ---
+      </markdown>
+      <markdown mermaid  ngPreserveWhitespaces clipboard fxLayoutAlign="center center">
+        <pre class="mermaid">
+          flowchart TD
+          id1([Create a MDX file]) -->  id2([Give the correct component])
+
+          id2([Give the correct component]) -->  id3([Prepare the Meta data])
+
+          id3([Prepare the Meta data]) -->  id4([Create a Story from the component])
+
+          id4([Create a Story from the component]) -->  id5([Change the Order of the displayed stories])
+        </pre>
+      </markdown>
+      <markdown ngPreserveWhitespaces clipboard>
+        ---          
+        ## Add the correct component!
+        # Component is used in the StackblitzStorybookComponent
+          {{ 'moduleMetadata(\{
+              declarations: [StackblitzTitleComponent],' | language: 'typescript' }}     
+      </markdown>      
+      <markdown ngPreserveWhitespaces clipboard>     
+        ## Use Meta data to give location info
+        # Title shows the place where you can find the story
+          {{ '\\<Meta title="YoutubeMaking/06Sep22"    ' | language: 'typescript' }}   
+      </markdown>
+      <markdown ngPreserveWhitespaces clipboard>     
+        ## Import Modules for story use
+        # Import sharedModule which contains FlexBox, HTTPClient Module for MarkdownModule
+        # Also the providers will have MarkdownService for markdown module
+          {{ 'imports: \[
+          AppSharedModule\,
+          HttpClientModule\,
+          MarkdownModule.forRoot({ loader: HttpClient })\,
+        \]\,
+        providers: [MarkdownService]\,"    ' | language: 'typescript' }}   
+      </markdown>
+      <markdown ngPreserveWhitespaces clipboard>     
+        ## Prepare the template for the storybook added in MDX
+        # Send the prop value to the component
+
+      </markdown>
+      <markdown [src]="'../../assets/storydesign.md'" ngPreserveWhitespaces clipboard></markdown>
+      <markdown ngPreserveWhitespaces clipboard>     
+        ## Change preview.js to modify the order
+        # Normally alpabetical order is followed
+        # If seperate .mdx files are used the preview.js will not control the order
+      </markdown>
+      <markdown [src]="'../../assets/storydesignOrder.md'" ngPreserveWhitespaces clipboard></markdown> 
+  </ng-template>
+
+  <ng-template #angularsetup >
+    <markdown  ngPreserveWhitespaces clipboard>
+        ---
+    </markdown>
+    <markdown mermaid  ngPreserveWhitespaces clipboard fxLayoutAlign="center center">
+      <pre class="mermaid">
+        flowchart TD
+          id4([1.Prepare Git Environment]) -->  id5([2.Add repo and push in github])
+          id5([2.Add repo and push in github]) -->  id6([3.Host static pages in gh-pages])
+          id6([3.Host static pages in gh-pages]) -->  id7([4.Prepare Stackblitz Environment])
+          id7([4.Prepare Stackblitz Environment]) -->  id8([5.Prepare for Storybook branch])
+          id8([5.Prepare for Storybook branch]) -->  id9([6.Run in stackblitz Environment])
+      </pre>
+    </markdown>
+    <markdown  [src]="'../../assets/angularsetup.md'" ngPreserveWhitespaces clipboard
+      commandLine
+      [prompt]="'PS C:\Manoj>'"
+      [filterOutput]="'(out)'">
+    </markdown>
+  </ng-template>
+
+  <ng-template #mermaidCenter >
+    <markdown  ngPreserveWhitespaces clipboard>
+        ---
+    </markdown>
+    <div class="markdown" fxLayoutAlign="center center">
+      <markdown mermaid [src]="'../../assets/stackblitzTitle.md'"></markdown>
+    </div>
+    <markdown  ngPreserveWhitespaces clipboard>
+      ---
+  </markdown>
+    <div class="footer">
+      <markdown emoji class="footer-text" fxLayout="row" fxLayoutAlign.gt-xs="center">
+        Crafted with :heart: by **gmanojisaac** <span style="margin:0 .15em;">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)
+      </markdown>
+    </div>
+  </ng-template>
+
+  <ng-template #pagedesign >
+    <markdown  ngPreserveWhitespaces clipboard>
+        ---
+    </markdown>
+    <markdown mermaid  ngPreserveWhitespaces clipboard fxLayoutAlign="center center">
+      <pre class="mermaid">
+        flowchart TD
+          id1([Prepare ngTemplate]) -->  id2([Mmyselectedtemp receive input from story])
+
+          id2([myselectedtemp receive input from story]) -->  id3([Shows the template])
+
+          id3([Shows the template]) -->  id4([use templateOutlet and context])
+      </pre>
+    </markdown>
+    <markdown  ngPreserveWhitespaces clipboard>
+      {{pagedesignvar}}
+    </markdown>
+    <markdown [src]="'../../assets/storydesign.md'" ngPreserveWhitespaces clipboard></markdown>   
+  </ng-template>
+
+  <ng-template #usingmermaid >
+    <markdown  ngPreserveWhitespaces clipboard>
+    ---          
+    </markdown>
+    <markdown mermaid  ngPreserveWhitespaces clipboard fxLayoutAlign="center center">
+      <pre class="mermaid">
+        flowchart TD
+        id1([Mermaid works]) --> id2([In html])
+        id1([Mermaid works]) --> id3([From src])
+      </pre>
+    </markdown>
+    <markdown  ngPreserveWhitespaces clipboard>
+      ---
+      ## Mermaid __works__! 
+    </markdown>
+    <markdown [data]="usingmermaidMarkdown" ngPreserveWhitespaces clipboard></markdown>
+  </ng-template>
+
+  <ng-template #usingmarkdown >
+    <markdown  ngPreserveWhitespaces clipboard>
+      ---          
+    </markdown>
+    <markdown mermaid  ngPreserveWhitespaces clipboard fxLayoutAlign="center center">
+      <pre class="mermaid">
+        flowchart TD
+          id1([Markdown used in]) --> id2([In html])
+          id1([Markdown used in]) --> id3([In template])
+          id1([Markdown used in]) --> id4([In Component])
+          id1([Markdown used in]) --> id5([Load from src])
+      </pre>
+    </markdown>
+    <markdown  ngPreserveWhitespaces clipboard>
+      ---
+      ## Markdown __works__!          
+    </markdown>      
+    <markdown [data]="usingmarkdownMarkdown" ngPreserveWhitespaces clipboard ></markdown>
+  </ng-template>
+
+  <ng-container 
+    [ngTemplateOutlet]="tems"
+    [ngTemplateOutletContext]="myContext"> 
+  </ng-container>
   `,
   styles: [`
   
@@ -143,7 +280,7 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
   constructor() { }
 
   ngOnInit(): void { }
-
+  
   something = `
   @ViewChild('mermaidCenter', { static: true })
   mermaidCenter!: TemplateRef<any>;`;
@@ -158,7 +295,16 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
 
   @ViewChild('pagedesign', { static: true })
   pagedesign!: TemplateRef<any>;
-  
+
+  @ViewChild('storybookdesign', { static: true })
+  storybookdesign!: TemplateRef<any>;
+
+  @ViewChild('angularsetup', { static: true })
+  angularsetup!: TemplateRef<any>;
+
+  @ViewChild('angularComp', { static: true })
+  angularComp!: TemplateRef<any>;
+
   tems: TemplateRef<any> = this.mermaidCenter;
   myContext = { $implicit: 'World', localSk: 'Svet' };
 
@@ -176,6 +322,7 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
 
   usingmarkdownMarkdown = `
   ### Markdown working from html
+  # use single back slash \ for escaping comma , angle brackets etc
   \`\`\`typescript
   <markdown ngPreserveWhitespaces clipboard>
   ### Lists
@@ -187,7 +334,16 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
   </markdown>
   \`\`\`
   ---
-
+  ### Markdown showing command line
+  # filterOutput will not show the prompt
+  \`\`\`typescript
+  <markdown [src]="'../../assets/markdowncommandline.md'"
+    commandLine
+    [prompt]="'PS C:\Users\Manoj>'"
+    [filterOutput]="'(out)'">
+  </markdown>
+  \`\`\`
+  ---
   ### Markdown working from template
   \`\`\`typescript
   <markdown  ngPreserveWhitespaces clipboard>
@@ -214,9 +370,7 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
   
   ### Markdown working from src
   \`\`\`typescript
-  <div class="markdown">
     <markdown [src]="'../../assets/storydesign.md'"></markdown>
-  </div>
   \`\`\`
 
   ## .md file will not contain => backslash
@@ -225,22 +379,22 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
     myselectedtemp : 'usingmarkdown'
     },   
   \`\`\`
+  # Markdown also has other features which can be used.
   ---
 `;
 
-  usingmermaidMarkdown = `## Mermaid __works__!
-  ---
+  usingmermaidMarkdown = `  
   
   ### Mermaid works from html
   \`\`\`typescript
-  <markdown mermaid>
-  <pre class="mermaid">
-    flowchart TD
-      id1([Markdown in html])
-      id2([Markdown in template])
-      id3([Markdown in data])
-      id4([Markdown loaded from src])
-  </pre>
+<markdown mermaid  ngPreserveWhitespaces clipboard>
+<pre class="mermaid">
+  flowchart TD
+  id1([Markdown in html])
+  id2([Markdown in template])
+  id3([Markdown in data])
+  id4([Markdown loaded from src])
+</pre>
 </markdown>
   \`\`\`
   
@@ -250,15 +404,15 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
    
   ### Mermaid works from file load
   \`\`\`typescript
-    <div class="markdown">
       <markdown mermaid [src]="'../../assets/stackblitzMermaid.md'"></markdown>
-    </div>
   \`\`\`
 
   # Mermaid works from file load seamlessly
+  ---    
   `;
 
   pagedesignvar=`
+  --- 
   ## PageDesign __works__!
 
   # In html use the different templates
@@ -352,6 +506,17 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
       case 'pagedesign':
         this.tems = this.pagedesign;
         break;
+      case 'storybookdesign':
+        this.tems = this.storybookdesign;
+        break;
+      case 'angularsetup':
+        this.tems = this.angularsetup;
+        break;
+      case 'angularComp':
+        this.tems = this.angularComp;
+        break;
+        
+
     }
   }
 
