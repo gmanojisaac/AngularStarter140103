@@ -8,6 +8,12 @@ import { AppSharedModule } from '../app/app-shared/app-shared.module';
 export default {
   title: 'Youtube/02Sep22/Title',
   component: StackblitzTitleComponent,
+  parameters: {
+    viewMode: 'docs',
+    previewTabs: { 
+      canvas: { hidden: true } 
+    }
+  },
   decorators: [
     moduleMetadata({
       imports: [
