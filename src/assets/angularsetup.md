@@ -1,7 +1,22 @@
 ## 1. Prepare Git Environment
 # open the Browser Create a new Repo in https://github.com/ after creating an account
 
+```powershell
+git config --global user.email "gmanoj.isaac@gmail.com"
+git config --global user.name "Manoj"
+```
+
 ## 2. Add new Github Repo
+# To remove a commit from the github location
+
+```powershell
+git stash
+git pull
+git reset --hard HEAD~1
+git push origin HEAD --force
+
+```
+
 # Go to the new angular project and add repo to the angular project
 ```powershell
 git remote remove origin
@@ -23,7 +38,7 @@ Change the asset access link to ./assets and create a new branch for it
 
 # open the package.json file and add the following code at the beginning of the file.
 ```typescript
-(out)"homepage": "http://gmanojisaac.github.io/AngularStarterLatest",
+(out) "homepage": "http://github.com/gmanojisaac/AngularGithub.git",
 (out)
 (out) storybook-static is a build file that will be generated after building your Storybook locally.
 (out)
@@ -44,32 +59,28 @@ Change the asset access link to ./assets and create a new branch for it
 ```
 
 ## 4. Prepare Stackblitz Environment
-# open the Browser Create a new nodeJs project in https://stackblitz.com/ after creating an account
-# Go to the new angular project and master branch
-# Add file stackblitz.rc
+# Add file .stackblitzrc in project folder, push master brnnch to origin repo
 
 ```typescript
-(out)  "installDependencies": true,
-(out)  "startCommand": " turbo run serve",
-(out)  "env": //{
-(out)    "ENABLE_CJS_IMPORTS": true
-(out)  //}
-(out)  //}
+(out)  {"installDependencies":true,"startCommand":"turbo run serve","env":{"ENABLE_CJS_IMPORTS":true}}
 ```
+# open the Browser Create a new nodeJs project in https://stackblitz.com/ after creating an account
+# Go to the new angular project and master branch
 
+![alt text](../assets/stackblitz-master.png "Added New Proj")
 
 ## 5. Prepare for Storybook Branch
 
 # Create a New Branch for stackblitz deployment -> storybook
-# Modify  file stackblitz.rc
+```powershell
+ npm install -g npx
+ npx -p @storybook/cli sb init --type angular
+```
+
+# Modify  file .stackblitzrc
 
 ```typescript
-(out)  "installDependencies": true,
-(out)  "startCommand": " turbo run storybook",
-(out)  "env": //{
-(out)    "ENABLE_CJS_IMPORTS": true
-(out)  //}
-(out)  //}
+(out)  {"installDependencies":true,"startCommand":"turbo run storybook","env":{"ENABLE_CJS_IMPORTS":true}}
 ```
 
 # Git Commands
@@ -82,13 +93,6 @@ Change the asset access link to ./assets and create a new branch for it
 ```
 
 ## 6. Prepare & Run in stackblitz Environment
-```typescript
-(out)  npm install -g npx
-(out)  npx -p @storybook/cli sb init --type angular
-
-```
-
-
 # Create a new NodeJs project and add the repo with master branch
 
 ![alt text](../assets/stackblitz.png "Add repo")
