@@ -65,9 +65,17 @@ Change the asset access link to ./assets and create a new branch for it
 (out)  {"installDependencies":true,"startCommand":"turbo run serve","env":{"ENABLE_CJS_IMPORTS":true}}
 ```
 # open the Browser Create a new nodeJs project in https://stackblitz.com/ after creating an account
-# Go to the new angular project and master branch
+# Create a new NodeJs project and add the repo with master branch
 
-![alt text](../assets/stackblitz-master.png "Added New Proj")
+![alt text](../assets/stackblitz.png "Add repo")
+
+# Load the master branch and install and serve
+
+![alt text](../assets/stackblitz-start.png "Add repo")
+
+# Open the browser and the run the application from the cloud
+
+![alt text](../assets/stackblitz-served.png "Add repo")
 
 ## 5. Prepare for Storybook Branch
 
@@ -93,21 +101,6 @@ Change the asset access link to ./assets and create a new branch for it
 ```
 
 ## 6. Prepare & Run in stackblitz Environment
-# Create a new NodeJs project and add the repo with master branch
-
-![alt text](../assets/stackblitz.png "Add repo")
-
-#
-# Load the master branch and install and serve
-
-![alt text](../assets/stackblitz-start.png "Add repo")
-
-#
-# Open the browser and the run the application from the cloud
-
-![alt text](../assets/stackblitz-served.png "Add repo")
-
-#
 # Change the branch to storybook and dicard the changes. Change the command to npm install && turbo run storybook
 
 ![alt text](../assets/stackblitz-storybook.png "Add repo")

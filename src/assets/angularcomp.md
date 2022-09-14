@@ -135,10 +135,10 @@ Go to browser and open link => http://localhost:4200/
 # Add AppSharedModule in main app module
 
 ```typescript
-(out) import { AppSharedModule } from '../lib/app-shared/app-shared.module';
+(out) import { AppSharedModule } from './app-shared/app-shared.module';
 (out) ...
 (out)imports: [
-(out)AppSharedModule,
+(out) AppSharedModule,
 ```
 
 # Warning: initial exceeded maximum budget. Solved by changing the budget
@@ -157,6 +157,7 @@ Angular.json-> modify to 2mb
 (out)                  "maximumWarning": "2mb",
 (out)                  "maximumError": "2mb"
 (out)                }
+(out)            ],
 
 ```
 ## 4.Add Material Module inside app-shared module
@@ -170,9 +171,6 @@ Angular.json-> modify to 2mb
 
 ```typescript
 (out) import { MaterialModule } from '../material/material.module';
-(out) ...
-(out)imports: [
-(out)MaterialModule,
 (out) ...
 (out)exports: [
 (out)MaterialModule,
@@ -350,11 +348,9 @@ ng g m beforeLogin
 (out){ path: 'beforelogin', loadChildren: () => import('./before-login/before-login.module').then(m => m.BeforeLoginModule) }];
 ```
 
-# Add in app.component.ts:
+# Add in app.component.html:
 
 ```typescript
-(out)  template: 
-(out)       
 (out)  <router-outlet></router-outlet>
 ```
 
@@ -365,138 +361,60 @@ ng g m beforeLogin
 (out), exports: [
 (out)FormsModule, ReactiveFormsModule
 ```
-
-## 8. Add ngXs Store
-# Modify the compiler option -    "strict": false,
-
-```powershell
-npm install @ngxs/store @ngxs/store@dev @ngxs/logger-plugin@dev --save
-```
-# In App.module
+# Add in featurecomponent.html
 
 ```typescript
-(out)    NgxsModule.forRoot([], {
-(out)      developmentMode: !environment.production,
-(out)    }),
-(out)    NgxsReduxDevtoolsPluginModule.forRoot(),
-(out)    NgxsLoggerPluginModule.forRoot({
-(out)      disabled: environment.production,
-(out)    }),
-```
-## 9. Add ngx-markdown
-# mermaid, highlight, linenumbers, prismjs should work
-
-```powershell
-npm install ngx-markdown autoprefixer@10.4.5 --save
-npm install @types/clipboard @types/marked @types/mermaid @types/prismjs --save-dev
-```
-
-# Add node modules in angular.io scripts and styles
-
-```typescript
-(out)    "styles": [
-(out)        "node_modules/prismjs/themes/prism-okaidia.css",
-(out)        "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
-(out)        "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
-(out)        "node_modules/prismjs/plugins/command-line/prism-command-line.css"
-(out)    ],
-(out)    "scripts": [
-(out)        "node_modules/marked/marked.min.js",
-(out)        "node_modules/prismjs/prism.js",
-(out)        "node_modules/prismjs/components/prism-typescript.min.js",
-(out)        "node_modules/prismjs/components/prism-mermaid.min.js",
-(out)        "node_modules/prismjs/components/prism-powershell.min.js",
-(out)        "node_modules/prismjs/components/prism-css.min.js",
-(out)        "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js",
-(out)        "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js",
-(out)        "node_modules/prismjs/plugins/command-line/prism-command-line.js",
-(out)        "node_modules/mermaid/dist/mermaid.min.js",
-(out)        "node_modules/clipboard/dist/clipboard.min.js",
-(out)        "node_modules/emoji-toolkit/lib/js/joypixels.min.js"
-(out)    ]
-```
-# Add in app.module
-
-```typescript
-(out) import { MarkdownModule, MarkdownService } from 'ngx-markdown';
-(out) import { HttpClient } from '@angular/common/http';
-(out) import { HttpClientModule } from '@angular/common/http';
-(out) 
-(out) imports:[
-(out)     ...
-(out)     HttpClientModule,
-(out)     MarkdownModule.forRoot({ loader: HttpClient }),
-(out)     ],
-(out)   providers: [MarkdownService],
+<div class="container" fxLayoutAlign="center center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form [formGroup]="signupForm" (ngSubmit) = "onSubmit()">
+          <div formGroupName = "userData">
+            <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              formControlName="username"
+              class="form-control">
+              <span *ngIf = "!signupForm.get('userData.username')?.valid && signupForm.get('userData.username')?.touched" class="help-block" style="color: red !important;">Please Enter A Vlid UserName!!!</span>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              id="email"
+              formControlName="email"
+              class="form-control">
+            <span *ngIf = "!signupForm.get('userData.email')?.valid && signupForm.get('userData.email')?.touched" class="help-block" style="color: red !important;">Please Enter A Vlid Email-Id!!!</span>
+          </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+        {{signupForm.value | json}}
+      </div>
+    </div>
+  </div>
 ```
 
-# Add in component.html
+# Add in featurecomponent.ts
 
 ```typescript
-(out)<ng-template #greet let-person><span>Hello {{person}}</span>
-(out)  <div class="markdown">
-(out)    <markdown mermaid [src]="'../../assets/Testing.md'"></markdown>
-(out)    </div>
-(out)  </ng-template>
-(out)<ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
-(out)<ng-template #svk let-person="localSk" ><span>Ahoj {{person}}!</span></ng-template>
-(out)<ng-container 
-(out)  [ngTemplateOutlet]="tems"
-(out)  [ngTemplateOutletContext]="myContext"> </ng-container>
-  ```
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 
-# Add in component.ts
+... implements OnInit {
+  signupForm!: FormGroup;
+   ngOnInit(): void {
+     this.signupForm = new FormGroup ({
+       userData: new FormGroup ({
+         'username': new FormControl('Pavan Nagadiya', Validators.required),
+       'email': new FormControl('nagadiyap@gmail.com', [Validators.required, Validators.email]),
+       })
+     })
+   }
+   onSubmit() {
+     console.log(this.signupForm);
+   }
+}
 
-```typescript
-(out)import { Component, Input, OnInit, AfterContentInit, ViewChild, TemplateRef, } from '@angular/core';
-(out)...
-(out)implements OnInit, AfterContentInit{
-(out)  title = 'AngularGhPages';
-(out)
-(out)  @ViewChild('greet', { static: true })
-(out)  greet!: TemplateRef<any>;
-(out)  @ViewChild('svk', { static: true })
-(out)  svk!: TemplateRef<any>;
-(out)  @ViewChild('eng', { static: true })
-(out)  eng!: TemplateRef<any>;
-(out)
-(out)  tems: TemplateRef<any> = this.greet;
-(out)  myContext = { $implicit: 'World', localSk: 'Svet' };
-(out)  @Input()
-(out)  myselectedtemp: string = 'greet';
-(out)  ngOnInit(): void { }
-(out)  ngAfterContentInit() {
-(out)
-(out)    switch (this.myselectedtemp) {
-(out)      case 'greet':
-(out)        this.tems = this.greet;
-(out)        break;
-(out)  case 'svk':
-(out)        this.tems = this.svk;
-(out)    break;
-(out)      case 'eng':
-(out)        this.tems = this.eng;
-(out)        break;
-(out)    }
-(out)  }
-(out)
-(out)
 ```
-
-# Create a new file Testing.md in assets folder
-```typescript
-(out)<pre class="mermaid">
-(out)journey
-(out)  title My Career Graph
-(out)  section Before Tech
-(out)  Secondary- 88%: 1: Manoj
-(out)  Higher Secondary-89%: 2: Manoj
-(out)  College-UG- 67%: 3: Manoj
-(out)  College-PG- 74%: 4: Manoj
-(out)  section After Tech
-(out)  Lecturer- 1Y: 5: Manoj
-(out)  Telecom Testing- 14Y: 6: Manoj
-(out)  Development- 7Y: 7: Manoj
-(out)
-(out)</pre>
-  ```
