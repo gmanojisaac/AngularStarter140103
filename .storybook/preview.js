@@ -7,9 +7,20 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'AboutMe', ['Introduction', 'Career', 'Lecturer', 'Telecom', 'Development'],
-        'Youtube15sep22',['Title', 'FlowChart','RunAngular', 'RunStorybook', 'UpdatePR'],
-        'YoutubeMaking', [ 'AngularCompSetup', 'Markdown',  'Mermaid', 'StorybookDesign','AngularEnvSetup',  'AngularNgXs', 'FirstPage']
+        'AboutMe',
+        ['Introduction', 'Career', 'Lecturer', 'Telecom', 'Development'],
+        'Youtube15sep22',
+        ['Title', 'FlowChart', 'RunAngular', 'RunStorybook', 'UpdatePR'],
+        'YoutubeMaking',
+        [
+          'AngularCompSetup',
+          'Markdown',
+          'Mermaid',
+          'StorybookDesign',
+          'AngularEnvSetup',
+          'AngularNgXs',
+          'FirstPage',
+        ],
       ],
     },
   },
