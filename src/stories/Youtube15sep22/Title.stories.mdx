@@ -1,17 +1,14 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
-import {  StackblitzTitleComponent  } from '../../app/youtube/2022sept02/stackblitz.component';
+import {SeptfifteenComponent} from '../../app/youtube/Sep2022/septfifteen/septfifteen.component';
 import { linkTo } from '@storybook/addon-links';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppSharedModule } from '../../app/app-shared/app-shared.module';
 
-# Angular Setup in Windows Environment
-Use Windows 64bit Laptop connected with Internet.
+# Run Angular in Stackblitz as NodeJS App.
 
-# Use gh-pages / stackblitz / push github
-
-<Meta title="YoutubeMaking/06Sep22"   
+<Meta title="Youtube15sep22/Title"   
   parameters={{
       viewMode: 'docs',
       previewTabs: { 
@@ -20,7 +17,7 @@ Use Windows 64bit Laptop connected with Internet.
   }}
   decorators={[
 moduleMetadata({
-  declarations: [StackblitzTitleComponent],
+  declarations: [SeptfifteenComponent],
       imports: [
         AppSharedModule,
         HttpClientModule,
@@ -31,11 +28,12 @@ moduleMetadata({
     
     ]} />
 
-<Story name="AngularEnvSetup">
+
+<Story name="Title">
   {{
-    template: `<app-stackblitz-title [myselectedtemp]= "myselectedtemp"></app-stackblitz-title>`,
+   template: `<app-septfifteen [myselectedtemp]= "myselectedtemp"></app-septfifteen>`,
     props: {
-    myselectedtemp : 'angularsetup'
+    myselectedtemp : 'Title'
     },
   }}
 </Story>

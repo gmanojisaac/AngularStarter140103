@@ -72,14 +72,14 @@
   eng!: TemplateRef<any>;
 
   myContext = { $implicit: 'World', localSk: 'Svet' };
-
+  tems: TemplateRef<any> = this.greet;
 ```
 
   # use AfterContentInit
 
 ```typescript
 
-  import { OnInit, AfterContentInit, ViewChild, TemplateRef } from '@angular/core';
+  import { OnInit, AfterContentInit, ViewChild, TemplateRef, Input, Component } from '@angular/core';
 
   Component=>  implements OnInit, AfterContentInit {
 

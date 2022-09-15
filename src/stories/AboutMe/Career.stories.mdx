@@ -1,18 +1,14 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
-import {  StackblitzTitleComponent  } from '../../app/youtube/2022sept02/stackblitz.component';
+import { AboutMeComponent} from '../../app/about-me/about-me.component';
 import { linkTo } from '@storybook/addon-links';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppSharedModule } from '../../app/app-shared/app-shared.module';
 
-# Mermaid Diagrams are used to pictorially describe ideas
+# My Career Graph working at various Organizations
 
-Mermaid diagrams are used using ngx-markdown module
-
-# Load mermaid diagrams in various ways
-
-<Meta title="YoutubeMaking/06Sep22"   
+<Meta title="AboutMe/Career"   
   parameters={{
       viewMode: 'docs',
       previewTabs: { 
@@ -21,7 +17,7 @@ Mermaid diagrams are used using ngx-markdown module
   }}
   decorators={[
 moduleMetadata({
-  declarations: [StackblitzTitleComponent],
+  declarations: [AboutMeComponent],
       imports: [
         AppSharedModule,
         HttpClientModule,
@@ -33,11 +29,11 @@ moduleMetadata({
     ]} />
 
 
-<Story name="Mermaid">
+<Story name="Career">
   {{
-    template: `<app-stackblitz-title [myselectedtemp]= "myselectedtemp"></app-stackblitz-title>`,
+    template: `<app-about-me [myselectedtemp]= "myselectedtemp"></app-about-me>`,
     props: {
-    myselectedtemp : 'usingmermaid'
+    myselectedtemp : 'Career'
     },
   }}
 </Story>

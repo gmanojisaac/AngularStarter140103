@@ -1,17 +1,14 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
-import {  StackblitzTitleComponent  } from '../../app/youtube/2022sept02/stackblitz.component';
+import { AboutMeComponent} from '../../app/about-me/about-me.component';
 import { linkTo } from '@storybook/addon-links';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppSharedModule } from '../../app/app-shared/app-shared.module';
 
-# Angular Setup in Windows Environment
-Use Windows 64bit Laptop connected with Internet.
+# Let me Introduce Myself
 
-# Use gh-pages / stackblitz / push github
-
-<Meta title="YoutubeMaking/06Sep22"   
+<Meta title="AboutMe/Introduction"   
   parameters={{
       viewMode: 'docs',
       previewTabs: { 
@@ -20,7 +17,7 @@ Use Windows 64bit Laptop connected with Internet.
   }}
   decorators={[
 moduleMetadata({
-  declarations: [StackblitzTitleComponent],
+  declarations: [AboutMeComponent],
       imports: [
         AppSharedModule,
         HttpClientModule,
@@ -31,11 +28,12 @@ moduleMetadata({
     
     ]} />
 
-<Story name="AngularNgXs">
+
+<Story name="Introduction">
   {{
-    template: `<app-stackblitz-title [myselectedtemp]= "myselectedtemp"></app-stackblitz-title>`,
+    template: `<app-about-me [myselectedtemp]= "myselectedtemp"></app-about-me>`,
     props: {
-    myselectedtemp : 'usingngxs'
+    myselectedtemp : 'Introduction'
     },
   }}
 </Story>

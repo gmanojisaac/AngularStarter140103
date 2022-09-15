@@ -1,18 +1,15 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
-import {  StackblitzTitleComponent  } from '../../app/youtube/2022sept02/stackblitz.component';
+import {SeptfifteenComponent} from '../../app/youtube/Sep2022/septfifteen/septfifteen.component';
 import { linkTo } from '@storybook/addon-links';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppSharedModule } from '../../app/app-shared/app-shared.module';
 
-# First Page shows the title of the youtube videos
+# Open PR exists for stackblitz NodeJs Angular Program Execution
+Update the PR and give all details
 
-Youtube video title is shown here and introduction about the video is spoken here
-
-# First Page Mermaid diagram and small footer is shown
-
-<Meta title="YoutubeMaking/06Sep22"   
+<Meta title="Youtube15sep22/UpdatePR"   
   parameters={{
       viewMode: 'docs',
       previewTabs: { 
@@ -21,7 +18,7 @@ Youtube video title is shown here and introduction about the video is spoken her
   }}
   decorators={[
 moduleMetadata({
-  declarations: [StackblitzTitleComponent],
+  declarations: [SeptfifteenComponent],
       imports: [
         AppSharedModule,
         HttpClientModule,
@@ -33,11 +30,11 @@ moduleMetadata({
     ]} />
 
 
-<Story name="FirstPage">
+<Story name="UpdatePR">
   {{
-    template: `<app-stackblitz-title [myselectedtemp]= "myselectedtemp"></app-stackblitz-title>`,
+   template: `<app-septfifteen [myselectedtemp]= "myselectedtemp"></app-septfifteen>`,
     props: {
-    myselectedtemp : 'mermaidCenter'
+    myselectedtemp : 'PRUpdate'
     },
   }}
 </Story>

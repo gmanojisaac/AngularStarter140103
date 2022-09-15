@@ -33,7 +33,9 @@ import { StackblitzComponent,
   StackblitzStartTestComponent,
   StackblitzMermaidInlineComponent
  } from './youtube/2022sept02/stackblitz.component';
-
+ import {SeptfifteenComponent} from './youtube/Sep2022/septfifteen/septfifteen.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { YoutubeMakingComponent } from './youtube-making/youtube-making.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,10 @@ import { StackblitzComponent,
     StackblitzUpdatePRComponent,
     StackblitzStartPageComponent,
     StackblitzStartTestComponent,
-    StackblitzMermaidInlineComponent
+    StackblitzMermaidInlineComponent,
+    SeptfifteenComponent,
+    AboutMeComponent,
+    YoutubeMakingComponent
   ], //],
   imports: [
     AppSharedModule,
