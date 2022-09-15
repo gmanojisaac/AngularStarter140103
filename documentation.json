@@ -703,7 +703,7 @@
                 "OnInit",
                 "AfterContentInit"
             ],
-            "templateData": "<ng-template #Introduction >\n    <div class=\"markdown\" fxFlexOffset=\"15vw\" fxLayout=\"row\">\n        <markdown mermaid [src]=\"'../../../../assets/AboutMe/Introduction.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Career >\n    <div class=\"markdown\" fxFlex=\"86vw\">\n        <markdown mermaid [src]=\"'../../../../assets/AboutMe/Career.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Development >\n    <div class=\"markdown\">\n        <markdown mermaid [src]=\"'../../../../assets/Sep2022/Development.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Lecturer >\n    <div class=\"markdown\" fxFlexOffset=\"15vw\" fxLayout=\"row\">\n        <markdown mermaid [src]=\"'../../../../assets/Sep2022/Lecturer.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Telecom >\n    <div class=\"markdown\" fxFlexOffset=\"15vw\" fxLayout=\"row\">\n        <markdown mermaid [src]=\"'../../../../assets/Sep2022/Telecom.md'\"></markdown>\n     </div>\n</ng-template>\n\n\n<ng-container \n[ngTemplateOutlet]=\"tems\"\n[ngTemplateOutletContext]=\"myContext\"> "
+            "templateData": "<ng-template #Introduction >\n    <div class=\"markdown\" fxFlexOffset=\"15vw\" fxLayout=\"row\">\n        <markdown mermaid [src]=\"'../../../../assets/AboutMe/Introduction.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Career >\n    <div class=\"markdown\" fxFlex=\"86vw\">\n        <markdown mermaid [src]=\"'../../../../assets/AboutMe/Career.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Development >\n    <div class=\"markdown\">\n        <markdown mermaid [src]=\"'../../../../assets/AboutMe/Development.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Lecturer >\n    <div class=\"markdown\">\n        <markdown mermaid [src]=\"'../../../../assets/AboutMe/Lecturer.md'\"></markdown>\n     </div>\n</ng-template>\n\n<ng-template #Telecom >\n    <div class=\"markdown\">\n        <markdown mermaid [src]=\"'../../../../assets/AboutMe/Telecom.md'\"></markdown>\n     </div>\n</ng-template>\n\n\n<ng-container \n[ngTemplateOutlet]=\"tems\"\n[ngTemplateOutletContext]=\"myContext\"> "
         },
         {
             "name": "AboutmeDevelopmentComponent",
@@ -1474,61 +1474,6 @@
                     }
                 }
             }
-        },
-        {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-20f594b81311fa0da5183beb9ff89ad6c8fd0bed36e148df900da741fa5154428b86e5185b9abf822d09b2746b84e273f57cf31b88dad8eebf52a36ac17c1d50-1",
-            "file": "src/stories/angular-demo/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-button-component",
-            "styleUrls": [],
-            "styles": [
-                "\n      button {\n        border: 1px solid #eee;\n        border-radius: 3px;\n        background-color: #ffffff;\n        cursor: pointer;\n        font-size: 15px;\n        padding: 3px 10px;\n        margin: 10px;\n      }\n    "
-            ],
-            "template": "<button (click)=\"onClick.emit($event)\">{{ text }}</button>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "text",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 22,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<any>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 25,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button-component',\r\n  template: ` <button (click)=\"onClick.emit($event)\">{{ text }}</button> `,\r\n  styles: [\r\n    `\r\n      button {\r\n        border: 1px solid #eee;\r\n        border-radius: 3px;\r\n        background-color: #ffffff;\r\n        cursor: pointer;\r\n        font-size: 15px;\r\n        padding: 3px 10px;\r\n        margin: 10px;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport default class ButtonComponent {\r\n  @Input()\r\n  text = '';\r\n\r\n  @Output()\r\n  onClick = new EventEmitter<any>();\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "\n      button {\n        border: 1px solid #eee;\n        border-radius: 3px;\n        background-color: #ffffff;\n        cursor: pointer;\n        font-size: 15px;\n        padding: 3px 10px;\n        margin: 10px;\n      }\n    \n",
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "ButtonComponent-1"
         },
         {
             "name": "HeaderComponent",
@@ -3923,51 +3868,6 @@
             "stylesData": "\n      main {\n        padding: 15px;\n        line-height: 1.4;\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\n        background-color: #ffffff;\n      }\n\n      .note {\n        opacity: 0.5;\n      }\n\n      .inline-code {\n        font-size: 15px;\n        font-weight: 600;\n        padding: 2px 5px;\n        border: 1px solid #eae9e9;\n        border-radius: 4px;\n        background-color: #f3f2f2;\n        color: #3a3a3a;\n      }\n\n      a {\n        color: #1474f3;\n        text-decoration: none;\n        border-bottom: 1px solid #1474f3;\n        padding-bottom: 2px;\n      }\n    \n"
         },
         {
-            "name": "WelcomeComponent",
-            "id": "component-WelcomeComponent-35f0950a414d59028659672d52561fcc412f374a310e7eac392f28a42f09cec128f1b38e8e5f1d163deec8ae4c6e4896114e3527ec37201346193fc3b9d61a1c-1",
-            "file": "src/stories/angular-demo/welcome.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-welcome-component",
-            "styleUrls": [],
-            "styles": [
-                "\n      main {\n        padding: 15px;\n        line-height: 1.4;\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\n        background-color: #ffffff;\n      }\n\n      .note {\n        opacity: 0.5;\n      }\n\n      .inline-code {\n        font-size: 15px;\n        font-weight: 600;\n        padding: 2px 5px;\n        border: 1px solid #eae9e9;\n        border-radius: 4px;\n        background-color: #f3f2f2;\n        color: #3a3a3a;\n      }\n\n      a {\n        color: #1474f3;\n        text-decoration: none;\n        border-bottom: 1px solid #1474f3;\n        padding-bottom: 2px;\n      }\n    "
-            ],
-            "template": "<main>\n  <h1>Welcome to storybook</h1>\n  <p>This is a UI component dev environment for your app.</p>\n  <p>\n    We've added some basic stories inside the\n    <span class=\"inline-code\">src/stories</span> directory. <br />\n    A story is a single state of one or more UI components. You can have as many stories as you\n    want. <br />\n    (Basically a story is like a visual test case.)\n  </p>\n  <p>\n    See these sample\n    <a (click)=\"showApp.emit($event)\" role=\"button\" tabIndex=\"0\">stories</a> for a component\n    called <span class=\"inline-code\">Button</span> .\n  </p>\n  <p>\n    Just like that, you can add your own components as stories. <br />\n    You can also edit those components and see changes right away. <br />\n    (Try editing the <span class=\"inline-code\">Button</span> stories located at\n    <span class=\"inline-code\">src/stories/index.js</span>.)\n  </p>\n  <p>\n    Usually we create stories with smaller UI components in the app.<br />\n    Have a look at the\n    <a\n      href=\"https://storybook.js.org/basics/writing-stories\"\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n    >\n      Writing Stories\n    </a>\n    section in our documentation.\n  </p>\n  <p class=\"note\">\n    <b>NOTE:</b> <br />\n    Have a look at the <span class=\"inline-code\">.storybook/webpack.config.js</span> to add\n    webpack loaders and plugins you are using in this project.\n  </p>\n</main>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [
-                {
-                    "name": "showApp",
-                    "defaultValue": "new EventEmitter<any>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 80,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-welcome-component',\r\n  template: `\r\n    <main>\r\n      <h1>Welcome to storybook</h1>\r\n      <p>This is a UI component dev environment for your app.</p>\r\n      <p>\r\n        We've added some basic stories inside the\r\n        <span class=\"inline-code\">src/stories</span> directory. <br />\r\n        A story is a single state of one or more UI components. You can have as many stories as you\r\n        want. <br />\r\n        (Basically a story is like a visual test case.)\r\n      </p>\r\n      <p>\r\n        See these sample\r\n        <a (click)=\"showApp.emit($event)\" role=\"button\" tabIndex=\"0\">stories</a> for a component\r\n        called <span class=\"inline-code\">Button</span> .\r\n      </p>\r\n      <p>\r\n        Just like that, you can add your own components as stories. <br />\r\n        You can also edit those components and see changes right away. <br />\r\n        (Try editing the <span class=\"inline-code\">Button</span> stories located at\r\n        <span class=\"inline-code\">src/stories/index.js</span>.)\r\n      </p>\r\n      <p>\r\n        Usually we create stories with smaller UI components in the app.<br />\r\n        Have a look at the\r\n        <a\r\n          href=\"https://storybook.js.org/basics/writing-stories\"\r\n          target=\"_blank\"\r\n          rel=\"noopener noreferrer\"\r\n        >\r\n          Writing Stories\r\n        </a>\r\n        section in our documentation.\r\n      </p>\r\n      <p class=\"note\">\r\n        <b>NOTE:</b> <br />\r\n        Have a look at the <span class=\"inline-code\">.storybook/webpack.config.js</span> to add\r\n        webpack loaders and plugins you are using in this project.\r\n      </p>\r\n    </main>\r\n  `,\r\n  styles: [\r\n    `\r\n      main {\r\n        padding: 15px;\r\n        line-height: 1.4;\r\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\r\n        background-color: #ffffff;\r\n      }\r\n\r\n      .note {\r\n        opacity: 0.5;\r\n      }\r\n\r\n      .inline-code {\r\n        font-size: 15px;\r\n        font-weight: 600;\r\n        padding: 2px 5px;\r\n        border: 1px solid #eae9e9;\r\n        border-radius: 4px;\r\n        background-color: #f3f2f2;\r\n        color: #3a3a3a;\r\n      }\r\n\r\n      a {\r\n        color: #1474f3;\r\n        text-decoration: none;\r\n        border-bottom: 1px solid #1474f3;\r\n        padding-bottom: 2px;\r\n      }\r\n    `,\r\n  ],\r\n})\r\nexport default class WelcomeComponent {\r\n  @Output()\r\n  showApp = new EventEmitter<any>();\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "\n      main {\n        padding: 15px;\n        line-height: 1.4;\n        font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;\n        background-color: #ffffff;\n      }\n\n      .note {\n        opacity: 0.5;\n      }\n\n      .inline-code {\n        font-size: 15px;\n        font-weight: 600;\n        padding: 2px 5px;\n        border: 1px solid #eae9e9;\n        border-radius: 4px;\n        background-color: #f3f2f2;\n        color: #3a3a3a;\n      }\n\n      a {\n        color: #1474f3;\n        text-decoration: none;\n        border-bottom: 1px solid #1474f3;\n        padding-bottom: 2px;\n      }\n    \n",
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "WelcomeComponent-1"
-        },
-        {
             "name": "YoutubeMakingComponent",
             "id": "component-YoutubeMakingComponent-51f89a54b82c32f9bb67df4cccee2bb3d5f7424ac0cea7e521fa3da560a417b6d7b9b93fafd0f723af86b25a15003d7bf086c9b5961466d84fe3e77d03650b10",
             "file": "src/app/youtube-making/youtube-making.component.ts",
@@ -4397,21 +4297,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: false\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "Introduction",
@@ -4476,21 +4376,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Lecturer.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<AboutmeLecturerComponent>",
-                "defaultValue": "(\r\n  args: AboutmeLecturerComponent\r\n) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Introduction.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<AboutmeIntroductionComponent>",
                 "defaultValue": "(\r\n  args: AboutmeIntroductionComponent\r\n) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Lecturer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AboutmeLecturerComponent>",
+                "defaultValue": "(\r\n  args: AboutmeLecturerComponent\r\n) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4570,18 +4470,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -4592,6 +4480,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/stories/Development.stories.ts": [
@@ -4724,7 +4624,7 @@
         ]
     },
     "coverage": {
-        "count": 12,
+        "count": 13,
         "status": "low",
         "files": [
             {
@@ -5162,24 +5062,6 @@
                 "name": "User",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/angular-demo/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/angular-demo/welcome.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "WelcomeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
                 "status": "low"
             },
             {

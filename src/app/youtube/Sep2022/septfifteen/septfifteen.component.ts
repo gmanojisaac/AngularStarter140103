@@ -24,6 +24,11 @@ export class SeptfifteenComponent implements OnInit, AfterContentInit  {
   @ViewChild('PRUpdate', { static: true })
   PRUpdate!: TemplateRef<any>;
 
+  @ViewChild('Output', { static: true })
+  Output!: TemplateRef<any>;
+
+  
+
   tems: TemplateRef<any> = this.Title;
   
   ngOnInit(){      
@@ -45,6 +50,9 @@ export class SeptfifteenComponent implements OnInit, AfterContentInit  {
     case 'PRUpdate':        
     this.tems = this.PRUpdate;
     break;
+    case 'Output':        
+    this.tems = this.Output;
+    break;    
     }
   }
 }
