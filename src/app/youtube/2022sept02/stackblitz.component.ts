@@ -220,6 +220,8 @@ export class StackblitzComponent implements OnInit {
           id4([4. Display logic for Task States from Store]) --> id5([5. Load All Task States from Store])
           id5([5. Load All Task States from Store]) --> id6([6. Logic for Error State and normal state])
           id6([6. Logic for Error State and normal state]) --> id7([7. Update Error State from Store])
+          id7([7. Update Error State from Store]) --> id8([8. Load the github code to stackblitz also Load the static-pages])
+          
       </pre>
     </markdown>
     <markdown  ngPreserveWhitespaces clipboard>
@@ -230,12 +232,12 @@ export class StackblitzComponent implements OnInit {
     <markdown mermaid [src]="'../../assets/angularngxs.md'" ngPreserveWhitespaces clipboard ></markdown>   
     </div>
     <iframe
-    src="https://stackblitz.com/edit/node-fgdcje?embed=1&hideNavigation=1&view=editor"
+    src="https://stackblitz.com/edit/node-guc5va?embed=1&file=README.md&hideNavigation=1&view=editor"
     style="width: 50em; min-height: 30em; margin-top: 10vh;"
   ></iframe>
 
   <iframe
-    src="https://gmanojisaac.github.io/AngularGithub/?path=/docs/testing-ngx--testme"
+    src="https://gmanojisaac.github.io/AngularGithub/beforelogin"
     style="width: 50em; min-height: 30em; margin-top: 10vh;"
   ></iframe>
   </ng-template>

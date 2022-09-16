@@ -528,14 +528,4 @@ this.onArchiveTask.emit(id);
     <app-pure-inbox-screen [error]="error$ | async"></app-pure-inbox-screen>
 ```
 
-# Load the output in the browser
-
-![alt text](../assets/ngxs-output.png 'Add repo')
-
-# Load the code in the stackblitz
-
-
-
-# Load the static-pages from gitgub hosting
-
-
+## 8.Load the github code to stackblitz also Load the static-pages
