@@ -229,7 +229,7 @@ export class StackblitzComponent implements OnInit {
     <div fxLayoutAlign="center center">
 
     <markdown mermaid [src]="'../../assets/angularngxs.md'" ngPreserveWhitespaces clipboard ></markdown>   
-          </div>
+    </div>
   </ng-template>
   <ng-container 
     [ngTemplateOutlet]="tems"
