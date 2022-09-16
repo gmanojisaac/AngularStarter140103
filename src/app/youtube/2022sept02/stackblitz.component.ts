@@ -1,16 +1,22 @@
-import { Component, Input, OnInit, AfterContentInit, ViewChild, TemplateRef, } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  AfterContentInit,
+  ViewChild,
+  TemplateRef,
+} from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 @Component({
   selector: 'app-stackblitz',
   templateUrl: './stackblitz.component.html',
-  styleUrls: ['./stackblitz.component.scss']
+  styleUrls: ['./stackblitz.component.scss'],
 })
 export class StackblitzComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   @Input()
   mode: ProgressBarMode = 'indeterminate';
 
@@ -49,7 +55,6 @@ export class StackblitzComponent implements OnInit {
   
   ### Blockquote
   > Blockquote to the max`;
-
 }
 
 @Component({
@@ -92,6 +97,8 @@ export class StackblitzComponent implements OnInit {
           id5([5.Add FlexLayout]) -->  id6([6.Add Lazy Loaded Module/ Service])
 
           id6([6.Add Lazy Loaded Module/ Service]) -->  id7([7.Add Reactive Forms])
+
+          id7([7.Add Reactive Forms]) -->  id8([8.Github-pages hosting])
         </pre>
       </markdown>
       <markdown  [src]="'../../assets/angularcomp.md'" ngPreserveWhitespaces clipboard
@@ -229,7 +236,8 @@ export class StackblitzComponent implements OnInit {
     [ngTemplateOutletContext]="myContext"> 
   </ng-container>
   `,
-  styles: [`
+  styles: [
+    `
   
   .footer {
         margin: 32px 0 8px;
@@ -262,14 +270,14 @@ export class StackblitzComponent implements OnInit {
           right: 16px;
         }
       }  
-  `]
+  `,
+  ],
 })
 export class StackblitzTitleComponent implements OnInit, AfterContentInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void { }
-  
   something = `
   @ViewChild('mermaidCenter', { static: true })
   mermaidCenter!: TemplateRef<any>;`;
@@ -298,15 +306,13 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
   @ViewChild('usingngxs', { static: true })
   usingngxs!: TemplateRef<any>;
 
-  
   tems: TemplateRef<any> = this.mermaidCenter;
   myContext = { $implicit: 'World', localSk: 'Svet' };
-
 
   @Input()
   myselectedtemp: string = 'first';
 
-  storydesign=`
+  storydesign = `
   \`\`\`typescript
   props: {
   myselectedtemp : 'usingmarkdown'
@@ -320,12 +326,11 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
   usingmermaidMarkdown = `   
   `;
 
-  pagedesignvar=`
+  pagedesignvar = `
 
   `;
 
   ngAfterContentInit() {
-
     switch (this.myselectedtemp) {
       case 'mermaidCenter':
         this.tems = this.mermaidCenter;
@@ -354,23 +359,19 @@ export class StackblitzTitleComponent implements OnInit, AfterContentInit {
       case 'usingngxs':
         this.tems = this.usingngxs;
         break;
-        
-
     }
   }
-
 }
 
 @Component({
   selector: 'app-stackblitz-runangular',
   templateUrl: './stackblitz.component.html',
-  styleUrls: ['./stackblitz.component.scss']
+  styleUrls: ['./stackblitz.component.scss'],
 })
 export class StackblitzRunAngularComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   @Input()
   mode: ProgressBarMode = 'indeterminate';
 
@@ -409,19 +410,17 @@ export class StackblitzRunAngularComponent implements OnInit {
   
   ### Blockquote
   > Blockquote to the max`;
-
 }
 
 @Component({
   selector: 'app-stackblitz-storybook',
   templateUrl: './stackblitz.component.html',
-  styleUrls: ['./stackblitz.component.scss']
+  styleUrls: ['./stackblitz.component.scss'],
 })
 export class StackblitzStorybookComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   @Input()
   mode: ProgressBarMode = 'indeterminate';
 
@@ -460,19 +459,17 @@ export class StackblitzStorybookComponent implements OnInit {
   
   ### Blockquote
   > Blockquote to the max`;
-
 }
 
 @Component({
   selector: 'app-stackblitz-updatePR',
   templateUrl: './stackblitz.component.html',
-  styleUrls: ['./stackblitz.component.scss']
+  styleUrls: ['./stackblitz.component.scss'],
 })
 export class StackblitzUpdatePRComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   @Input()
   mode: ProgressBarMode = 'indeterminate';
 
@@ -511,9 +508,7 @@ export class StackblitzUpdatePRComponent implements OnInit {
   
   ### Blockquote
   > Blockquote to the max`;
-
 }
-
 
 @Component({
   selector: 'app-stackblitz-startpage',
@@ -546,15 +541,16 @@ export class StackblitzUpdatePRComponent implements OnInit {
 </pre>
 </markdown>
   `,
-  styles: [`
+  styles: [
+    `
   
-  `]
+  `,
+  ],
 })
 export class StackblitzStartPageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   @Input()
   mode: ProgressBarMode = 'indeterminate';
 
@@ -597,9 +593,7 @@ export class StackblitzStartPageComponent implements OnInit {
   
   ### Blockquote
   > Blockquote to the max!!!`;
-
 }
-
 
 @Component({
   selector: 'app-stackblitz-testpage',
@@ -622,13 +616,14 @@ Down here
 <mat-progress-bar mode="buffer"></mat-progress-bar>
 Here
   `,
-  styles: [`
+  styles: [
+    `
   
-  `]
+  `,
+  ],
 })
 export class StackblitzStartTestComponent implements OnInit, AfterContentInit {
-
-  constructor() { }
+  constructor() {}
 
   @ViewChild('greet', { static: true })
   greet!: TemplateRef<any>;
@@ -639,7 +634,6 @@ export class StackblitzStartTestComponent implements OnInit, AfterContentInit {
 
   tems: TemplateRef<any> = this.greet;
   myContext = { $implicit: 'World', localSk: 'Svet' };
-
 
   @Input()
   myselectedtemp: string = 'first';
@@ -682,9 +676,8 @@ export class StackblitzStartTestComponent implements OnInit, AfterContentInit {
   ### Blockquote
   > Blockquote to the max`;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   ngAfterContentInit() {
-
     switch (this.myselectedtemp) {
       case 'greet':
         this.tems = this.greet;
@@ -697,9 +690,7 @@ export class StackblitzStartTestComponent implements OnInit, AfterContentInit {
         break;
     }
   }
-
 }
-
 
 @Component({
   selector: 'app-stackblitz-mermaidinline',
@@ -713,15 +704,16 @@ export class StackblitzStartTestComponent implements OnInit, AfterContentInit {
 </pre>
 </markdown>
   `,
-  styles: [`
+  styles: [
+    `
   
-  `]
+  `,
+  ],
 })
 export class StackblitzMermaidInlineComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   @Input()
   mode: ProgressBarMode = 'indeterminate';
 
@@ -760,5 +752,4 @@ export class StackblitzMermaidInlineComponent implements OnInit {
   
   ### Blockquote
   > Blockquote to the max`;
-
 }

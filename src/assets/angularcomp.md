@@ -1,32 +1,39 @@
- ---
-  ## 1. Setup Windows Environment
-  # Using 64bit Windows OS
-  # Open powershell in Admin Mode
+---
+
+## 1. Setup Windows Environment
+
+# Using 64bit Windows OS
+
+# Open powershell in Admin Mode
 
 ```typescript
 node -v
 (out)v16.10.0
 ```
 
-  ## Check npm version
-  # npm version should be compatible with the node
+## Check npm version
+
+# npm version should be compatible with the node
 
 ```typescript
 npm -v
 (out)7.24.0
 ```
-  ## Check Angular Version vs the required typescript compiler version
-  # Compiler version is changing fast
 
-| Angular       | Typescript    |
-| ------------- |:-------------:| 
-| 13.0          | 4.4 & 4.5     |
-| 13.2          | 4.4 & 4.5     |   
-| 13.3          | 4.4, 4.5, 4.6 |  
-| 14.1.3        | 4.7.2 |  
+## Check Angular Version vs the required typescript compiler version
 
-  ## update the nodeJS for the required Angular-cli version
-  # check the latest angular-cli version compatibility
+# Compiler version is changing fast
+
+| Angular |  Typescript   |
+| ------- | :-----------: |
+| 13.0    |   4.4 & 4.5   |
+| 13.2    |   4.4 & 4.5   |
+| 13.3    | 4.4, 4.5, 4.6 |
+| 14.1.3  |     4.7.2     |
+
+## update the nodeJS for the required Angular-cli version
+
+# check the latest angular-cli version compatibility
 
 ```typescript
 ng version
@@ -37,7 +44,7 @@ ng version
 (out)  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
 (out) /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
 (out)                |___/
-(out)    
+(out)
 (out)
 (out)Angular CLI: 14.1.3
 (out)Node: 16.10.0
@@ -63,9 +70,11 @@ ng version
 
 ```
 
-  ## Download NodeJs for the required OS - mine is 64bit Windows OS
-  # Check the minimum supported nodeJs and npm version
-  # https://nodejs.org/en/ -  open command prompt, type winver / wmic os get osarchitecture
+## Download NodeJs for the required OS - mine is 64bit Windows OS
+
+# Check the minimum supported nodeJs and npm version
+
+# https://nodejs.org/en/ - open command prompt, type winver / wmic os get osarchitecture
 
 ```typescript
 wmic os get osarchitecture
@@ -73,8 +82,9 @@ wmic os get osarchitecture
 (out)64-bit
 ```
 
- ## To check the supported nodeJs version for the installed angular
-  Goto https://unpkg.com/browse/@angular/core@14.1.3/package.json 
+## To check the supported nodeJs version for the installed angular
+
+Goto https://unpkg.com/browse/@angular/core@14.1.3/package.json
 
 ```typescript
 (out)"engines": {
@@ -82,9 +92,10 @@ wmic os get osarchitecture
 (out)  },
 ```
 
- ## To Update the latest angular-cli, prepare the npm Environment, Restart the laptop
+## To Update the latest angular-cli, prepare the npm Environment, Restart the laptop
 
-  Open Explorer and type %APPDATA% and go to that location
+Open Explorer and type %APPDATA% and go to that location
+
 ```powershell
 npm uninstall -g @angular/cli
 cd  C:\Users\gmano\AppData\Roaming
@@ -92,10 +103,11 @@ npm install -g rimraf
 rimraf -rf ./npm-cache/
 npm cache clean --force
 npm cache verify
-shutdown -r 
+shutdown -r
 ```
 
 ## 2. Run Local Hello World Angular
+
 # open the powershell in Admin Mode-Create new Angular Project and execute in Laptop
 
 ```powershell
@@ -111,6 +123,7 @@ Go to browser and open link => http://localhost:4200/
 ```
 
 ## 3.Add Shared Module
+
 # Execute Angular cli command for creating the shared module
 
 ```powershell
@@ -127,7 +140,7 @@ Go to browser and open link => http://localhost:4200/
 (out)   exports: [
 (out)       CommonModule
 (out)            ]
-(out) 
+(out)
 (out)   })
 (out)export class AppSharedModule { }
 ```
@@ -142,6 +155,7 @@ Go to browser and open link => http://localhost:4200/
 ```
 
 # Warning: initial exceeded maximum budget. Solved by changing the budget
+
 Angular.json-> modify to 2mb
 
 ```typescript
@@ -160,7 +174,9 @@ Angular.json-> modify to 2mb
 (out)            ],
 
 ```
+
 ## 4.Add Material Module inside app-shared module
+
 # Execute Angular cli command for creating the shared module
 
 ```powershell
@@ -232,7 +248,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
- 
+
 @NgModule({
   exports: [
     A11yModule,
@@ -284,21 +300,23 @@ import { OverlayModule } from '@angular/cdk/overlay';
 export class MaterialModule { }
 ```
 
-
 # Add a Slider in app.component.html
 
 ```typescript
 (out) <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
 ```
 
-## 5. Add FlexLayout 
+## 5. Add FlexLayout
+
 # In app-shared Module
+
 ```typescript
 (out) import { FlexLayoutModule } from '@angular/flex-layout';
 (out)  , exports: [
 (out)    FlexLayoutModule,
 
 ```
+
 # Add FlexLayout using npm
 
 ```powershell
@@ -314,12 +332,12 @@ npm i -s @angular/flex-layout
 (out)  </div>
 ```
 
-
 ## 6. Add LazyLoaded Feature module/ Service
 
 ```powershell
 ng generate module beforeLogin --route beforelogin --module app.module
 ```
+
 # Add a service
 
 ```powershell
@@ -329,7 +347,7 @@ ng generate service service/userdata
 # Add Feature Module
 
 ```powershell
-ng g m beforeLogin 
+ng g m beforeLogin
 ```
 
 # Add the sharedModule in Feature Module
@@ -361,60 +379,69 @@ ng g m beforeLogin
 (out), exports: [
 (out)FormsModule, ReactiveFormsModule
 ```
+
 # Add in featurecomponent.html
 
 ```typescript
-<div class="container" fxLayoutAlign="center center">
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-        <form [formGroup]="signupForm" (ngSubmit) = "onSubmit()">
-          <div formGroupName = "userData">
-            <div class="form-group">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              formControlName="username"
-              class="form-control">
-              <span *ngIf = "!signupForm.get('userData.username')?.valid && signupForm.get('userData.username')?.touched" class="help-block" style="color: red !important;">Please Enter A Vlid UserName!!!</span>
-          </div>
-          <div class="form-group">
-            <label for="email">email</label>
-            <input
-              type="text"
-              id="email"
-              formControlName="email"
-              class="form-control">
-            <span *ngIf = "!signupForm.get('userData.email')?.valid && signupForm.get('userData.email')?.touched" class="help-block" style="color: red !important;">Please Enter A Vlid Email-Id!!!</span>
-          </div>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
-        <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
-        {{signupForm.value | json}}
-      </div>
-    </div>
-  </div>
+(out)<div class="container" fxLayoutAlign="center center">
+(out)    <div class="row">
+(out)      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+(out)        <form [formGroup]="signupForm" (ngSubmit) = "onSubmit()">
+(out)          <div formGroupName = "userData">
+(out)            <div class="form-group">
+(out)            <label for="username">Username</label>
+(out)            <input
+(out)              type="text"
+(out)              id="username"
+(out)              formControlName="username"
+(out)              class="form-control">
+(out)              <span *ngIf = "!signupForm.get('userData.username')?.valid && signupForm.get('userData.username')?.touched" class="help-block" (out)style="color: red !important;">Please Enter A Vlid UserName!!!</span>
+(out)          </div>
+(out)          <div class="form-group">
+(out)            <label for="email">email</label>
+(out)            <input
+(out)              type="text"
+(out)              id="email"
+(out)              formControlName="email"
+(out)              class="form-control">
+(out)            <span *ngIf = "!signupForm.get('userData.email')?.valid && signupForm.get('userData.email')?.touched" class="help-block"
+(out)style="color: red !important;">Please Enter A Vlid Email-Id!!!</span>
+(out)          </div>
+(out)          </div>
+(out)          <button class="btn btn-primary" type="submit">Submit</button>
+(out)        </form>
+(out)        <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+(out)        {{signupForm.value | json}}
+(out)      </div>
+(out)    </div>
+(out)  </div>
 ```
 
 # Add in featurecomponent.ts
 
 ```typescript
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+(out)import { FormGroup, FormControl, Validators} from '@angular/forms';
+(out)
+(out)... implements OnInit {
+(out)  signupForm!: FormGroup;
+(out)   ngOnInit(): void {
+(out) this.signupForm = new FormGroup ({
+(out)       userData: new FormGroup ({
+(out)         'username': new FormControl('Pavan Nagadiya', Validators.required),
+(out)       'email': new FormControl('nagadiyap@gmail.com', [Validators.required, Validators.email]),
+(out)       })
+(out)})
+(out)   }
+(out)   onSubmit() {
+(out)console.log(this.signupForm);
+(out)   }
+(out)}
+(out)
+```
 
-... implements OnInit {
-  signupForm!: FormGroup;
-   ngOnInit(): void {
-     this.signupForm = new FormGroup ({
-       userData: new FormGroup ({
-         'username': new FormControl('Pavan Nagadiya', Validators.required),
-       'email': new FormControl('nagadiyap@gmail.com', [Validators.required, Validators.email]),
-       })
-     })
-   }
-   onSubmit() {
-     console.log(this.signupForm);
-   }
-}
+## 8.Github-pages hosting
 
+```typescript
+ ng add angular-cli-ghpages
+ ng deploy --base-href=/AngularGithub/
 ```
