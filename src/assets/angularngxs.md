@@ -534,14 +534,8 @@ this.onArchiveTask.emit(id);
 
 # Load the code in the stackblitz
 
-  <iframe
-    src="https://stackblitz.com/edit/node-uc4bnk"
-    style="width: 50em; min-height: 30em; margin-top: 10vh;"
-  ></iframe>
+
 
 # Load the static-pages from gitgub hosting
 
-  <iframe
-    src="https://gmanojisaac.github.io/AngularGithub/beforelogin"
-    style="width: 50em; min-height: 30em; margin-top: 10vh;"
-  ></iframe>
+

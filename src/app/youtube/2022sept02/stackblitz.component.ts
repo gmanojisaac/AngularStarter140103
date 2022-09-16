@@ -227,9 +227,17 @@ export class StackblitzComponent implements OnInit {
       ## NgXs __works__!          
     </markdown>      
     <div fxLayoutAlign="center center">
-
     <markdown mermaid [src]="'../../assets/angularngxs.md'" ngPreserveWhitespaces clipboard ></markdown>   
     </div>
+    <iframe
+    src="https://stackblitz.com/edit/node-fgdcje?embed=1&hideNavigation=1&view=editor"
+    style="width: 50em; min-height: 30em; margin-top: 10vh;"
+  ></iframe>
+
+  <iframe
+    src="https://gmanojisaac.github.io/AngularGithub/?path=/docs/testing-ngx--testme"
+    style="width: 50em; min-height: 30em; margin-top: 10vh;"
+  ></iframe>
   </ng-template>
   <ng-container 
     [ngTemplateOutlet]="tems"
