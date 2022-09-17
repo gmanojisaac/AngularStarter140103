@@ -332,7 +332,9 @@ npm i -s @angular/flex-layout
 (out)  </div>
 ```
 
-## 6. Add LazyLoaded Feature module/ Service
+## 6. Add LazyLoaded Feature module/
+
+# Also add a Service / component inside a module
 
 ```powershell
 ng generate module beforeLogin --route beforelogin --module app.module
@@ -348,6 +350,12 @@ ng generate service service/userdata
 
 ```powershell
 ng g m beforeLogin
+```
+
+# Add a component inside a module
+
+```powershell
+ng g component new-module/new-component
 ```
 
 # Add the sharedModule in Feature Module
