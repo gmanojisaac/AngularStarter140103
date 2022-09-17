@@ -1,3 +1,179 @@
+<ng-template #pagedesign>
+  <markdown
+    mermaid
+    ngPreserveWhitespaces
+    clipboard
+    fxLayoutAlign="center center"
+  >
+    <pre class="mermaid">
+          flowchart TD
+          id1([1.Setup Windows Env]) -->  id2([2.Run Local Hello World Angular])
+
+          id2([2.Run Local Hello World Angular]) -->  id3([3.Add Shared Module])
+
+          id3([3.Add Shared Module])  --> id4([4.Add Material Design])
+      
+          id4([4.Add Material Design]) -->  id5([5.Add FlexLayout])
+
+          id5([5.Add FlexLayout]) -->  id6([6.Add Lazy Loaded Module/ Service])
+
+          id6([6.Add Lazy Loaded Module/ Service]) -->  id7([7.Add Reactive Forms])
+        </pre
+    >
+  </markdown>
+</ng-template>
+<ng-template #angularComp>
+  <markdown ngPreserveWhitespaces clipboard> --- </markdown>
+  <markdown
+    mermaid
+    ngPreserveWhitespaces
+    clipboard
+    fxLayoutAlign="center center"
+  >
+    <pre class="mermaid">
+          flowchart TD
+          id1([1.Setup Windows Env]) -->  id2([2.Run Local Hello World Angular])
+
+          id2([2.Run Local Hello World Angular]) -->  id3([3.Add Shared Module])
+
+          id3([3.Add Shared Module])  --> id4([4.Add Material Design])
+      
+          id4([4.Add Material Design]) -->  id5([5.Add FlexLayout])
+
+          id5([5.Add FlexLayout]) -->  id6([6.Add Lazy Loaded Module/ Service])
+
+          id6([6.Add Lazy Loaded Module/ Service]) -->  id7([7.Add Reactive Forms])
+
+          id7([7.Add Reactive Forms]) -->  id8([8.Github-pages hosting])
+        </pre
+    >
+  </markdown>
+  <markdown
+    [src]="'../../assets/angularcomp.md'"
+    ngPreserveWhitespaces
+    clipboard
+    commandLine
+    [prompt]="'PS C:\Manoj>'"
+    [filterOutput]="'(out)'"
+  >
+  </markdown>
+</ng-template>
+<ng-template #storybookdesign>
+  <markdown ngPreserveWhitespaces clipboard> --- </markdown>
+  <markdown
+    mermaid
+    ngPreserveWhitespaces
+    clipboard
+    fxLayoutAlign="center center"
+  >
+    <pre class="mermaid">
+          flowchart TD
+          id1([Create a MDX file]) -->  id2([Give the correct component])
+
+          id2([Give the correct component]) -->  id3([Prepare the Meta data])
+
+          id3([Prepare the Meta data]) -->  id4([Create a Story from the component])
+
+          id4([Create a Story from the component]) -->  id5([Change the Order of the displayed stories])
+        </pre
+    >
+  </markdown>
+  <markdown
+    mermaid
+    [src]="'../assets/storydesign.md'"
+    ngPreserveWhitespaces
+    clipboard
+  ></markdown>
+</ng-template>
+
+<ng-template #angularsetup>
+  <markdown ngPreserveWhitespaces clipboard> --- </markdown>
+  <markdown
+    mermaid
+    ngPreserveWhitespaces
+    clipboard
+    fxLayoutAlign="center center"
+  >
+    <pre class="mermaid">
+        flowchart TD
+          id4([1.Prepare Git Environment]) -->  id5([2.Add repo and push in github])
+          id5([2.Add repo and push in github]) -->  id6([3.Host static pages in gh-pages])
+          id6([3.Host static pages in gh-pages]) -->  id7([4.Prepare Stackblitz Environment])
+          id7([4.Prepare Stackblitz Environment]) -->  id8([5.Prepare for Storybook branch])
+          id8([5.Prepare for Storybook branch]) -->  id9([6.Run in stackblitz Environment])
+      </pre
+    >
+  </markdown>
+  <markdown
+    [src]="'../assets/angularsetup.md'"
+    ngPreserveWhitespaces
+    clipboard
+    commandLine
+    [prompt]="'PS C:\Manoj>'"
+    [filterOutput]="'(out)'"
+  >
+  </markdown>
+</ng-template>
+
+<ng-template #usingmermaid>
+  <markdown ngPreserveWhitespaces clipboard> --- </markdown>
+  <markdown
+    mermaid
+    ngPreserveWhitespaces
+    clipboard
+    fxLayoutAlign="center center"
+  >
+    <pre class="mermaid">
+        flowchart TD
+        id1([Mermaid works]) --> id2([In html])
+        id1([Mermaid works]) --> id3([From src])
+      </pre
+    >
+  </markdown>
+  <markdown ngPreserveWhitespaces clipboard>
+    --- ## Mermaid __works__!
+  </markdown>
+  <markdown
+    mermaid
+    [src]="'../assets/angularmermaid.md'"
+    ngPreserveWhitespaces
+    clipboard
+  ></markdown>
+</ng-template>
+
+<ng-template #usingmarkdown>
+  <markdown ngPreserveWhitespaces clipboard> --- </markdown>
+  <markdown
+    mermaid
+    ngPreserveWhitespaces
+    clipboard
+    fxLayoutAlign="center center"
+  >
+    <pre class="mermaid">
+        flowchart TD
+          id1([Markdown used in]) --> id2([In html])
+          id1([Markdown used in]) --> id3([In template])
+          id1([Markdown used in]) --> id4([In Component])
+          id1([Markdown used in]) --> id5([Load from src])
+          id1([Markdown used in]) --> id6([Load from .md file])
+      </pre
+    >
+  </markdown>
+  <markdown ngPreserveWhitespaces clipboard>
+    --- ## Markdown __works__!
+  </markdown>
+  <markdown
+    [src]="'../assets/angularmarkdown.md'"
+    ngPreserveWhitespaces
+    clipboard
+    commandLine
+    [prompt]="'PS C:\Manoj>'"
+    [filterOutput]="'(out)'"
+  >
+    ></markdown
+  >
+</ng-template>
+
 <ng-template #usingngxs>
   <markdown ngPreserveWhitespaces clipboard> --- </markdown>
   <markdown
@@ -38,5 +214,6 @@
     style="width: 50em; min-height: 30em; margin-top: 10vh;"
   ></iframe>
 </ng-template>
+
 <ng-container [ngTemplateOutlet]="tems" [ngTemplateOutletContext]="myContext">
 </ng-container>

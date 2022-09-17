@@ -1,6 +1,6 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
-import {  StackblitzTitleComponent  } from '../../app/youtube/2022sept02/stackblitz.component';
+import { YoutubeMakingComponent } from '../../app/youtube-making/youtube-making.component';
 import { linkTo } from '@storybook/addon-links';
 import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -21,7 +21,7 @@ ngx-markdown is used to render the markdown with various styles
   }}
   decorators={[
 moduleMetadata({
-  declarations: [StackblitzTitleComponent],
+  declarations: [YoutubeMakingComponent],
       imports: [
         AppSharedModule,
         HttpClientModule,
@@ -35,7 +35,7 @@ moduleMetadata({
 
 <Story name="Markdown">
   {{
-    template: `<app-stackblitz-title [myselectedtemp]= "myselectedtemp"></app-stackblitz-title>`,
+    template: `<app-youtube-making [myselectedtemp]= "myselectedtemp"></app-youtube-making>`,
     props: {
     myselectedtemp : 'usingmarkdown'
     },
