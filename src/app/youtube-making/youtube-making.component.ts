@@ -6,8 +6,6 @@ import {
   ViewChild,
   TemplateRef,
 } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
-import { ProgressBarMode } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-youtube-making',
@@ -17,7 +15,7 @@ import { ProgressBarMode } from '@angular/material/progress-bar';
 export class YoutubeMakingComponent implements OnInit {
   @ViewChild('usingngxs', { static: true })
   usingngxs!: TemplateRef<any>;
-  
+
   @ViewChild('usingmermaid', { static: true })
   usingmermaid!: TemplateRef<any>;
 
@@ -35,9 +33,6 @@ export class YoutubeMakingComponent implements OnInit {
 
   @ViewChild('angularComp', { static: true })
   angularComp!: TemplateRef<any>;
-
-  @ViewChild('usingngxs', { static: true })
-  usingngxs!: TemplateRef<any>;
 
   tems: TemplateRef<any> = this.usingngxs;
 
