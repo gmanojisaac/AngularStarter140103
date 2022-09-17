@@ -19,7 +19,6 @@ export const parameters = {
           'StorybookDesign',
           'AngularEnvSetup',
           'AngularNgXs',
-          'FirstPage',
         ],
       ],
     },

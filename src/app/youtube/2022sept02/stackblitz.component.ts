@@ -147,24 +147,6 @@ export class StackblitzComponent implements OnInit {
     </markdown>
   </ng-template>
 
-  <ng-template #mermaidCenter >
-    <markdown  ngPreserveWhitespaces clipboard>
-        ---
-    </markdown>
-    <div class="markdown" fxLayoutAlign="center center">
-      <markdown mermaid [src]="'../../assets/stackblitzTitle.md'"></markdown>
-    </div>
-    <markdown  ngPreserveWhitespaces clipboard>
-      ---
-  </markdown>
-    <div class="footer">
-      <markdown emoji class="footer-text" fxLayout="row" fxLayoutAlign.gt-xs="center">
-        Crafted with :heart: by **gmanojisaac** <span style="margin:0 .15em;">•</span> Follow on [GitHub](https://github.com/gmanoj.isaac)
-      </markdown>
-    </div>
-    <markdown mermaid [src]="'../../assets/angularfirstpage.md'"  ngPreserveWhitespaces clipboard></markdown>
-  </ng-template>
-
   <ng-template #usingmermaid >
     <markdown  ngPreserveWhitespaces clipboard>
     ---          
