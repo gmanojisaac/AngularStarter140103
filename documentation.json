@@ -3553,7 +3553,7 @@
         },
         {
             "name": "YoutubeMakingComponent",
-            "id": "component-YoutubeMakingComponent-27ba6eb17adee4e5aa151de7432c05d121374607f331e1aaa7a9bba666a038f487c2d83cadca0168f8cdef70af70cb46cbd12a91c026c2d2b4529917cfbc6630",
+            "id": "component-YoutubeMakingComponent-7d7b0027cf4065a0052750d05effe5b3ecc3c9ad71b33e12114e4cd714439771f6874a3b7def0195e617d2eca2616e86b1fe1c0c10a107c74d9f2f3afe1b551a",
             "file": "src/app/youtube-making/youtube-making.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3575,7 +3575,7 @@
                     "defaultValue": "'first'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 45,
+                    "line": 40,
                     "type": "string",
                     "decorators": []
                 }
@@ -3589,7 +3589,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 37,
+                    "line": 35,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3604,7 +3604,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 34,
+                    "line": 32,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3619,7 +3619,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 28,
+                    "line": 26,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3634,7 +3634,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 31,
+                    "line": 29,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3650,7 +3650,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 42
+                    "line": 37
                 },
                 {
                     "name": "usingmarkdown",
@@ -3659,7 +3659,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 23,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3674,7 +3674,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 22,
+                    "line": 20,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3689,22 +3689,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 19,
-                    "decorators": [
-                        {
-                            "name": "ViewChild",
-                            "stringifiedArguments": "'usingngxs', {static: true}"
-                        }
-                    ]
-                },
-                {
-                    "name": "usingngxs",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TemplateRef<any>",
-                    "optional": false,
-                    "description": "",
-                    "line": 40,
+                    "line": 17,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -3720,7 +3705,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 45,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3730,7 +3715,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 44,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3742,7 +3727,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  Input,\n  OnInit,\n  AfterContentInit,\n  ViewChild,\n  TemplateRef,\n} from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { ProgressBarMode } from '@angular/material/progress-bar';\n\n@Component({\n  selector: 'app-youtube-making',\n  templateUrl: './youtube-making.component.html',\n  styleUrls: ['./youtube-making.component.scss'],\n})\nexport class YoutubeMakingComponent implements OnInit {\n  @ViewChild('usingngxs', { static: true })\n  usingngxs!: TemplateRef<any>;\n  \n  @ViewChild('usingmermaid', { static: true })\n  usingmermaid!: TemplateRef<any>;\n\n  @ViewChild('usingmarkdown', { static: true })\n  usingmarkdown!: TemplateRef<any>;\n\n  @ViewChild('pagedesign', { static: true })\n  pagedesign!: TemplateRef<any>;\n\n  @ViewChild('storybookdesign', { static: true })\n  storybookdesign!: TemplateRef<any>;\n\n  @ViewChild('angularsetup', { static: true })\n  angularsetup!: TemplateRef<any>;\n\n  @ViewChild('angularComp', { static: true })\n  angularComp!: TemplateRef<any>;\n\n  @ViewChild('usingngxs', { static: true })\n  usingngxs!: TemplateRef<any>;\n\n  tems: TemplateRef<any> = this.usingngxs;\n\n  @Input()\n  myselectedtemp: string = 'first';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n  ngAfterContentInit() {\n    switch (this.myselectedtemp) {\n      case 'usingmermaid':\n        this.tems = this.usingmermaid;\n        break;\n\n      case 'usingmarkdown':\n        this.tems = this.usingmarkdown;\n        break;\n      case 'pagedesign':\n        this.tems = this.pagedesign;\n        console.log('reached');\n        break;\n      case 'storybookdesign':\n        this.tems = this.storybookdesign;\n        break;\n      case 'angularsetup':\n        this.tems = this.angularsetup;\n        break;\n      case 'angularComp':\n        this.tems = this.angularComp;\n        break;\n      case 'usingngxs':\n        this.tems = this.usingngxs;\n        break;\n    }\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  Input,\n  OnInit,\n  AfterContentInit,\n  ViewChild,\n  TemplateRef,\n} from '@angular/core';\n\n@Component({\n  selector: 'app-youtube-making',\n  templateUrl: './youtube-making.component.html',\n  styleUrls: ['./youtube-making.component.scss'],\n})\nexport class YoutubeMakingComponent implements OnInit {\n  @ViewChild('usingngxs', { static: true })\n  usingngxs!: TemplateRef<any>;\n\n  @ViewChild('usingmermaid', { static: true })\n  usingmermaid!: TemplateRef<any>;\n\n  @ViewChild('usingmarkdown', { static: true })\n  usingmarkdown!: TemplateRef<any>;\n\n  @ViewChild('pagedesign', { static: true })\n  pagedesign!: TemplateRef<any>;\n\n  @ViewChild('storybookdesign', { static: true })\n  storybookdesign!: TemplateRef<any>;\n\n  @ViewChild('angularsetup', { static: true })\n  angularsetup!: TemplateRef<any>;\n\n  @ViewChild('angularComp', { static: true })\n  angularComp!: TemplateRef<any>;\n\n  tems: TemplateRef<any> = this.usingngxs;\n\n  @Input()\n  myselectedtemp: string = 'first';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n  ngAfterContentInit() {\n    switch (this.myselectedtemp) {\n      case 'usingmermaid':\n        this.tems = this.usingmermaid;\n        break;\n\n      case 'usingmarkdown':\n        this.tems = this.usingmarkdown;\n        break;\n      case 'pagedesign':\n        this.tems = this.pagedesign;\n        console.log('reached');\n        break;\n      case 'storybookdesign':\n        this.tems = this.storybookdesign;\n        break;\n      case 'angularsetup':\n        this.tems = this.angularsetup;\n        break;\n      case 'angularComp':\n        this.tems = this.angularComp;\n        break;\n      case 'usingngxs':\n        this.tems = this.usingngxs;\n        break;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3757,7 +3742,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 45
+                "line": 40
             },
             "implements": [
                 "OnInit"
@@ -4476,7 +4461,7 @@
                 "linktype": "component",
                 "name": "YoutubeMakingComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
