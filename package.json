@@ -1,4 +1,5 @@
 {
+  "homepage": "http://github.com/gmanojisaac/AngularStarter140103.git",
   "name": "angular-starter140103",
   "version": "0.0.0",
   "scripts": {
@@ -9,7 +10,9 @@
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "private": true,
   "dependencies": {
@@ -54,6 +57,7 @@
     "@types/mermaid": "^8.2.9",
     "@types/prismjs": "^1.26.0",
     "babel-loader": "^8.2.5",
+    "gh-pages": "^4.0.0",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
