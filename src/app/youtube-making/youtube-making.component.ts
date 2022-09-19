@@ -36,6 +36,8 @@ export class YoutubeMakingComponent implements OnInit {
 
   tems: TemplateRef<any> = this.usingngxs;
 
+  myContext = {$implicit: 'World', localSk: 'Svet'};
+  
   @Input()
   myselectedtemp: string = 'first';
 

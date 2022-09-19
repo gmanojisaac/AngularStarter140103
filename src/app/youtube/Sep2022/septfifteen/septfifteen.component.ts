@@ -27,7 +27,7 @@ export class SeptfifteenComponent implements OnInit, AfterContentInit  {
   @ViewChild('Output', { static: true })
   Output!: TemplateRef<any>;
 
-  
+  myContext = {$implicit: 'World', localSk: 'Svet'};
 
   tems: TemplateRef<any> = this.Title;
   

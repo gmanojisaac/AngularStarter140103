@@ -44,7 +44,13 @@
 
           id6([6.Add Lazy Loaded Module/ Service]) -->  id7([7.Add Reactive Forms])
 
-          id7([7.Add Reactive Forms]) -->  id8([8.Github-pages hosting])
+          id7([7.Add Reactive Forms]) -->  id8([8.Github-pages hosting npm install])
+
+          id8([8.Github-pages hosting npm install]) -->  id9([9. Prepare Stackblitz Environment])
+
+          id9([9. Prepare Stackblitz Environment]) -->  id10([10.Github-pages hosting])
+
+          id10([10.Github-pages hosting]) -->  id11([11. Steps to load the code in stackblitz and load static files from github])
         </pre
     >
   </markdown>
@@ -57,6 +63,26 @@
     [filterOutput]="'(out)'"
   >
   </markdown>
+
+  <markdown ngPreserveWhitespaces clipboard> 
+  ## Check the code exported to stackblitz  
+  </markdown>
+
+
+  <iframe
+  src="https://stackblitz.com/edit/node-jfhocj?embed=1&file=README.md&hideNavigation=1&view=editor"
+  style="width: 50em; min-height: 30em; margin-top: 10vh;"
+></iframe>
+
+<markdown ngPreserveWhitespaces clipboard> 
+  ## Check the static files hosted in gh-pages
+  </markdown>
+
+<iframe
+  src="https://gmanojisaac.github.io/AngularComp/"
+  style="width: 50em; min-height: 30em; margin-top: 10vh;"
+></iframe>
+
 </ng-template>
 <ng-template #storybookdesign>
   <markdown ngPreserveWhitespaces clipboard> --- </markdown>
@@ -210,12 +236,12 @@
     ></markdown>
   </div>
   <iframe
-    src="https://stackblitz.com/edit/node-guc5va?embed=1&file=README.md&hideNavigation=1&view=editor"
+    src="https://stackblitz.com/edit/node-vxfj82?embed=1&file=README.md&hideNavigation=1&view=editor"
     style="width: 50em; min-height: 30em; margin-top: 10vh;"
   ></iframe>
 
   <iframe
-    src="https://gmanojisaac.github.io/AngularGithub/ngxs"
+    src="https://gmanojisaac.github.io/AngularComp/"
     style="width: 50em; min-height: 30em; margin-top: 10vh;"
   ></iframe>
 </ng-template>

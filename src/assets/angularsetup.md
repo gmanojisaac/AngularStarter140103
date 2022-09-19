@@ -3,7 +3,7 @@
 
 ```powershell
 git config --global user.email "gmanoj.isaac@gmail.com"
-git config --global user.name "Manoj"
+git config --global user.name "gmanojisaac"
 ```
 
 ## 2. Add new Github Repo
@@ -20,14 +20,13 @@ git push origin HEAD --force
 # Go to the new angular project and add repo to the angular project
 ```powershell
 git remote remove origin
-git remote add origin https://github.com/gmanojisaac/AngularStorybook.git
+git remote add origin https://github.com/gmanojisaac/AngularComp.git
 git remote -v show
 git status
 git log --oneline
 git add .
-git commit -am “Material & ngx-markdown working”
+git commit -am “Setup Github”
 git push -u origin master
-
 ```
 
 ## 3. Host static pages in gh-pages
@@ -57,25 +56,6 @@ Change the asset access link to ./assets and create a new branch for it
 (out) git commit -am "Added storybook static file"
 (out) git push -u origin Storybookdeploy
 ```
-
-## 4. Prepare Stackblitz Environment
-# Add file .stackblitzrc in project folder, push master brnnch to origin repo
-
-```typescript
-(out)  {"installDependencies":true,"startCommand":"turbo run serve","env":{"ENABLE_CJS_IMPORTS":true}}
-```
-# open the Browser Create a new nodeJs project in https://stackblitz.com/ after creating an account
-# Create a new NodeJs project and add the repo with master branch
-
-![alt text](../assets/stackblitz.png "Add repo")
-
-# Load the master branch and install and serve
-
-![alt text](../assets/stackblitz-start.png "Add repo")
-
-# Open the browser and the run the application from the cloud
-
-![alt text](../assets/stackblitz-served.png "Add repo")
 
 ## 5. Prepare for Storybook Branch
 
