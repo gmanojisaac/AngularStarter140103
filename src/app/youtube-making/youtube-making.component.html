@@ -130,11 +130,12 @@
   >
     <pre class="mermaid">
         flowchart TD
+          id44([0.Get latest stackblitz env]) -->  id4([1.Prepare Git Environment])
           id4([1.Prepare Git Environment]) -->  id5([2.Add repo and push in github])
-          id5([2.Add repo and push in github]) -->  id6([3.Host static pages in gh-pages])
-          id6([3.Host static pages in gh-pages]) -->  id7([4.Prepare Stackblitz Environment])
-          id7([4.Prepare Stackblitz Environment]) -->  id8([5.Prepare for Storybook branch])
-          id8([5.Prepare for Storybook branch]) -->  id9([6.Run in stackblitz Environment])
+          id5([2.Add repo and push in github]) -->  id6([3.Prepare Stackblitz Environment])
+          id6([3.Prepare Stackblitz Environment])  -->  id7([4.Prepare for Storybook branch])
+          id7([4.Prepare for Storybook branch]) --> id8([5.Host static pages in gh-pages])
+          id8([5.Host static pages in gh-pages]) -->  id9([6.Run in stackblitz Environment])
       </pre
     >
   </markdown>
@@ -147,6 +148,17 @@
     [filterOutput]="'(out)'"
   >
   </markdown>
+  
+  <iframe
+    src="https://stackblitz.com/edit/node-dxjexi"
+    style="width: 50em; min-height: 30em; margin-top: 10vh;"
+  ></iframe>
+
+  <iframe
+    src="https://gmanojisaac.github.io/AngularEnv/"
+    style="width: 50em; min-height: 30em; margin-top: 10vh;"
+  ></iframe>
+
 </ng-template>
 <ng-template #usingmermaid>
   <markdown ngPreserveWhitespaces clipboard> --- </markdown>
