@@ -462,8 +462,6 @@ ng g component new-module/new-component
 ## 10.Github-pages hosting
 
 ```typescript
-  ng add angular-cli-ghpages
-
   git add .
   git commit -am “Setup Github gh-pages and Stackblitz”
   git push -u origin master
