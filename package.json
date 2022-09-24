@@ -11,7 +11,7 @@
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
     "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static -r https://github.com/gmanojisaac/AngularStarter140103.git"
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "private": true,
   "dependencies": {
