@@ -1,33 +1,71 @@
+  ## Create a new branch for Storybook design from Angular Env Setup
+   ```powershell
+    git checkout -b storydesign
+  ```
+
+  ## Create a new component
+   ```powershell
+  ng g c storybookdesign
+  ```
+  
+  ## Create a App-shared module
+   ```powershell
+    ng g module app-shared
+  ```
+
+  ## Create a new MDX Story in src/stories folder
+   ```powershell
+    storybookdesign.stories.mdx
+  ```
+
+  ## Add in App-shared module
+   ```powershell
+    import { NgModule } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+    @NgModule({
+      declarations: [],
+      exports: [
+          CommonModule,
+          FormsModule, ReactiveFormsModule
+                ]
+
+      })
+    export class AppSharedModule { }
+  ```
+
   ## Use Meta data to give location info
   # Title shows the place where you can find the story and add parameters to modify the view mode
   ```typescript
-    <Meta title="YoutubeMaking/06Sep22"  
-      parameters={{
-      viewMode: 'docs',
-      previewTabs: { 
-        canvas: { hidden: true } 
-      },
+    import { moduleMetadata } from '@storybook/angular';
+    import { Story, Meta, ArgsTable } from '@storybook/addon-docs';
+    import { StorybookdesignComponent } from '../app/storybookdesign/storybookdesign.component';
+    import { AppSharedModule } from '../app/app-shared/app-shared.module';
+
+
+    <Meta
+    title="YoutubeMaking/StorybookDesign"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+        canvas: { hidden: true },
+        },
+    }}
   ```
 
   ## Import Modules for story use
   # Import sharedModule which contains FlexBox, HTTPClient Module for MarkdownModule
-  # Also the providers will have MarkdownService for markdown module
+  # Component is used in the StorybookdesignComponent
   ```typescript
-  imports: [
-  AppSharedModule,
-  HttpClientModule,
-  MarkdownModule.forRoot({ loader: HttpClient }),
-  ],
+    decorators={[
+    moduleMetadata({
+        declarations: [StorybookdesignComponent],
+        imports: [AppSharedModule ],
+        providers: [],
+    }),
+    ]}
+    />
   ```
-
-  ## Add the correct component!
-  # Component is used in the StackblitzStorybookComponent
-  ```typescript
-      moduleMetadata({
-        declarations: [StackblitzTitleComponent],
-      ...
-  ```
-  --- 
   ## PageDesign __works__!
 
   <pre class="mermaid">
@@ -41,7 +79,7 @@
   
   # In html use the different templates
 ```typescript
-  <ng-template #usingmarkdown >
+  <ng-template #storydesign >
   </ng-template>
 ```
 
@@ -55,10 +93,16 @@
 
   # use the context in html
 
-```typescript
+```typescript  
+  <ng-template #storydesign >
+  <h1>
+      Working
+  </h1>>
+  </ng-template>
   <ng-template #greet let-person><span>Hello {{person}} </span></ng-template>
   <ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
   <ng-template #svk let-person="localSk" ><span>Ahoj {{person}}!</span></ng-template>
+
 ```
 
   # use the context in component
@@ -70,6 +114,8 @@
   svk!: TemplateRef<any>;
   @ViewChild('eng', { static: true })
   eng!: TemplateRef<any>;
+  @ViewChild('storydesign', { static: true })
+  storydesign!: TemplateRef<any>;
 
   myContext = { $implicit: 'World', localSk: 'Svet' };
   tems: TemplateRef<any> = this.greet;
@@ -84,8 +130,7 @@
   Component=>  implements OnInit, AfterContentInit {
 
   @Input()
-  myselectedtemp: string = 'first';
-
+  myselectedtemp: string = 'greet';
 
   ngAfterContentInit() {
 
@@ -99,6 +144,15 @@
       case 'eng':
         this.tems = this.eng;
         break;
+      case 'storydesign':
+        this.tems = this.storydesign;
+        break;
+      }
+    }
+
+    constructor() { }
+
+    ngOnInit(): void {
     }
   }
 
@@ -109,24 +163,41 @@
 # If seperate .mdx files are used the preview.js will not control the order
 
 ```powershell
-<Story name="pagedesign">
-  {{
-    template: `<app-stackblitz-title [myselectedtemp]= "myselectedtemp"></app-stackblitz-title>`,
-    props: {
-    myselectedtemp : 'pagedesign'
-    },
-  }}
+<Story name="StorybookDesign">
+{{
+template: `<app-storybookdesign [myselectedtemp]= "myselectedtemp"></app-storybookdesign>`,
+props: {
+myselectedtemp : 'storydesign'
+},
+}}
 </Story>
 ```
 # This is the design of the Page
 # Storybook mdx feature is used extensively
+# The order of the strories can be set in the preview.js -> parameters
+
 ```typescript
 options: {
     storySort: {
       order: [
-       'YoutubeMaking', ['06Sep22', ['FirstPage', 'Mermaid', 'Markdown', 'PageDesign', 'StorybookDesign', 'AngularSetup']],
+       'YoutubeMaking', ['StorybookDesign'], 'Example', ['Page', '*']
        ],
     },
-        
+  },
+   ...        
+ ```
+
+# Git comamnds to push to repo and gh-pages
+
+```typescript
+  git remote remove origin
+  git remote add origin https://github.com/gmanojisaac/AngularStorybook.git
+  git remote -v show
+  git add .
+  git commit -am “Completed storybook design”
+  git push -u origin storydesign
+  npm run pre-deploy
+  npm run deploy-storybook
+
  ```
 

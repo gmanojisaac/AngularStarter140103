@@ -528,4 +528,15 @@ this.onArchiveTask.emit(id);
     <app-pure-inbox-screen [error]="error$ | async"></app-pure-inbox-screen>
 ```
 
-## 8.Load the github code to stackblitz also Load the static-pages
+## 8.Load the github code to stackblitz also Load the static-pages to gh-pages
+
+```typescript
+ng add angular-cli-ghpages
+git remote remove origin
+git remote add origin https://github.com/gmanojisaac/Angularngxs.git
+git remote -v show
+git add .
+git commit -am “Completed ngxs”
+git push -u origin ngxs
+ng deploy --base-href=/Angularngxs/
+```
