@@ -122,6 +122,23 @@ ng serve
 Go to browser and open link => http://localhost:4200/
 ```
 
+# Modify the budgets in angular.json
+
+```typescript
+  "budgets": [
+    {
+      "type": "initial",
+      "maximumWarning": "2mb",
+      "maximumError": "2mb"
+    },
+    {
+      "type": "anyComponentStyle",
+      "maximumWarning": "2mb",
+      "maximumError": "2mb"
+    }
+  ],
+```
+
 ## 3.Add Shared Module
 
 # Execute Angular cli command for creating the shared module
@@ -451,14 +468,16 @@ ng g component new-module/new-component
 
 ```typescript
  ng add angular-cli-ghpages
- ```
+```
 
 ## 9. Prepare Stackblitz Environment
+
 # Add file .stackblitzrc in project folder, push master brnnch to origin repo
 
 ```typescript
 (out)  {"installDependencies":true,"startCommand":"turbo run start","env":{"ENABLE_CJS_IMPORTS":true}}
 ```
+
 ## 10.Github-pages hosting
 
 ```typescript
@@ -470,15 +489,17 @@ ng g component new-module/new-component
 ```
 
 ## 11. Steps to load the code in stackblitz and load static files from github.
+
 # open the Browser Create a new nodeJs project in https://stackblitz.com/ after creating an account
+
 # Create a new NodeJs project and add the repo with master branch
 
-![alt text](../assets/stackblitz.png "Add repo")
+![alt text](../assets/stackblitz.png 'Add repo')
 
 # Load the master branch and install and serve
 
-![alt text](../assets/stackblitz-start.png "Add repo")
+![alt text](../assets/stackblitz-start.png 'Add repo')
 
 # Open the browser and the run the application from the cloud
 
-![alt text](../assets/stackblitz-served.png "Add repo")
+![alt text](../assets/stackblitz-served.png 'Add repo')

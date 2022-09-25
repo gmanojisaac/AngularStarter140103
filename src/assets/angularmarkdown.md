@@ -1,4 +1,5 @@
 ## Add ngx-markdown
+
 # mermaid, highlight, linenumbers, prismjs should work
 
 ```powershell
@@ -10,6 +11,7 @@ npm install @types/clipboard @types/marked @types/mermaid @types/prismjs --save-
 
 ```typescript
 (out)    "styles": [
+(out)        "src/styles.scss",
 (out)        "node_modules/prismjs/themes/prism-okaidia.css",
 (out)        "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
 (out)        "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
@@ -30,13 +32,14 @@ npm install @types/clipboard @types/marked @types/mermaid @types/prismjs --save-
 (out)        "node_modules/emoji-toolkit/lib/js/joypixels.min.js"
 (out)    ]
 ```
+
 # Add in app.module
 
 ```typescript
 (out) import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 (out) import { HttpClient } from '@angular/common/http';
 (out) import { HttpClientModule } from '@angular/common/http';
-(out) 
+(out)
 (out) imports:[
 (out)     ...
 (out)     HttpClientModule,
@@ -48,57 +51,13 @@ npm install @types/clipboard @types/marked @types/mermaid @types/prismjs --save-
 # Add in component.html
 
 ```typescript
-(out)<ng-template #greet let-person><span>Hello {{person}}</span>
 (out)  <div class="markdown">
 (out)    <markdown mermaid [src]="'../../assets/Testing.md'"></markdown>
 (out)    </div>
-(out)  </ng-template>
-(out)<ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
-(out)<ng-template #svk let-person="localSk" ><span>Ahoj {{person}}!</span></ng-template>
-(out)<ng-container 
-(out)  [ngTemplateOutlet]="tems"
-(out)  [ngTemplateOutletContext]="myContext"> </ng-container>
-  ```
-
-# Add in component.ts
-
-```typescript
-(out)import { Component, Input, OnInit, AfterContentInit, ViewChild, TemplateRef, } from '@angular/core';
-(out)...
-(out)implements OnInit, AfterContentInit{
-(out)  title = 'AngularGhPages';
-(out)
-(out)  @ViewChild('greet', { static: true })
-(out)  greet!: TemplateRef<any>;
-(out)  @ViewChild('svk', { static: true })
-(out)  svk!: TemplateRef<any>;
-(out)  @ViewChild('eng', { static: true })
-(out)  eng!: TemplateRef<any>;
-(out)
-(out)  tems: TemplateRef<any> = this.greet;
-(out)  myContext = { $implicit: 'World', localSk: 'Svet' };
-(out)  @Input()
-(out)  myselectedtemp: string = 'greet';
-(out)  ngOnInit(): void { }
-(out)  ngAfterContentInit() {
-(out)
-(out)    switch (this.myselectedtemp) {
-(out)      case 'greet':
-(out)        this.tems = this.greet;
-(out)        break;
-(out)  case 'svk':
-(out)        this.tems = this.svk;
-(out)    break;
-(out)      case 'eng':
-(out)        this.tems = this.eng;
-(out)        break;
-(out)    }
-(out)  }
-(out)
-(out)
 ```
 
 # Create a new file Testing.md in assets folder
+
 ```typescript
 (out)<pre class="mermaid">
 (out)journey
@@ -114,10 +73,12 @@ npm install @types/clipboard @types/marked @types/mermaid @types/prismjs --save-
 (out)  Development- 7Y: 7: Manoj
 (out)
 (out)</pre>
-  ```
-  
+```
+
 ### Markdown working from html
-  # use single back slash \ for escaping comma , angle brackets etc
+
+# use single back slash \ for escaping comma , angle brackets etc
+
 ```typescript
 (out)  <markdown ngPreserveWhitespaces clipboard>
 (out)  ### Lists
@@ -128,51 +89,107 @@ npm install @types/clipboard @types/marked @types/mermaid @types/prismjs --save-
 (out)  {{ '#working' | language: 'typescript' }}
 (out)  </markdown>
 ```
-  ---
-  ### Markdown showing command line
-  # filterOutput will not show the prompt
+
+---
+
+### Markdown showing command line
+
+# Output showing the prompt
+
 ```typescript
-(out)  <markdown [src]="'../../assets/markdowncommandline.md'"
-(out)    commandLine
-(out)    [prompt]="'PS C:\Users\Manoj>'"
-(out)    [filterOutput]="'(out)'">
-(out)</markdown>
+  In html
+  <markdown [src]="'../../assets/markdownnofilter.md'"
+     commandLine
+      [prompt]="'PS C:\Users\Manoj>'"
+      [filterOutput]="'(out)'">
+  </markdown>
+
+  In the markdownnofilter.md
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
+  })
+  export class AppComponent {
+    title = 'AngularComp';
+  }
 ```
-  ---
-  ### Markdown working from template
+
+# filterOutput will not show the prompt
+
+```typescript
+  In html
+  <markdown [src]="'../../assets/markdown.md'"
+  commandLine
+  [prompt]="'PS C:\Users\Manoj>'"
+  [filterOutput]="'(out)'">
+  </markdown>
+
+  In the markdown.md
+  (out)  import { Component } from '@angular/core';
+  (out)
+  (out)    @Component({
+  (out)      selector: 'app-root',
+  (out)      templateUrl: './app.component.html',
+  (out)      styleUrls: ['./app.component.scss']
+  (out)    })
+  (out)    export class AppComponent {
+  (out)      title = 'AngularComp';
+  (out)    }
+  (out)
+```
+
+### Markdown working from template
+
 ```typescript
 (out)  <markdown  ngPreserveWhitespaces clipboard>
 (out)  ## Markdown __works__!
-(out)  ---          
+(out)  ---
 (out)  </markdown>
 ```
 
-  ---
+---
 
-  ### Markdown working from component
+### Markdown working from component
+
 ```typescript
+(out) In html
 (out)  <markdown ngPreserveWhitespaces clipboard>
 (out)  {{someothervar}}
 (out)  {{ somevar | language: 'typescript' }}
 (out)  </markdown>
 (out)
 (out)  <div [innerHTML]="markdowncode | markdown"></div>
+
+(out) In Component
+(out)
+(out)  someothervar=`
+(out)  ## Markdown from component no code __works__!
+(out)  ---
+(out)  `;
+(out)  somevar=`
+(out)  ## Markdown from component with typescript __works__!
+(out)  ---
+(out)  `;
+(out)  markdowncode=`
+(out)  ## Markdown from component __works__!
+(out)  ---
+(out)  `;
+
 ```
 
-  # somevar should be having the markdown to run from the component
-  ---
+# somevar should be having the markdown to run from the component
 
-  
-  ### Markdown working from src
+---
+
+### Markdown working from src
+
 ```typescript
-(out)    <markdown [src]="'../../assets/storydesign.md'"></markdown>
+(out)    <markdown [src]="'../../assets/markdwonsrc.md'"></markdown>
 ```
 
-  ## .md file will not contain => backslash
-```typescript
-(out)    props: {
-(out)    myselectedtemp : 'usingmarkdown'
-(out)    },   
-```
-  # Markdown also has other features which can be used.
-  ---
+## .md file will not contain => backslash
+
+---
