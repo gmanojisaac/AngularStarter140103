@@ -192,4 +192,18 @@ npm install @types/clipboard @types/marked @types/mermaid @types/prismjs --save-
 
 ## .md file will not contain => backslash
 
+# Git commands for Creating the github pages
+
+```typescript
+git remote remove origin
+git remote add origin https://github.com/gmanojisaac/AngularMarkdown.git
+git remote -v show
+git status
+git log --oneline
+git add .
+git commit -am “Markdown working”
+git push -u origin Markdown
+ng deploy --base-href=/AngularMarkdown/
+```
+
 ---
